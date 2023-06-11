@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  janus:
+  main_service:
     build: .
     command: python manage.py runserver 0.0.0.0:8000 --noreload
     volumes:
@@ -11,8 +11,8 @@ services:
     env_file:
       - ./.env.dev
     depends_on:
-      - janus-db
-  janus-db:
+      - db
+  db:
     image: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data/
