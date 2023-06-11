@@ -13,7 +13,7 @@ cd main_service
 docker-compose -f docker-compose.yml up -d
 ```
 
-Go to http://localhost:8200 to check if it's working.
+Go to http://localhost:8009 to check if it's working.
 
 ### Non-Docker style
 
