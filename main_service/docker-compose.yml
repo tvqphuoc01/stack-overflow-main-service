@@ -3,7 +3,7 @@ version: '3.9'
 services:
   main_service:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000 --noreload
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/usr/src/app/
     ports:
@@ -11,8 +11,8 @@ services:
     env_file:
       - ./.env.dev
     depends_on:
-      - database
-  database:
+      - postgres
+  postgres:
       image: postgres
       restart: always
       volumes:
@@ -20,8 +20,10 @@ services:
       environment:
         POSTGRES_HOST_AUTH_METHOD: trust
         POSTGRES_PASSWORD: postgres
+        POSTGRES_USER: postgres
+        POSTGRES_DB: postgres
       ports:
         - 5432:5432
-
+  
 volumes:
   postgres_data:
