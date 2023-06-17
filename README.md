@@ -5,7 +5,7 @@
 Build image from local Dockerfile
 
 
-Run base services of Parcel Perform projects.
+Run base services of projects.
 Clone [main-service](https://github.com/tvqphuoc01/stack-overflow-main-service.git) repository
 
 ```sh
