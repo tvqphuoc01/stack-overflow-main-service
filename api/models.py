@@ -20,6 +20,7 @@ class Question(models.Model):
     question_status = models.IntegerField(default=0)
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
+    image_url = models.CharField(max_length=1000, default='')
     
     def __str__(self):
         return self.title
@@ -96,7 +97,7 @@ class Reply(models.Model):
     def __str__(self):
         return "Reply: " + str(self.reply_id) + " - Question: " + str(self.question_id) + " - Answer: " + str(self.answer_id) + " - Owner: " + str(self.owner_id) + " - Content: " + str(self.content) + " - Image: " + str(self.image_url) + " - Like: " + str(self.number_of_like) + " - Dislike: " + str(self.number_of_dislike) + " - Status: " + str(self.answer_status) + " - Create: " + str(self.create_date) + " - Update: " + str(self.update_date)
 
-class reply_user(models.Model):
+class ReplyUser(models.Model):
     reply_id = models.ForeignKey(Reply, on_delete=models.CASCADE)
     user_id = models.UUIDField()
     create_date = models.DateTimeField(auto_now_add=True)
