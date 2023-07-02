@@ -105,3 +105,32 @@ def update_question_status(request):
         },
         status=status.HTTP_200_OK
     )
+    
+@api_view(['DELETE'])
+def delete_question(request):
+    question_id = request.data.get('question_id')
+    
+    if not question_id:
+        return Response(
+            {
+                "message": "Question id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+        
+    question = Question.objects.filter(id=question_id).first()
+    if not question:
+        return Response(
+            {
+                "message": "Question is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    question.delete()
+    return Response(
+        {
+            "message": "Delete question successfully",
+        },
+        status=status.HTTP_200_OK
+    )
