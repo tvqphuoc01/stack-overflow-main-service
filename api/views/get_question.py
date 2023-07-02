@@ -80,6 +80,8 @@ def update_question_status(request):
     question_id = request.data.get('question_id')
     question_status = request.data.get('question_status')
     
+    # TODO ADD PERMISSION CHECK
+    
     if not question_id:
         return Response(
             {
@@ -109,6 +111,8 @@ def update_question_status(request):
 @api_view(['DELETE'])
 def delete_question(request):
     question_id = request.data.get('question_id')
+    
+    # TODO ADD PERMISSION CHECK
     
     if not question_id:
         return Response(
