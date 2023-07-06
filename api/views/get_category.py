@@ -14,3 +14,29 @@ def get_list_category(request):
         },
         status=status.HTTP_200_OK
     )
+
+@api_view(['POST'])
+def create_category(request):
+    category_name = request.data.get('category_name')
+    if not category_name:
+        return Response(
+            {
+                "message": "Category name is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    category, created = Category.objects.get_or_create(name=category_name)
+    if created == False:
+        return Response(
+            {
+                "message": "Category already created"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    else:
+        return Response(
+            {
+                "message": "Category created"
+            },
+            status=status.HTTP_201_CREATED
+        )
