@@ -1,5 +1,5 @@
 from api.models import Question
-
+from django.core.paginator import Paginator
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -50,10 +50,15 @@ def get_question_by_id(request):
     
 @api_view(['GET'])
 def get_first_ten_question(request):
-    question_list = Question.objects.filter(question_status=True).order_by('-create_date')[:10]
+    number_of_page = request.GET.get('page' , 1)
+    
+    question = Question.objects.filter(question_status=True).order_by('-create_date').all()
+    question_list = Paginator(question, 10)
+    question_objs = question_list.page(number_of_page)
+    
     question_list_data = []
     
-    for question in question_list:
+    for question in question_objs:
         question_list_data.append(
             {
                 "id": question.id,
