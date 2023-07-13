@@ -1,8 +1,9 @@
-from api.models import Tag
+from api.models import Tag, QuestionTag
 
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.db.models import Count
 
 @api_view(['GET'])
 def get_list_tag(request):
@@ -112,5 +113,20 @@ def create_tag(request):
             },
             status=status.HTTP_201_CREATED
         )
+
+@api_view(["GET"])
+def get_top_five_tag(request):
+    question_tags = QuestionTag.objects.select_related('tag_id').values('tag_id').annotate(tag_count=Count('tag_id'))
+    list_data = []
+    for question_tag in question_tags:
+        print(question_tag)
+    return Response(
+        {
+
+        },
+        status=status.HTTP_200_OK
+    )
+
+
     
     
