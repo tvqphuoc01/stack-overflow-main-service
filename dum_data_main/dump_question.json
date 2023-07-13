@@ -1,0 +1,1427 @@
+[
+    {
+        "model": "api.Question",
+        "pk": "3b14536d-287a-4007-be0d-64f4d648b2d9",
+        "fields": {
+            "user_id": "6fbebe74-79b8-417d-9ddb-30ddae119a3b",
+            "title": "Hi, am having trouble on how to code [False, False, True, True, True, False, True, True, False] into [[2,3],[6,2]] in python",
+            "content": "How should I code [False, False, True, True, True, False, True, True, False] into [[2, 3], [6, 2]] in python, where for the first sublist, 2 is where the True index starts and 3 is the sum of True elements from where its index starts.\nStuck with this question",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-06 19:16:41.645771",
+            "update_date": "2023-07-10 19:34:41.645771",
+            "image_url": "https://picsum.photos/seed/3b14536d-287a-4007-be0d-64f4d648b2d9/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "b3deba00-ad9a-4d6a-ace9-aadd568a32db",
+        "fields": {
+            "user_id": "fa1ee3ed-166b-45c0-80ae-ed39499a5ac5",
+            "title": "How to get object path for all property in js",
+            "content": "How to get the object path for all properties from the below object\nExpected result\n}\nJason path finding and parsing should work dynamically",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 03:25:41.836195",
+            "update_date": "2023-07-08 08:57:41.836195",
+            "image_url": "https://picsum.photos/seed/b3deba00-ad9a-4d6a-ace9-aadd568a32db/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8d5afb95-c6d6-4792-b205-aa9faf4f77a8",
+        "fields": {
+            "user_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "title": "I have a string which I read from a file. I need to get the differences of the consecutive values of the string",
+            "content": "The string is as follows\n'''  77.65\n77.90\n78.20\n78.30\n79.60\n80.40\n....\n.... '''\nand so on. First I need to read this file and then I have to extract each number separately. So, that i can take the difference as 77.90-77.65 , 78.20-77.90 , 78.30-78.20 , 79.60-78.30 , 80.40-79.60 and so on. But I can not extract all the data separately. Whenever I am trying to read the file all the numbers are coming as a whole. I was trying with a code like following\nI described it in the above section.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 20:22:41.937060",
+            "update_date": "2023-07-11 10:49:41.937060",
+            "image_url": "https://picsum.photos/seed/8d5afb95-c6d6-4792-b205-aa9faf4f77a8/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8ab50f89-2a3c-44f1-b6cd-e302b077bbcf",
+        "fields": {
+            "user_id": "41487767-25c3-493b-8eb5-7abdace71a5d",
+            "title": "\u043f\u043e\u0447\u0435\u043c\u0443 2-\u0442\u0435\u0441\u0442 \u0432 cypress \u0431\u0435\u0440\u0435\u0442 url 1-\u0442\u0435\u0441\u0442\u0430 \u0438 \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0435\u0442 \u0435\u0433\u043e \u0442\u0435\u0441\u0442 \u0445\u043e\u0442\u044f \u044f \u0432 cy. visit \u0434\u043e\u0432\u0430\u043b\u0430 \u0435\u043c\u0443 \u0434\u0440\u0443\u0433\u043e\u0439 URL \u0430\u0434\u0440\u0435\u0441 . \u043a\u0430\u043a \u0438\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u044d\u0442\u0443 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0443 [closed]",
+            "content": "Stack Overflow is an English-only site. The author must be able to communicate in English to understand and engage with any comments and/or answers their question receives. Don't translate this post for the author; machine translations can be inaccurate, and even human translations can alter the intended meaning of the post.\nClosed 9 mins ago.\n\u042d\u0442\u043e \u0432 cypress \u043d\u0430\u0432\u0435\u0440\u043d\u0438\u043a\u0430 \u043d\u0443\u0436\u0435\u043d \u0434\u0440\u0443\u0433\u043e\u0439 \u0442\u043e\u043a\u0435\u043d \u043d\u043e \u044f \u043d\u0435 \u0437\u043d\u0430\u044e \u0433\u0434\u0435 \u043a\u0430\u043a \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c \u0442\u043e\u043a\u0435\u043d \u0447\u0442\u043e \u0434\u0435\u043b\u0430\u0442\u044c \u043f\u043e\u0434\u0441\u043a\u0430\u0436\u0438\u0442\u0435 \u043f\u043e\u0436\u0430\u043b\u0443\u0441\u0442\u0430.\n\u044f \u043f\u044b\u0442\u0430\u043b\u0430\u0441\u044c \u0432\u0437\u044f\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u0442\u043e\u043a\u0435\u043d \u0432 \u043f\u043e\u0441\u0442\u043c\u0430\u043d \u043d\u043e \u043d\u0435 \u0437\u043d\u0430\u044e \u043a\u0430\u043a \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c \u0435\u0433\u043e \u0438 \u043a\u0443\u0434\u0430? \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u043e\u0436\u0430\u043b\u0443\u0441\u0442\u0430 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e \u043e\u0431\u044f\u0441\u043d\u0438\u0442\u044c",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 07:13:42.089265",
+            "update_date": "2023-07-08 02:39:42.089265",
+            "image_url": "https://picsum.photos/seed/8ab50f89-2a3c-44f1-b6cd-e302b077bbcf/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "52a64b46-5c63-4c7e-b8f4-12967733ed37",
+        "fields": {
+            "user_id": "9fc6773c-2df8-49fc-b93c-92b5acdf16ce",
+            "title": "Rendered text magically disappears | OpenGL and C++",
+            "content": "Im currently preparing everything to write my own game in c++ using GLFW. I never wrote a game in c++ before only in C# using Unity. I'm completly new to GLSL. I found out how to render text and everything works basicly great but now I have a problem with (I think) the projection matrix. I used GLFWmonitor to get my screen resolution and ran my window on this resolutions:\nFrom the cout I get:\nThen I started with the text renderer and used glfwGetWindowSize to get the window size and set the projection matrix to this size but something went wrong. As if the space where I can render text is only available in a fraction of my Window:\nFor debug reasons I started printing the width and height I get form the glfwGetWindowSize and i saw that's not 100% but it should work:\nI don't know why I get this incorrect numbers and I dont know why I can't render on the complete screen.\nHere is the function that is responsible for rendering the text:\nthe fragment shader:\nand the vertex shader:\nThe shader functions we use in the renderText method just uses glUseProgram and the functions to set uniforms.\nHere is how I use the functions:\nThank you for your time",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 18:54:42.140048",
+            "update_date": "2023-07-13 07:44:42.140048",
+            "image_url": "https://picsum.photos/seed/52a64b46-5c63-4c7e-b8f4-12967733ed37/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8741a970-2864-41a4-acd5-50140b80b114",
+        "fields": {
+            "user_id": "a398c88b-4079-4c36-9244-f20190ae81f0",
+            "title": "Use System.console() in IntelliJ",
+            "content": "I am trying to use System.console() to read something from the console in java (System.console.readLine()). The problem is that IntelliJ launches the program without a console attached. So according to the Java-docs, the Console is null:\nOn Windows you can use java.exe instead of javaw.exe to achieve this. My problem is, I'm on MacOS.\nAlso, somehow, Microsofts Visual Studio Code gets it to work and you can use System.console().\nThe call in IntelliJ looks as following:\nin VSCode it looks like this:\nI know it's different, but I don't know the exact different and what I have to change for it working in IntelliJ. What do I need to change for it to work?\nUnfortunately it is mandatory to use the console() and not the Scanner.\nThank you in advance!",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 19:13:42.192057",
+            "update_date": "2023-07-09 13:37:42.192057",
+            "image_url": "https://picsum.photos/seed/8741a970-2864-41a4-acd5-50140b80b114/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "1ecf31b7-6b26-4d6c-9ca9-b39e526ce741",
+        "fields": {
+            "user_id": "c09740f5-320e-4752-8696-c5e9f7281779",
+            "title": "SQL Server compare using indirect reference of cell (compare logic given as string) [closed]",
+            "content": "Want to improve this question? Add details and clarify the problem by editing this post.\nClosed 3 mins ago.\nIn my SQL Server database I have a table containing the following columns\nThe situation is, that not every VALUE has a low AND a high limit; All permutations are possible. Also, depending on the parameter, sometimes the value needs to be < or <= the high limit and > or >= the low limit or any combination of it. The comparison logic is given as a string in ACCEPTANCE_CRITERIA. The values are, for example, currently given as\nand so on, but the format can be changed if necessary.\nWhat I am looking for is a push in the right direction, how I can include a new column Criteria_Met that checks if the value satisfies the logic given as value in ACCEPTANCE_CRITERIA",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 12:28:42.242279",
+            "update_date": "2023-07-13 12:39:42.242279",
+            "image_url": "https://picsum.photos/seed/1ecf31b7-6b26-4d6c-9ca9-b39e526ce741/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "5042cc83-64d1-41aa-956c-bbfb1acb6131",
+        "fields": {
+            "user_id": "421816d0-90a4-4316-bd05-b04028d91236",
+            "title": "strange effect for :hover property",
+            "content": "I'm trying to make the button that shows icon after hovering.\nNow, the button seems to be stuck in hover when you stay ~2sec in hover state\nCan anyone fix this? And try to make it smoother?\nGIF:\n.button {\n  width: fit-content;\n  height: fit-content;\n  padding: 10px 15px;\n  background-color: #323232;\n  color: white;\n  border-radius: 10px;\n  align-items: center;\n  justify-content: center;\n  display: flex;\n  cursor: pointer;\n  position: relative;\n  border: 1px solid #bdc3c7;\n}\n\n.button-text-container {\n  order: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  white-space: nowrap;\n  overflow: hidden;\n  width: 0;\n  transition-duration: 1s;\n  transition-property: max-width;\n  transition-timing-function: ease-in-out;\n  font-size: 1.5em;\n  width: fit-content;\n  max-width: 0;\n}\n\n.button-icon-container {\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  font-size: 1.6em;\n}\n\n.button:hover .button-text-container {\n  max-width: 1275px;\n}\n\n.button-text-container>span {\n  margin: 10px;\n}\n<div class=\"button\">\n  <div class=\"button-icon-container\">icon</div>\n  <div class=\"button-text-container\"><span>test</span></div>\n</div>",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 01:04:42.293041",
+            "update_date": "2023-07-09 19:26:42.293041",
+            "image_url": "https://picsum.photos/seed/5042cc83-64d1-41aa-956c-bbfb1acb6131/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "eee8f4f6-274f-4fce-9f43-8b2d3403ea20",
+        "fields": {
+            "user_id": "0d3c9405-3f8a-45d5-9d10-05478e4059aa",
+            "title": "filter row based on condition in R",
+            "content": "I need to filter rows from dataframe based on multiple conditions.\nCondition is after group_by ID and No is not NA or 0, then Date is latest.\nHere is my data like:\nI want to get result like:\nFor example in ID 479,\nFor example in ID 228, when the both of No is NA, will keep row with latest Date.\nFor example in ID 501, both of No and Date is NA,so keep them both.\nHere is my code I have tried:\nBut I got like\nAny help will be appreciated.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 22:06:42.446199",
+            "update_date": "2023-07-10 08:34:42.446199",
+            "image_url": "https://picsum.photos/seed/eee8f4f6-274f-4fce-9f43-8b2d3403ea20/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "709c7cdb-5c56-44b4-a569-aefbfb38a552",
+        "fields": {
+            "user_id": "01f4db33-e6ec-49cf-b7ae-ea46d54093db",
+            "title": "Having trouble with public class fields in Javascript",
+            "content": "I'm trying to import a javascript class (\"vendor/test\") from another file, and I'm getting an error (error  Parsing error: Unexpected token =). The reason I'm doing this is because I'm trying to edit an unmaintained library, and use it in my codebase.\nLooking at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields, the field =\"123\" seems to be simply a public class field and should be valid code, but it's throwing the above error. What am I missing?\nFile doing the import\nSecond File",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 01:31:42.610066",
+            "update_date": "2023-07-09 18:01:42.610066",
+            "image_url": "https://picsum.photos/seed/709c7cdb-5c56-44b4-a569-aefbfb38a552/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "14c1b66b-0f74-406b-a8e5-c98f229f04f3",
+        "fields": {
+            "user_id": "8c4bec48-01ca-4fe8-a106-83e0f813c1a3",
+            "title": "How to create all paths possible from a python dictionary?",
+            "content": "I have a python dictionary where I'd like to output all possible paths from all key values. Here is a small scale example to visualize what I'm trying to do.\ndictionary = {'parent':['child1','child2'], \u2018child1\u2019: ['child1_1','child1_2'], \u2018child2\u2019: ['child2_1','child2_2'], \u2018child3\u2019: [], 'child1_1'= ['child1_1_1', 'child1_1_2'],  'child1_1_1': [], 'child1_1_2': [], 'child1_2': [], 'child2_1': [], 'child2_2': [], 'child4'=[]}\nAnd the output that I'd like to have is something like this:\nparent/child1\nparent/child1/child1_1\nparent/child1/child1_1/child1_1_1\nparent/child1/child1_1/child1_1_2\nparent/child1/child1_2\nparent/child2/child2_1\nparent/child2/child2_2\nparent/child3\nparent/child4\n.\n.\n.\nPlease note that I'd like to use it for a larger scale, so using 2 for loops I was able to output a path with parent and a 2 direct childs of it. But it doesn't work on larger scale, I think I need a for loop inside of a while true loop where I can check if a child doesn't have any childs of itself and it outputs me \u201cHey I'm the last one left and here is paths that are available to me\" etc.\nThanks in advance and have a nice day.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 22:06:42.712069",
+            "update_date": "2023-07-10 06:40:42.712176",
+            "image_url": "https://picsum.photos/seed/14c1b66b-0f74-406b-a8e5-c98f229f04f3/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "c85b2e68-012f-486c-8020-9410e99b1a30",
+        "fields": {
+            "user_id": "9fc6773c-2df8-49fc-b93c-92b5acdf16ce",
+            "title": "How to make tidyr::complete work when nesting the same column twice?",
+            "content": "For some reason, my code repeats a column's name inside complete (it's inside a function and the argumet may be a column already present).\nI don't want the column cyl to be repeated in the result, just to be clear.\nHow to make this work elegantly?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 10:46:42.863540",
+            "update_date": "2023-07-09 23:35:42.863540",
+            "image_url": "https://picsum.photos/seed/c85b2e68-012f-486c-8020-9410e99b1a30/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "7c0f243e-6b42-48a0-bdbc-8b09f268af50",
+        "fields": {
+            "user_id": "9193a3a5-9e55-4d32-b5a4-b3df0f13e6f3",
+            "title": "how to convert this command to python",
+            "content": "I just want to recreate this command using python using post request.\nsigntool timestamp /t http://timestamp.digicert.com MyFile.exe\nI created some code that should be working but getting http status 500 error code.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 02:35:42.968089",
+            "update_date": "2023-07-08 12:20:42.969118",
+            "image_url": "https://picsum.photos/seed/7c0f243e-6b42-48a0-bdbc-8b09f268af50/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "fe00247b-149f-48ab-9192-738838710d77",
+        "fields": {
+            "user_id": "fa1ee3ed-166b-45c0-80ae-ed39499a5ac5",
+            "title": "I am getting a user log in failed on C#?",
+            "content": "I have a sqlconnection string:\nI just copied the database properties and yet when I open the form when I run the program, it shows an exception and it says Log in User failed 'sa'. I'm using an SQL Server Authentication.\nAny ideas on what is wrong with the database connection?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 20:52:43.018212",
+            "update_date": "2023-07-12 11:28:43.018212",
+            "image_url": "https://picsum.photos/seed/fe00247b-149f-48ab-9192-738838710d77/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "482ba723-bd17-4a3b-8239-fe3359cf7c5e",
+        "fields": {
+            "user_id": "f0e9834d-f95c-400c-95f1-cdb193aaabde",
+            "title": "Undefined reference to `cvIplImage(cv::Mat const&)'",
+            "content": "I have been trying to implement a design on Vivado High Level Synthesis. For those who do not know what it is, for now you can believe me that it is basically a C++ environment.\nAs per point 3 in this GitHub Project README, I made the changes in xfopencv-master\\include\\common\\xf_axi.h  Lines 144 and 259 (IplImage img = cv_mat;) replaced with IplImage img = cvIplImage(cv_mat);.\nNow the errors I have facing during compilation are these\nC:/xfopencv-master/include/common/xf_axi.h:144: undefined reference to `cvIplImage(cv::Mat const&)'\nand\nC:/xfopencv-master/include/common/xf_axi.h:259: undefined reference to `cvIplImage(cv::Mat const&)\nThese are the exact lines that were explicitly highlighted to change.\nI have include all the necessary header files for my C++ project such as\nI checked my C:\\opencv\\install\\include\\opencv2\\core\\types_c.h file as the xf_axi.h file in question has the header\n#include <opencv2/core/types_c.h>\nand I do have IplImage functions such as\nThe project seems to work flawlessly on the GitHub repo's owner's end.\nEverything is exactly the same as per this GitHub project.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 02:50:43.069209",
+            "update_date": "2023-07-08 23:01:43.069209",
+            "image_url": "https://picsum.photos/seed/482ba723-bd17-4a3b-8239-fe3359cf7c5e/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "ca400b23-d8af-4f20-b346-df94b56ed3ba",
+        "fields": {
+            "user_id": "0a2cd4c2-ff40-4608-8c18-c9433badee5f",
+            "title": "Record as Response Getting Empty",
+            "content": "I have Response Dto as record type like below:\n\nWhen I debug it I can see the response is not empty. But I am getting empty response in the postman. What is the problem here?\nController part;\nController seems like this;\nI know that if I change record the class i can get the response. But why record is not working?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 12:32:43.120187",
+            "update_date": "2023-07-06 22:01:43.120481",
+            "image_url": "https://picsum.photos/seed/ca400b23-d8af-4f20-b346-df94b56ed3ba/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "5cb2013c-5625-4b93-af4c-297dfee2c993",
+        "fields": {
+            "user_id": "fee5f9f4-1481-4ab0-84fc-d939e976a887",
+            "title": "Resizing an arrays in C programming",
+            "content": "I have a question regarding the process of memory allocation of an array. I have an array called list which initially has 3 values\nWe use realloc to increase the size of the array to 4  and assign the value of 4 the the new member of the list as such:\nMy question is how do we get about when address 0x12de06a1c is occupied by a dummy value ?\nThis is my code:\nIs there something missing , or I am not understanding properly?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 06:55:43.221532",
+            "update_date": "2023-07-12 04:06:43.221532",
+            "image_url": "https://picsum.photos/seed/5cb2013c-5625-4b93-af4c-297dfee2c993/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "11807032-2ca0-4df5-93da-26e087a4ec37",
+        "fields": {
+            "user_id": "ffe4e643-893e-49b1-8f54-bdfb44b3270a",
+            "title": "what is wrong with my cpp code ! problem D. Distinct Split in codeforces [closed]",
+            "content": "Edit the question to include desired behavior, a specific problem or error, and the shortest code necessary to reproduce the problem. This will help others answer the question.\nClosed 29 mins ago.\ni wanna know What is wrong with my code ? it gives me a wrong answer on test case 160th \" it should give 9 while my code print 8\" , and i can't know what the test case is .... here is my code, and the problem statement follows :\nand here is the link for the problem statement :\nhttps://codeforces.com/problemset/problem/1791/D\nI've tried to debug it and I've asked chatGPT, also the AI got a wrong answer in the same test case:)",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 02:22:43.272523",
+            "update_date": "2023-07-10 21:37:43.272523",
+            "image_url": "https://picsum.photos/seed/11807032-2ca0-4df5-93da-26e087a4ec37/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "fc6617f7-7a72-45b3-a53a-f04ae8f27e88",
+        "fields": {
+            "user_id": "a5bb966a-c05b-4cdb-94e5-f2783556269d",
+            "title": "How to avoid stackoverflow exception in multiple recursion?",
+            "content": "I'm trying to make custom OpenApiSchema generator.\nHow it works:\nThis is example api:\nSo ApiArgument, ApiReturn represent DTOs. All I need is to create OpenApiSchema by this model. Let's see code for getting IDictionary<string, OpenApiSchema>:\nI have three problems:\nAlso we can add references:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 20:06:43.323688",
+            "update_date": "2023-07-10 18:27:43.323688",
+            "image_url": "https://picsum.photos/seed/fc6617f7-7a72-45b3-a53a-f04ae8f27e88/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "2e15c399-bcc0-4242-8787-731a24eef658",
+        "fields": {
+            "user_id": "9012ea0d-8045-43e8-9e2d-74ed0056ade4",
+            "title": "Python doesn't run and I don't know what is the problem",
+            "content": "it just shows my file path in the terminal window when I click Run. Please help, I'm new to this sorry.\nI tried to search for tutorials on youtube but I don't know what to search for this kind of problem\nI also tried to check my Code runner extension",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 18:03:43.386234",
+            "update_date": "2023-07-11 12:52:43.386234",
+            "image_url": "https://picsum.photos/seed/2e15c399-bcc0-4242-8787-731a24eef658/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "b41f5c63-9961-4dbf-8af9-d2074140f4cb",
+        "fields": {
+            "user_id": "b3633029-e828-433c-823f-88d92de52e92",
+            "title": "Group by running total resetting every time the counter is incremented",
+            "content": "I have the below table (my input would be just columns NIF, FILE and FILESIZE).\nI would like to obtain columns PARTITION and SUBPARTITION with the following rules:\nData:\nIt does not need to be a single query, doing a PSLQL cursor would also be fine.\nNOTE: this is the code to create the input table.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 19:27:43.538430",
+            "update_date": "2023-07-06 23:41:43.538430",
+            "image_url": "https://picsum.photos/seed/b41f5c63-9961-4dbf-8af9-d2074140f4cb/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "ee077f51-1d97-4644-9791-da4febccfb61",
+        "fields": {
+            "user_id": "1535c832-55d2-40c8-80a2-79b258aec030",
+            "title": "F-string not formatting floats into an integer",
+            "content": "Usually, I use % string formatting. But, as I discovered f-string is the new way of string formatting and it is faster as well, I want to use it. \nBut, I am facing a problem when formatting a float into an integer using f-string. Following is what I have tried:\nUsing % string formatting\nUsing f-string formatting\nAm I missing something?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 16:10:43.640199",
+            "update_date": "2023-07-13 11:13:43.640199",
+            "image_url": "https://picsum.photos/seed/ee077f51-1d97-4644-9791-da4febccfb61/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "67a9e77e-233b-4ff2-a900-aecd718ad0e6",
+        "fields": {
+            "user_id": "459085bb-b33d-4e2a-80a1-e03e669815a1",
+            "title": "Expand PHP Array one level before array_merge",
+            "content": "I have a simple array like this:\nwhich I merge with a similar array (array_merge) and gets this.\n(If the key already exist only the value will be updated)\nBut I want to add a date to when each item was either added or updated. Like this:\nSo the new data is a one level array at first, I need to add a the current date/time (Format not important right now) to each key/level and then merge it with the old array. The old array will always be stored as a two level array.\nI hope I make any sense here :)",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 00:12:43.740801",
+            "update_date": "2023-07-09 10:18:43.740801",
+            "image_url": "https://picsum.photos/seed/67a9e77e-233b-4ff2-a900-aecd718ad0e6/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "2bad2a62-7d8f-46f0-bbf9-fa62ec350454",
+        "fields": {
+            "user_id": "64b23dda-6f2a-434f-82c2-c9639f099c9a",
+            "title": "constantly having to re-type inputs each time function called inside other function",
+            "content": "Each time this program is run I have to resubmit the user input variables in the \"get input\" function. probably have to resubmit them each time the function is called in other functions. I thought if I defined them in the main function \"kyle special pipeline\" this would be avoided, apparently not. I just want to have to submit those inputs once for the program. any suggestions?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 19:06:43.842782",
+            "update_date": "2023-07-08 07:05:43.842782",
+            "image_url": "https://picsum.photos/seed/2bad2a62-7d8f-46f0-bbf9-fa62ec350454/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "34f71bce-e957-46cb-9c0a-c7b2faaa2230",
+        "fields": {
+            "user_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "title": "Resize div height without white space at the bottom",
+            "content": "<div className='homepagePictures gap-4 inline-block'>\n  <div className='leftMidPicture md:h-5/6 '>\n  </div>\n  <div className='rightMidPicture flex flex-col md:h-5/6 xl:h-5/6'>\n  </div>\n</div>\nI'm using an image for the background of each div, however when I reduced the height of the div the background changes but not the div itself. As a result I have a lot of white space below it, does anyone know how I can get rid of it?\nLoosk like this currently:\n",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 05:55:44.827336",
+            "update_date": "2023-07-12 14:46:44.827336",
+            "image_url": "https://picsum.photos/seed/34f71bce-e957-46cb-9c0a-c7b2faaa2230/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8dcba8f8-5926-4f69-9a30-e4037297b229",
+        "fields": {
+            "user_id": "f9e1345e-09d2-45de-a49f-c084ba942c34",
+            "title": "How to extract all the table names from a Python script",
+            "content": "I have python script which has many SQL queries. I want to\nspark.sql(\"Select a,b from schema.table1 UNION ALL Select a,b from schema.table2 \")\nI need to extract all the table names referred in the script.\nI need help on how to approach this?Can I pass the script as input file and search for matching pattern or is there any other better approach?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 02:02:44.930125",
+            "update_date": "2023-07-09 00:23:44.930125",
+            "image_url": "https://picsum.photos/seed/8dcba8f8-5926-4f69-9a30-e4037297b229/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "e7d7754a-49d1-47b1-baec-22fba134793b",
+        "fields": {
+            "user_id": "ba005296-6ade-4d7b-a026-56de7b09365b",
+            "title": "How can I split a dataframe into multiple dataframes based on timestamp?",
+            "content": "Let's say I have a dataframe which contains content and different timestamps for each entry; how can I split the dataframe into two (or more) dataframes based on the difference in timestamps? For example, if an entry starts 6 hours after the one preceeding it, then I'd like all the rows coming after it (which are within 6 hour time interval) to be grouped together. You may assume that the timestamps come in ascending order in the dataframe.\nHere's an example df:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 16:47:45.031322",
+            "update_date": "2023-07-08 14:46:45.031322",
+            "image_url": "https://picsum.photos/seed/e7d7754a-49d1-47b1-baec-22fba134793b/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a31a8573-b89d-4697-ab50-911a74e5d787",
+        "fields": {
+            "user_id": "6f19260f-22d5-4a6b-8613-e18b7e1e9df7",
+            "title": "Spring not able to find my JSP file even though everything is absolutely fine",
+            "content": "I got whitelabel error page while returing my jsp file because spring isn't able to find it. I referred everywhere did everything that was mentioned still wasn't able to resolve the error.\nThings i tried:\nI tried to make a simple controller class to return a simple jsp file.\nBut no matter what i do i always get this error.\nI know it means it can't find my JSP file but according to me everything is fine.\nHere's my application.properties\nHere's my file structure\nenter image description here\nAnd here's my pom.xml",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 01:00:45.133245",
+            "update_date": "2023-07-12 03:28:45.133245",
+            "image_url": "https://picsum.photos/seed/a31a8573-b89d-4697-ab50-911a74e5d787/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "d769e0b6-6389-4047-9f2d-f06557ce325f",
+        "fields": {
+            "user_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "title": "The height of DropdownSearch is unnecessarily large in flutter",
+            "content": "I am using DropDownSearch in flutter, and I am giving it a list for menuItems. Currently, it has only a single item in it, but the menu is really long and showing a lot of blank space in it. How can I reduce it??\nMy code:\nHere is a picture:\n",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 17:11:45.234239",
+            "update_date": "2023-07-08 23:42:45.234239",
+            "image_url": "https://picsum.photos/seed/d769e0b6-6389-4047-9f2d-f06557ce325f/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a2dd1e80-0b7f-47b2-a4c3-cb4b249574a2",
+        "fields": {
+            "user_id": "8d77bfb1-2df6-49bc-b2d1-1db1c02d6bac",
+            "title": "how to write xpath for this",
+            "content": "I writing a script to scrap data from a website \"https://pfchangsmexico.com.mx/ubicaciones/\" in which I want latitude longitude values of each restaurants enter image description here in the image I have highlighted the latitude and longitude values but don't know to write its xpath or how to use css selector that. tell me how to write xpath for or css selector",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 09:55:45.336269",
+            "update_date": "2023-07-07 00:09:45.336269",
+            "image_url": "https://picsum.photos/seed/a2dd1e80-0b7f-47b2-a4c3-cb4b249574a2/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "72892182-58b4-456d-ad85-48a5d80dba46",
+        "fields": {
+            "user_id": "718672ba-d292-4bca-8a16-5d73521477d9",
+            "title": "Why re-declare items on an inherited interface [duplicate]",
+            "content": "3 interface (List,Collection,iterable) \nWhy java is re-declare inherited function Iterator<E> iterator();\nteach me guys\nim studying collection framework now\nso check interface sorce and find some weired\nwhy re-declareing this ?? > Iterator<E> iterator();\nis that right? i think Iterator<E> iterator(); is have to declareing once in Iterable interface",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 04:47:45.448410",
+            "update_date": "2023-07-06 21:11:45.448410",
+            "image_url": "https://picsum.photos/seed/72892182-58b4-456d-ad85-48a5d80dba46/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "75dbfe6d-a3e9-4233-a1d8-22e0b271ad39",
+        "fields": {
+            "user_id": "fee5f9f4-1481-4ab0-84fc-d939e976a887",
+            "title": "Is it possible to ensure two generic types implement generic interfaces of the same inner type?",
+            "content": "This is a functional example of what I want to achieve:\nMy question is essentially: is it possible to omit the TOptions from this method? I don't care what TOptions is, as long as TFrame has T Options {set;} and TBuilder has T Options {get;}.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 19:26:45.498425",
+            "update_date": "2023-07-12 01:22:45.498425",
+            "image_url": "https://picsum.photos/seed/75dbfe6d-a3e9-4233-a1d8-22e0b271ad39/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "40313c2f-3d57-4d90-b9a7-488ccc8a5b0d",
+        "fields": {
+            "user_id": "9193a3a5-9e55-4d32-b5a4-b3df0f13e6f3",
+            "title": "Undefined javascript array to html [closed]",
+            "content": "This question was caused by a typo or a problem that can no longer be reproduced. While similar questions may be on-topic here, this one was resolved in a way less likely to help future readers.\nClosed 24 mins ago.\nI started learning javascript and created a simple to-do web app to practice. However, an error that is breaking me apart is appearing, for example, i have an array with all the tasks which will store the tasks, then i will get the task content from the creation of the task and push it into the array and finally create the task element for the html part. But i dont know why, when the html part is created, the first element created always comes with two tasks, one saying what the content was and another saying undefined. The other tasks show up normal.\n\nAs you can see, when i  created task1 the undefined one showed up, and i dont know why this is hapening...\nAnd in the console, the array is working fine:\n\nHere is the relevant code:\nlet add = document.querySelector(\"#add\")\nlet tasksArray = []\n\nlet taskContent = document.querySelector(\"#task-content\")\n\nadd.addEventListener(\"click\", () => {\n  let task = \"\"\n  tasksArray.push(taskContent.value);\n  for (let index = 0; index <= tasksArray.length; index++) {\n    task +=\n      `\n        <div class=\"task\">\n            <input type=\"checkbox\">\n            <span id=\"task-name\">${tasksArray[index]}</span>\n            <span class=\"material-symbols-outlined\" id=\"mark-as-important\">grade</span>\n        </div>\n        `\n  }\n  document.querySelector(\".tasks-list\").innerHTML = task;\n\n\n  console.log(tasksArray);\n})\n<div class=\"add-task\">\n  <span id=\"task-title\">Add new task</span>\n  <input type=\"text\" id=\"task-content\">\n  <button type=\"submit\" id=\"add\">Add</button>\n</div>\n\n<div class=\"tasks-list\">\n\n</div>\nBy my understanding of the code, the tasksArray[index] is returning undefined but still, why is it showing up two times, one correct and another undefined??\nI have tried changing the position of the code various times or even trying to eliminate the task that said \"undefined\" but it didn't work. I dont really know how to fix this. I was expecting that the undefined task would disappear but it just would not.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 13:44:45.551405",
+            "update_date": "2023-07-13 13:01:45.551405",
+            "image_url": "https://picsum.photos/seed/40313c2f-3d57-4d90-b9a7-488ccc8a5b0d/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "2e8edc05-0bcd-4457-9809-90a4bf10c27d",
+        "fields": {
+            "user_id": "1535c832-55d2-40c8-80a2-79b258aec030",
+            "title": "How to iterate over each bit of a byte in Python?",
+            "content": "Let's say a=0xF0 and b=[a list of bits]. How do I iterate over each bit of a so that i can perform a bitwise operation between that bit and a bit in list b?\nI have tried converting a to its binary form using the bin() method before looping through it, however, i can no longer perform a bitwise operation as each bit of a is now of the string datatype.\nAny help is appreciated!",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 05:18:45.662413",
+            "update_date": "2023-07-11 01:40:45.662413",
+            "image_url": "https://picsum.photos/seed/2e8edc05-0bcd-4457-9809-90a4bf10c27d/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "958170ee-f4ed-4d15-b33a-b508f029946a",
+        "fields": {
+            "user_id": "d6a703b7-e24b-4b91-ad82-3e54b8579255",
+            "title": "i'm a beginner in flutter and I don't know how to solve this errors. Someone please help, i'd appreciate that",
+            "content": "[enter image description here](https://i.stack.imgur.c[enter image description here](https://i.stack.imgur.com/W0jyh.png)om/yzTRX.png)\ni wanted images to appear randomly when button is presssed\nfhrhehfruhewufhruewhuirh23uihrui23uifhi2uhfi2huifh2iuhfui2hf2h2fhf2huif2huifh2uif2uigfyugfhurebvfewofjreiwjoierogihroiehgoirhejfoijr3uihoknkjebkjfnrjehgi",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 14:56:45.764503",
+            "update_date": "2023-07-13 15:00:45.764503",
+            "image_url": "https://picsum.photos/seed/958170ee-f4ed-4d15-b33a-b508f029946a/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "1110612b-f296-4f97-ad1f-535107e3df7c",
+        "fields": {
+            "user_id": "3b67dc61-9720-46e7-a0da-ef291b63fcd0",
+            "title": "Does Kdb+ Support SQL-like Constraints?",
+            "content": "I am wondering if there are similar concepts or functionalities available in Kdb+, like NOT NULL, UNIQUE, CHECK, etc.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 22:43:45.960511",
+            "update_date": "2023-07-12 22:07:45.960511",
+            "image_url": "https://picsum.photos/seed/1110612b-f296-4f97-ad1f-535107e3df7c/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "6035927f-1e1d-4f09-9212-0ef7632188ee",
+        "fields": {
+            "user_id": "0e803aef-0f71-474f-8068-bcdb748aeb0a",
+            "title": "What is the default maximum url limit in Flask?",
+            "content": "I am working with Flask and WSGI Server. I am getting 414 error when i fire call with large urls(above 8k characters).\nI need to find out if it is limited by the Flask or the WSGI.\nIs there any default maximum size limit for urls in Flask?.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 07:43:46.011504",
+            "update_date": "2023-07-07 20:12:46.011504",
+            "image_url": "https://picsum.photos/seed/6035927f-1e1d-4f09-9212-0ef7632188ee/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "3c978e52-ac53-475d-92f9-2d34838d9e14",
+        "fields": {
+            "user_id": "ffe4e643-893e-49b1-8f54-bdfb44b3270a",
+            "title": "Check on PDF file by python",
+            "content": "I have a PDF file containing 6 pages. I will send this PDF file to customers to fill and then send it again. I want to check if this PDF is filled in or not.\nHow can I apply this by python OCR or machine learning or computer vision model?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 06:00:46.114223",
+            "update_date": "2023-07-07 22:05:46.114223",
+            "image_url": "https://picsum.photos/seed/3c978e52-ac53-475d-92f9-2d34838d9e14/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8d1930e4-0063-45fc-9e08-bcafed8b9704",
+        "fields": {
+            "user_id": "930ea6ac-6931-496e-bb70-5d3baa435693",
+            "title": "How to make border with elongated sharp corners",
+            "content": "\nHow to make that type of border in CSS?\nI have try border-radius with (-) sign but it didn't work. Please help me.\nAlso \u0130 tried to use :after :before properties but its also didn't work.\nIf you have any idea please help me solve this problem.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 03:38:46.215238",
+            "update_date": "2023-07-08 06:17:46.215238",
+            "image_url": "https://picsum.photos/seed/8d1930e4-0063-45fc-9e08-bcafed8b9704/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "eacfb348-c9c4-4e38-ae66-669738be5ad3",
+        "fields": {
+            "user_id": "9660317a-db60-4b1b-a8b2-873e1abe3330",
+            "title": "How to make an addition with types byte and short",
+            "content": "I saw in previous questions that it is impossible to make a direct addition without a cast but...\nHow do you explain that this following tip works?\nIn the same way, it is possible to use operator ++ in loops like for():\nSo... why the simple addition between two byte/short variables does not work but these two operators += and ++ work ?\nRegards,\nZoh\nI tried to read how these operators work compared to operator +.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 11:12:46.635867",
+            "update_date": "2023-07-07 05:36:46.635867",
+            "image_url": "https://picsum.photos/seed/eacfb348-c9c4-4e38-ae66-669738be5ad3/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8b82a54a-d992-4bad-8907-a29752693aac",
+        "fields": {
+            "user_id": "421816d0-90a4-4316-bd05-b04028d91236",
+            "title": "paintedComponent() method is triggered twice",
+            "content": "I am currently working on a Snake game, programmed in Java. For some reason, the paintComponent() method is called twice and I don't understand why that is the case.\nI know that the first call to paintComponent() is triggered by the background change in the constructor fucntion. The second call is made somewhere inside startGame(), since after running the program, the apple coordinates are updated, meaning that paintComponent() is called sometime after newApple().\nThank you for taking some time to help a fellow programmer out ^^!",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 18:01:46.788277",
+            "update_date": "2023-07-11 15:31:46.788277",
+            "image_url": "https://picsum.photos/seed/8b82a54a-d992-4bad-8907-a29752693aac/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8039cfee-f3f3-4fda-b650-ecd0a2cd19f0",
+        "fields": {
+            "user_id": "0e3cf761-1501-4a80-9027-ad86c561f1f8",
+            "title": "Inserting Tab and spaces before the word while adding a new line using sed",
+            "content": "Below is the file content and I'm trying to add a new line after the match - luxury_staty_villas: but only once or at the first match.\nCame up with - sed '/luxury_staty_villas: .*/a\\t\\    \\line_row_apartments: \"/home/properties_locality/marx/platinum\",'\nbut it doesn't work as expected.\nExtra forward slash gets appended at the start of the line, then, the 1st two characters of the added lines gets chomped off(ne_row_apartments: instead of line_row_apartments:) and it is matching all the occurences.\nI'm on Windows 11 and making use of Git Bash.\nCurrent Output.\nExpected output",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 16:31:46.839384",
+            "update_date": "2023-07-10 02:51:46.839384",
+            "image_url": "https://picsum.photos/seed/8039cfee-f3f3-4fda-b650-ecd0a2cd19f0/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "6d192b6c-7b89-40d8-8369-589216b49c2e",
+        "fields": {
+            "user_id": "1535c832-55d2-40c8-80a2-79b258aec030",
+            "title": "I cant read file with python on linux mint",
+            "content": "Im writing the telegram bot on python using aiogram. So...\nI just need to open a file via python on linux mint but I JUST CANT DO IT. File have some data inside but I always receive THE EMPTY. I cant understand why...\nMaybe its my code's fault so thats the code:\nI checked the opening file on new project and it isnt working too...\nI checked the happening in debugger and saw that I RECEIVE THE RIGHT DATA, but on the next row its [] again.\nI new to linux so mb I dont know some features of opening files? idk, pls help me.\nIm using Linux Mint 21.1",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 15:30:46.898567",
+            "update_date": "2023-07-08 03:00:46.898567",
+            "image_url": "https://picsum.photos/seed/6d192b6c-7b89-40d8-8369-589216b49c2e/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "b33ec937-925e-44cd-90cb-617eb31806a8",
+        "fields": {
+            "user_id": "421816d0-90a4-4316-bd05-b04028d91236",
+            "title": "Invalid argument(s): Invalid locale \"en\"",
+            "content": "I have an application supporting Three languages (English, Arabic, and Kurdish). whenever I change the application's selected language there is no problem with any language, but when I change it to Kurdish and then restart app, navigating to certain screen causes the following error.\nI don't know what restarting an app does with the Locales, but it causes me this problem where the application completely stops working.\nMy Delegate List:\nMy Supported Locales:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 23:07:46.949548",
+            "update_date": "2023-07-06 19:36:46.949548",
+            "image_url": "https://picsum.photos/seed/b33ec937-925e-44cd-90cb-617eb31806a8/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "767d7261-6aed-49b0-8c00-cefd491698a9",
+        "fields": {
+            "user_id": "8c2303fe-f7b6-4fc9-bbcc-d7d49b9254a9",
+            "title": "error code in R: Error in if (mode(n) != \"numeric\" || length(n) != 1 || n < 1 || (n%%1) != : missing value where TRUE/FALSE needed",
+            "content": "Z_seq_burned is a large matrix with 4000000 elements.\nKnumb is a large numeric element (200000 elements with the value 4)\nWhen I run the code below I always get the error message:\nLeads to:\nCan you help me what the main source of the error? I already checked the library information.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 13:24:47.050726",
+            "update_date": "2023-07-11 05:57:47.051726",
+            "image_url": "https://picsum.photos/seed/767d7261-6aed-49b0-8c00-cefd491698a9/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "32c7f2bc-a54b-4b18-b325-a9d9962cf981",
+        "fields": {
+            "user_id": "9384e006-942d-4913-b720-0a9d639c2c03",
+            "title": "Suggestions and Comments for my Task-based wrapper methods for external library",
+            "content": "I am working on C# application to communicate a Fingerprint Attendance Device. The external C# library provided for the device communication only contains synchronous methods, but they are blocking as they are without any async support. So, I started developing a wrapper library that wraps some of these methods into non-blocking asynchronous Task-based methods that can be awaited without blocking the UI thread. FYKI, I have no experience in writing these kinds of low-level asynchronous methods other than consuming existing ones.\nThe following code section has an example wrapper method ConnectAsync() that I have written on my own. I have used TaskCompletionSource based on the assumption that the target operation is mostly asynchronous and I/O bound operation as it involves a network call.\nI want to know if my method is actually correct or not and do further possible optimizations here. I would welcome any rewrites of this method if I'm incorrect or inefficient.\nFor reference, the full signature of the target method Connect_Net is:\nThe following is the way I want to consume it:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 16:10:47.101878",
+            "update_date": "2023-07-07 21:43:47.101878",
+            "image_url": "https://picsum.photos/seed/32c7f2bc-a54b-4b18-b325-a9d9962cf981/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "bf2ed4e7-14ab-4f04-87f4-aa81246ba616",
+        "fields": {
+            "user_id": "930ea6ac-6931-496e-bb70-5d3baa435693",
+            "title": "CSS border with circles in corners",
+            "content": "Is it possible to create this sort of border effect in css only?\n",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 13:18:47.153470",
+            "update_date": "2023-07-06 19:04:47.153470",
+            "image_url": "https://picsum.photos/seed/bf2ed4e7-14ab-4f04-87f4-aa81246ba616/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "0703e482-fc23-491d-ab03-e586e7e83c2c",
+        "fields": {
+            "user_id": "3b67dc61-9720-46e7-a0da-ef291b63fcd0",
+            "title": "How typing rtk reducer in root module?",
+            "content": "I am writing a react application using a modular architecture. Each module is imported outside a single interface.\nThen all modules are collected into one in the root module:\nFrom which I add all reducers to the store:\nIn the process of assembling reducers into one module, their typing is lost, which is why useAppSelector does not show possible reducers\nAdditional info:\nHow fix it?\nSimple example:\nhttps://codesandbox.io/s/sleepy-wilbur-qj27hs?file=/src/modules/user/index.ts",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 14:49:47.254186",
+            "update_date": "2023-07-12 22:57:47.254186",
+            "image_url": "https://picsum.photos/seed/0703e482-fc23-491d-ab03-e586e7e83c2c/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "ad3b6cab-cf34-4658-824a-a6a126ed706e",
+        "fields": {
+            "user_id": "8e5083fa-06d8-48d7-9097-c0e055c2efaf",
+            "title": "How do I solve this error about Android Studio flutter code?",
+            "content": "Originally I can run the flutter code in AS, but suddenly can't.\nI didn't modify a code in ffi.dart file...\nI wanna run the code using Chrome(Web)\nLaunching lib\\main.dart on Chrome in debug mode...\nWaiting for connection from debug service on Chrome...\nlib/main.dart:1:8: Error: Dart library 'dart:ffi' is not available on this platform.\nimport 'dart:ffi';\n^\nContext: The unavailable library 'dart:ffi' is imported through these packages:\nDetailed import paths for (some of) the these imports:\nFailed to compile application.\nupgraded flutter, dart through CMD",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 14:10:47.356650",
+            "update_date": "2023-07-07 00:51:47.356650",
+            "image_url": "https://picsum.photos/seed/ad3b6cab-cf34-4658-824a-a6a126ed706e/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "b1442e83-338e-4a0f-b7c2-9b3834c7b8cd",
+        "fields": {
+            "user_id": "c09740f5-320e-4752-8696-c5e9f7281779",
+            "title": "cannot move out of `keymap.command` which is behind a shared reference",
+            "content": "The following is a mock code for running a terminal command:\nRust Playground\nRight now, there's an error here:\nWhich can be solved by using clone():\nIs there another solution? I think using clone() like this isn't good practice?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 00:10:47.474571",
+            "update_date": "2023-07-13 04:12:47.474571",
+            "image_url": "https://picsum.photos/seed/b1442e83-338e-4a0f-b7c2-9b3834c7b8cd/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "6fd6f4bc-8310-4f51-abaf-bf02a34b07c1",
+        "fields": {
+            "user_id": "79dba9a9-5ef5-48c0-b3af-fd88aba244e2",
+            "title": "stop only click event bubbling but allow blur in Angular",
+            "content": "I am facing an issue that I use\nto prevent the event bubbling, it stops all events but I would like to allow blur. Is there any way to do it?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 02:12:47.576603",
+            "update_date": "2023-07-09 00:59:47.576603",
+            "image_url": "https://picsum.photos/seed/6fd6f4bc-8310-4f51-abaf-bf02a34b07c1/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "0d7f0f2e-09f9-444a-8316-a7baba2563a7",
+        "fields": {
+            "user_id": "7af10b20-27db-4c78-9a0c-da166c5553ec",
+            "title": "JWT - What if the refresh token is compromised?",
+            "content": "As far as I understand a JWT token has two parts\naccess token (short validity)\nrefresh token (long validity)\nThe purpose of keeping the access token short lived is if it gets compromised, the user will not be access the resource after its expiry.\nThe purpose of keeping the refresh token long lived is if the access token gets expired, the refresh token can then be used to generate a new access token OR increase the expiry time of the access token.\nMy question is, what if the refresh token gets compromised? In that case what is the whole point of keeping the access token short lived? Because the hacker can then keep reissuing a new access token each time it gets expired using the stolen refresh token.\nCan someone explain to me please?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 11:28:47.677745",
+            "update_date": "2023-07-12 21:50:47.677745",
+            "image_url": "https://picsum.photos/seed/0d7f0f2e-09f9-444a-8316-a7baba2563a7/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "fd6ff8c5-e8f0-447b-934d-2f0fa28e6652",
+        "fields": {
+            "user_id": "a0c693f2-1f31-4dbf-8db2-418a5bb4874b",
+            "title": "Compare and hash out unwanted entries in text file using powershell",
+            "content": "I am having below 2 text files with service details in them\nFile_1\nFile_2 (Service List which are having startup type as automatic)\nI want to compare File_2 with File_1. If the entry in File_2 present in File_1 the ignore else put a # in front of the line to comment that.\nand if it is already commented then it should not get commented again.\nThe changes should reflect in File_1 itself\nExpected Output\nOnly last 2 entries in File_1 is not present in File_2, so they got commented and rest which are already present/commented will remain as it is.\nI was trying the below code, but it is putting # for all the entries and double # for already hashed entries\nAbove updated code is working fine but only problem is which are already commented, this code is adding another # in front of it.\nPlease let me know how do this",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 23:32:47.729375",
+            "update_date": "2023-07-09 17:50:47.729375",
+            "image_url": "https://picsum.photos/seed/fd6ff8c5-e8f0-447b-934d-2f0fa28e6652/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "ae3379da-4a89-41e4-aee4-34acc94aa9c2",
+        "fields": {
+            "user_id": "40ec0ba4-7982-464e-9781-9960e85f3c7c",
+            "title": "How can I format string with thousands separator on Mac with the Python locale library?",
+            "content": "I'd like to format a number with . for thousands separator and , for decimal point. I know I could do that with a triple replace and the {:,} format.\nIs there a cleaner way to do it with the standard library locale?\nFirst I found that even today the Mac de_DE locale does not include the thousands separator and you need to use the trick\nBut next I do not know how to get the desired result\nIs there any way I can use locale to get the result \"123.456,789\"?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 19:07:47.779434",
+            "update_date": "2023-07-11 09:26:47.779434",
+            "image_url": "https://picsum.photos/seed/ae3379da-4a89-41e4-aee4-34acc94aa9c2/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a2069d16-2cda-4676-9432-a0666d7105f3",
+        "fields": {
+            "user_id": "0a2cd4c2-ff40-4608-8c18-c9433badee5f",
+            "title": "Mingw for c installation issue",
+            "content": "I tried the online installer of mingw for c on 64 bit in windows 11. I expected the smooth installation of this software but when I try to install it's says \"The file has been downloaded incorrectly\"",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-06 21:22:47.830981",
+            "update_date": "2023-07-10 11:55:47.830981",
+            "image_url": "https://picsum.photos/seed/a2069d16-2cda-4676-9432-a0666d7105f3/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "321e397b-98ee-4c70-bafc-d5ca870c8962",
+        "fields": {
+            "user_id": "6fbebe74-79b8-417d-9ddb-30ddae119a3b",
+            "title": "Import all XML to SQL?",
+            "content": "This c.value('(rep_Operation/@OpNumber)[1]' only insert in the table the first record of the xml file, how can i do to insert the rest of the file",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 09:20:47.880966",
+            "update_date": "2023-07-07 04:58:47.880966",
+            "image_url": "https://picsum.photos/seed/321e397b-98ee-4c70-bafc-d5ca870c8962/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a83865c9-4c00-4ac2-98df-68dc55a51c3b",
+        "fields": {
+            "user_id": "adf049a5-6795-4fe6-81f2-1be4446ebb9e",
+            "title": "Mule 'mvn clean package' command throws error - Cannot start embedded container at org.mule.runtime.module.embedd",
+            "content": "After cloning an API from BitBucket repository, I tried to build that project in local anypoint studio.\nError1: I was getting an error mvn clean package -nsu -DskipMunitTests\nSteps take: I ran command mvn clean package on the folder into which API was cloned.\nError2: The above command 'mvn clean package' didn't work and returned an error:\n\"Cannot start embedded container at org.mule.runtime.module.embedd...\"\nSteps taken:\nStill I am getting same error, can someone please help me in identifying the root cause.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 18:12:47.937861",
+            "update_date": "2023-07-12 05:19:47.937861",
+            "image_url": "https://picsum.photos/seed/a83865c9-4c00-4ac2-98df-68dc55a51c3b/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "5e719089-4847-4f2e-adf9-08c4f23b97ba",
+        "fields": {
+            "user_id": "c5cb8579-f3b0-4a2c-a8a0-4005206196df",
+            "title": "How to make nonlinear regression in R with coupled equations",
+            "content": "I want to use nls to fit some experimental data to this equation:\nnevertheless G has to been obtained as well from:\nK1K2G^3*+K1*(2K2Ht-K2Gt.M+1)G^2+K1(Ht-Gt.M)+1G-Gt = 0\nIs there a way to include G as a function in the formula (so it can be solved in each iteration, for example, by getting the root with polyroot)? For example\nI didn't manage to include G in the formula",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 18:25:47.989446",
+            "update_date": "2023-07-10 15:07:47.989446",
+            "image_url": "https://picsum.photos/seed/5e719089-4847-4f2e-adf9-08c4f23b97ba/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "1017f4d8-dec7-4ad0-abae-08635dd6efd3",
+        "fields": {
+            "user_id": "79dba9a9-5ef5-48c0-b3af-fd88aba244e2",
+            "title": "php artisan migrate, access denied for user'homestead'@'172.21.0.1'",
+            "content": "when I ran php artisan migrate this results to (see screenshot below)\nenter image description here\nI tried doing\nbut nothing happens. mysql-1 container is perfectly running on docker. For reference, this is my .env\nenter image description here\nI also tried removing the quote on username and password, also tried this\nbut still having the same error.\nAlso, for reference this is my docker-compose.yml",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 20:55:48.039136",
+            "update_date": "2023-07-12 22:37:48.039136",
+            "image_url": "https://picsum.photos/seed/1017f4d8-dec7-4ad0-abae-08635dd6efd3/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a72e1dcc-94d4-47a4-975d-79a171424a0a",
+        "fields": {
+            "user_id": "9ce30a90-1df3-4c4c-b350-a2c0c20b047e",
+            "title": "on selecting single checkbox or click on all or clear button got this error (Uncaught TypeError: Cannot read properties of undefined (reading '0'))",
+            "content": "In this component whenever i am selecting a single checkbox or when i click on All or clear button it is giving an error (Uncaught TypeError: Cannot read properties of undefined (reading '0')). I tried to fix it but do not understand the reason if someone can",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 09:49:48.090142",
+            "update_date": "2023-07-13 14:23:48.090142",
+            "image_url": "https://picsum.photos/seed/a72e1dcc-94d4-47a4-975d-79a171424a0a/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "fa36f34c-3866-4a58-a067-aac51dff9fa2",
+        "fields": {
+            "user_id": "67ee8119-ee09-4fe0-a55c-1a34a605762b",
+            "title": "alert is assigned a value but never used warning in reactjs",
+            "content": "Gettting waring in following code i want to display meassage ,but neither it is showing nor dissmiss the button\nWARNING in [eslint]\nI want to display alert message on screen. but it is not showing",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 18:16:48.159327",
+            "update_date": "2023-07-09 18:22:48.159327",
+            "image_url": "https://picsum.photos/seed/fa36f34c-3866-4a58-a067-aac51dff9fa2/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8ed0141d-bdc4-4643-954b-335aae165c2b",
+        "fields": {
+            "user_id": "718672ba-d292-4bca-8a16-5d73521477d9",
+            "title": "Quartz job works at night. How to stop its work during the day if the process has not completed?",
+            "content": "Quartz job works by trigger 0 0 19-5 * * ? (every hour from 7:00 PM to 5:00 AM). Process may take a long time, more than 1 hour. Cron expression is a part of external configuration. How to graceful stop Quartz job after 5:00 AM if process continue works?\nEven if we start last iteration at 4:00 AM, there is no guarantee that it will be completed in 1 hour. Also if we start the last iteration at 3:00 AM, there is no guarantee that it will complete in 2 hours.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 03:43:48.209956",
+            "update_date": "2023-07-07 00:03:48.209956",
+            "image_url": "https://picsum.photos/seed/8ed0141d-bdc4-4643-954b-335aae165c2b/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a26a510f-0cee-4d13-9b6f-50166de25d33",
+        "fields": {
+            "user_id": "7bd39e7f-86be-4d56-a9cd-073bb99ebda6",
+            "title": "Cut each string in a pandas dataframe",
+            "content": "I have a Dataframe 'country' like this:\nI would like to have:\nSo basically, I want to cut each string in a pandas DataFrame to three decimals after the first point and then round it to two decimals. How do I go about doing this?\nI have tried what I found here: Editing Strings in a Pandas Dataframe\ncountry.str[:5], but that only works for each column as: country['Country1'].str[:5], not for the whole DataFrame at once.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 08:17:48.259876",
+            "update_date": "2023-07-12 12:51:48.259876",
+            "image_url": "https://picsum.photos/seed/a26a510f-0cee-4d13-9b6f-50166de25d33/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "5314b23c-275d-4155-8766-99504f9ec5b2",
+        "fields": {
+            "user_id": "64b23dda-6f2a-434f-82c2-c9639f099c9a",
+            "title": "How to resolve an error with the round function within a multinomial regression?",
+            "content": "I have used the gam function from the mgcv package to perform a multinomial regression with random effects. My data looks as follows:\nThis is only a snippet, but I have data on 38 pension funds who have voted on 8 different companies across multiple years. This is why I include the random effects (my observations are not independent from each other).\nFurthermore, Vote is the dependent variable and Gender & Age (stand for board diversity) are the independent variables. My code looks like this:\nI get the following error:\nError in Math.factor(c(3L, 2L, 3L, 2L, 3L, 3L, 1L, 2L, 3L, 1L, 2L, 2L,  :\n\u2018round\u2019 not meaningful for factors\nI know the error is due to some of my variables being factors instead of numeric (Vote, Company and Pension_Fund). The variables are categorical so I cannot change them. I have tried to change the code a bit but I cannot find a solution in which the error is resolved AND I still have a multinomial regression with random effects. Thoughts?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 23:24:48.413773",
+            "update_date": "2023-07-08 13:23:48.413773",
+            "image_url": "https://picsum.photos/seed/5314b23c-275d-4155-8766-99504f9ec5b2/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "594865fc-0cc4-4d32-9bea-51f7a1eb847b",
+        "fields": {
+            "user_id": "813c0898-09f0-46d5-9ed5-99634229cb2c",
+            "title": "Sort List of Object and nested List of Object",
+            "content": "I want to sort the List based on category, and sorting should also happen inside List. Can you provide a solution to this?\nList program=Arrays.asList(new Program(\"bcd\",\"subCategory\",Arrays.asList(new Program(\"abc\", \"subCategory\"),new Program(\"123\", \"subCategory\"))),\nnew Program(\"abc\",\"subCategory\",Arrays.asList(new Program(\"bcd\", \"subCategory\"),new Program(\"ABC\", \"subCategory\"),new Program(\"abc\", \"subCategory\")))\n);",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 11:58:48.475354",
+            "update_date": "2023-07-08 20:45:48.475354",
+            "image_url": "https://picsum.photos/seed/594865fc-0cc4-4d32-9bea-51f7a1eb847b/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "3dc9e20a-388f-40b7-b39d-309985501065",
+        "fields": {
+            "user_id": "d35ffc94-fae2-4481-b86c-4fdba042df4d",
+            "title": "Display 5-6 columns from excel sheet in userform listbox without disturbing ALT+Enter in them",
+            "content": "in excel VBA, In userform list box i want to display 5-6 rows from excel sheet: some data are with ALT+Enter how to display exactly in list box??\nI have a code, which copies the specific sheet data based on the selection from combobox and then it writes that data into another sheet(Search Resilt) and from there it copies all columns and displays them on list box:\nMy concern if there is Alt+Enter in any of the cell it should display as such and not a special character. Someone plz help me how to do this.\nI've attched my code and screenshot below for reference:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 22:58:48.542078",
+            "update_date": "2023-07-07 16:45:48.542078",
+            "image_url": "https://picsum.photos/seed/3dc9e20a-388f-40b7-b39d-309985501065/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "46189368-7516-4b97-a46d-6be0b44fc27a",
+        "fields": {
+            "user_id": "16ecf65f-59e3-4c36-8ce3-5626c4a6bd22",
+            "title": "elementor form issue for not save the files data in the array",
+            "content": "I am facing a issue in elementor form.The issue is that when i submit the data of elementor form all the otheer data can save in the array but the files data or not save in that array what can i do now.When i ask about this issue to CHATGPT it says that Ensure that the form has the enctype=\"multipart/form-data\" attribute: This attribute is necessary when you have file inputs in your form. It allows the form to handle file uploads correctly. In the code you provided, the form element already has this attribute, so this may not be the issue.\nthat is the function.php code\nthat is the ajax code for check the data of the elementor form\nall the other data are comming but not the field's or values of the elementor form are comming",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 10:06:48.593094",
+            "update_date": "2023-07-12 22:51:48.593094",
+            "image_url": "https://picsum.photos/seed/46189368-7516-4b97-a46d-6be0b44fc27a/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a9b5e897-3aba-4ee6-a868-354d7c46b14e",
+        "fields": {
+            "user_id": "0a2cd4c2-ff40-4608-8c18-c9433badee5f",
+            "title": "How to have more informations on flutter errors",
+            "content": "i'm using flutter for an android and ios application and it works great but i have problems with debuging.\nWhy isn't there more informations about errors and prints in the debug console? It's the first language that i use that does not show the file and the line where the error occurs. The language is so modern in many ways but so basic in others.\nSame thing with print() why doesn't it show the line and file where it's written up? I'm loosing my mind trying to find what cause errors in this language and i don't get why it would be so hard when every other language does it..\nHere a real world example, today i wake to my app giving this error :\nE/flutter ( 3085): [ERROR:flutter/runtime/dart_vm_initializer.cc(41)]\nUnhandled Exception: FormatException: Unexpected end of input (at\ncharacter 1)\nHow am i supposed to debug this ?.. I have no informations whatsoever..\nThanks in advance for any tips on this.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 06:52:48.644446",
+            "update_date": "2023-07-07 22:30:48.644446",
+            "image_url": "https://picsum.photos/seed/a9b5e897-3aba-4ee6-a868-354d7c46b14e/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "c44a4a8d-b6e8-4b7d-9357-1563febc05c5",
+        "fields": {
+            "user_id": "4d6123fb-6f8e-4580-9190-9663c91af545",
+            "title": "Can I reset the searchable drop down using select2() jquery value and bring back the value without page reload between two radio button",
+            "content": "This is I get the list of employee from the controller using viewbag\nThis is the various radio button based on the radio button I write JS\nThis is for searchable drop down for the specific employee radio button\nThis is JS function written\nI have used searchable drop down using jQuery it working but when I move to other radio button (rd1) the value in the textbox(rd2) not cleared immediately after page load only it is cleared so that I used a reset select2() function empty, due to this whenever I go to other radio button the value of the drop down value becomes empty. Once I return immediately from the rd1 to rd2 without page reload the list of value in the dropdown completely empty.\nExcepting :\nI need without page reload whenever I come to the rd2 from rd1 the list of value should be there then after moves from rd2 to rd1 the value becomes empty it need to act as vice versa. Is there any way to handle select2() function.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 01:27:48.745817",
+            "update_date": "2023-07-07 06:36:48.745817",
+            "image_url": "https://picsum.photos/seed/c44a4a8d-b6e8-4b7d-9357-1563febc05c5/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "62cae14a-82d8-4de9-9530-2a865c0e44e4",
+        "fields": {
+            "user_id": "e2f2edfe-6a48-41dc-b9f5-f4e279dc48fb",
+            "title": "Forms controls two-way databinding to class properties has strange behaviour",
+            "content": "To learn databinding I have a test-project with copied example code.\nI have a test class with some properties and on a form I have some textboxes, that should be two-way bound to the class properties:\n//// in Form class and Load() ////\nNow, when I edit only textbox txt2 I see with the debugger that following code/calls are made:\nI don't understand the bindings fully, yet.\nWhat is my coding error?\nIs there a better way to do two-way binding?\nOnPropertyChanged(): why creating every time handler = PropertyChanged?\nWhat purpose has propertyName in PropertyChangedEventArgs(propertyName))? It is not used anyway?\nThanks for help / advice.\nDatabinding do updates only on necessary properties, without double call to all the class getters.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 02:21:49.579928",
+            "update_date": "2023-07-11 14:34:49.579928",
+            "image_url": "https://picsum.photos/seed/62cae14a-82d8-4de9-9530-2a865c0e44e4/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "df854aed-aa47-4dd5-9ccc-5bdfcd809f41",
+        "fields": {
+            "user_id": "a398c88b-4079-4c36-9244-f20190ae81f0",
+            "title": "How to fetch parameters from GET URL in nodejs with two GET statements?",
+            "content": "In Nodejs:\nBoth these statements need to be there for fetching all records and for fetching one record:\n// All records:\nrouter.route('/').get((argReq, argRes)=>{ argRes.json( customerStruct.data ); } )\n// One record:\nrouter.route('/id:').get((argReq, argRes) => { argRes.json({'id' : '5' })});\n// From ThunderClient:\nhttp://localhost:7000/customerData/?id=0\nThe above returns all values. It seems the second get request is not getting executed.\nWhat is the way to correctly write all this?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 15:02:49.652923",
+            "update_date": "2023-07-10 20:23:49.653160",
+            "image_url": "https://picsum.photos/seed/df854aed-aa47-4dd5-9ccc-5bdfcd809f41/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "9480246d-c58a-46d0-b7bc-f38ee837c263",
+        "fields": {
+            "user_id": "79dba9a9-5ef5-48c0-b3af-fd88aba244e2",
+            "title": "Deadlock when accessing HashSet unless Tokio mutex is used",
+            "content": "I'm getting deadlocked, and I cannot figure out what's the issue.\nThe code doesn't work if I use std::Mutex (or parking_lot::Mutex), but it works when Tokio's async mutex is used.\nMy understanding is that this would imply that I'm holding the lock across the await points, but as far as I can tell, I'm not, but clearly, I'm doing something wrong, I just don't see it.\nHere is a simplified version of the code:\nThe same code works if I use async RwLock form Tokio. This function is the only one \"interacting\" with IDs, so it is not that I am taking the lock \"somewhere else\" for too long.\nAs per Tokio docs:\nAs a rule of thumb, using a synchronous mutex from within asynchronous code is fine as long as contention remains low and the lock is not held across calls to .await\nI think I am following these rules.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-07 08:17:49.703909",
+            "update_date": "2023-07-11 05:48:49.703909",
+            "image_url": "https://picsum.photos/seed/9480246d-c58a-46d0-b7bc-f38ee837c263/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "d779f715-c303-40cd-b93b-5b84fdb276b8",
+        "fields": {
+            "user_id": "9012ea0d-8045-43e8-9e2d-74ed0056ade4",
+            "title": "load data into UITableViewCell cell",
+            "content": "I'm totally new to IOS dev and I'm looking for help on what I'm sure is a simple issue. I'm building a test app to learn loops, code, IBoutlets etc and I have create an app that reads in between 1-5 random names into an array, I now want to read those elements into a table that I have on the same screen. If I try and use a WHILE loop then I get an error that it cannot find Return Cell, if I don't use a loop then it prints all elements in every cell.\nthanks\nI want each array element appears on an individual row in the table.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 04:39:49.755142",
+            "update_date": "2023-07-11 11:34:49.755142",
+            "image_url": "https://picsum.photos/seed/d779f715-c303-40cd-b93b-5b84fdb276b8/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "86a8bace-31a5-4474-bd9f-0609b81b6b58",
+        "fields": {
+            "user_id": "8b8f3c83-bff2-4c4e-988e-e18e1ec2a4c0",
+            "title": "regular expressions - best practice with regards to match or matches methods",
+            "content": "I am doing some regex queries in an VB.net environment.\nBasically I have to say that my knowledge around regex is a little above beginners level.\nMost of my queries look like this:\nMy question now is - Is there a difference with positive/negative effect to the query performance if I do it as shown in the example or if I would use\nand iterate the Collection afterwards?\nAny idea is very welcome!\nThanks in advance",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 09:16:49.912140",
+            "update_date": "2023-07-10 04:21:49.912140",
+            "image_url": "https://picsum.photos/seed/86a8bace-31a5-4474-bd9f-0609b81b6b58/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "e5d9ca91-1183-4d02-a384-48d1f56c9d57",
+        "fields": {
+            "user_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "title": "How to reuse Excel workbooks?",
+            "content": "I make models in Excel. The overall structure is fairly simple, although the models may include several sheets:\nwhere\nBusiness usually wants several different sets parameters, and being able to view the results for all this sets of parameters. The Model (Constants and Computations) would be the same for all the sets of parameters.\nThe customary solution for this is to design the Model, make $n$ copies of the Worksheet, feed the different sheets with the different parameters and collect, a.k.a copy paste, the results somewhere (1st flag) else, usually a $n+1$ Workbook.\nThe problem comes when the Model has to be modified, let it be the Constants or Computations, or even mode derived results are desired, the changes have to be propagated to the $n$ worksheets and pray that the ol' Ctrl-C,V does not break anything, and is done in the same cells.\nWhat I desire is a way to factor the Model into a some sort of \"master\" workbook or set of sheets in a book, and other workbooks to be able to reference the functions, and if posible the whole process, not the cells, to reuse the computations for each set of parameters, to get the corresponding results.\nI've tried to use VBA to factor sheet, but this means that I have to transform the sheet into VBA code, and takes away the flexibility that the Excel sheet gives, and might break when sharing with business, it ends to give a more fragile solution than copy/paste.\nThis models usually are not reused outside than for the task that they are made.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 11:40:49.963151",
+            "update_date": "2023-07-08 16:53:49.963151",
+            "image_url": "https://picsum.photos/seed/e5d9ca91-1183-4d02-a384-48d1f56c9d57/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "c7e0a280-b8ca-46ec-b726-466ef03c5076",
+        "fields": {
+            "user_id": "e2f2edfe-6a48-41dc-b9f5-f4e279dc48fb",
+            "title": "Do I Need Quotation Marks in my CSV File for R?",
+            "content": "I am doing a project where I am using a big database of species to create a functional morphospace. I am new to R. I converted my excel files into CSV files, but some have double quotation marks around each value (\"3\",\"4\",\"5,\"), whilst others don't (3,4,5). Will this pose a problem for R, or are the quotation marks a non-issue?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 19:33:50.014167",
+            "update_date": "2023-07-07 15:15:50.014167",
+            "image_url": "https://picsum.photos/seed/c7e0a280-b8ca-46ec-b726-466ef03c5076/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "47e8ccfb-06f7-40c7-a66b-fd9df0fa63b1",
+        "fields": {
+            "user_id": "0736a034-bc91-4d5e-bde5-77903ce4692a",
+            "title": "Modern energy management systems process huge amounts of data that can be difficult to manage without appropriate tools and approaches",
+            "content": "HEEELP PLS!!!!!! It is important to take into account that the new software solution should be able to integrate with existing systems in the company.\nNeeds: The system should be able to automatically collect data from counters and analyze them. For the convenience of users, it is important to provide intuitive tools for visualizing energy consumption data. The system should be able to send notifications about anomalies in power consumption and generate reports for internal and external use. The use of machine learning and artificial intelligence methods can help in predicting future energy consumption and optimizing energy costs. The system should provide the ability to monitor and manage energy consumption in real time, allowing you to quickly respond to changes and optimize the use of resources. there is a large set of data related to energy consumption that needs preprocessing and analysis. Your task includes data cleaning, date processing, data visualization, as well as the application of machine learning methods to predict energy consumption.\nAs I understand it, you have problems with the dates recorded by the formula and you would like to see how to pre-process the data before clearing.\nit is necessary to prepare a database that is further to machine learning\ndatabase",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 14:46:50.066232",
+            "update_date": "2023-07-07 02:05:50.066315",
+            "image_url": "https://picsum.photos/seed/47e8ccfb-06f7-40c7-a66b-fd9df0fa63b1/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "7202c8c4-f1e1-4ff9-9d11-6dd84a6e4143",
+        "fields": {
+            "user_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "title": "Firebase cloud function is not sending push when user created new document",
+            "content": "I have created firebase cloud function, when user add new event this cloud function should trigger push event. But I can't get token from the user collections.\nEverything is working well if I remove\nconst token = await firestore.collection(\"users\").get(uid).get(\"token\");\nthis line and hardcode user token\nWhat am I doing wrong?\n",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 01:53:50.115331",
+            "update_date": "2023-07-11 18:29:50.115331",
+            "image_url": "https://picsum.photos/seed/7202c8c4-f1e1-4ff9-9d11-6dd84a6e4143/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a6ad4fa7-1f53-416e-a1da-391add410f13",
+        "fields": {
+            "user_id": "d6661573-6832-4d34-b713-4b049aaf8c32",
+            "title": "Selenium Webdriver clicks on button on pop-up but fails to load next page",
+            "content": "I have used implicit and explicit wait before clicking on button with condition like\nwait.Until(ExpectedConditions.elementToBeClickable(Webelement)), I am not getting element not interactable exception. driver clicks on button but fails to load the  next page. Execution run properly in debug mode but not in actual run.\nIf I use thread.sleep method before click then working properly. As use of thread.slepp is not recommended any alternative is there for this?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 14:02:50.166792",
+            "update_date": "2023-07-13 15:29:50.166792",
+            "image_url": "https://picsum.photos/seed/a6ad4fa7-1f53-416e-a1da-391add410f13/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "8f6e5b06-e500-428d-8d09-e8af3e76ed27",
+        "fields": {
+            "user_id": "1f7c6d9c-fbaf-49b3-a687-37a4dbdb67d8",
+            "title": "Creating a terminal emulator on Windows systems (preferably C#)",
+            "content": "On UNIX (mostly Linux I think) systems, creating a terminal emulator usually requires forking the current process and redirecting the output using ioctl and setting the stdin and stdout equivalent to the parent process. The pseudoterminal handles the communication between the GUI \"terminal\" and the actual shell program (/bin/sh) itself.\nWindows seems to have had a legacy Console API to do this kind of thing, but it appears to be deprecated.\nHow would I go about this in something on Windows? (Preferably for C# because I'll be doing most of my work in Unity to use shaders and other nifty visual effects for this \"terminal\").\nI haven't particularly tried anything as I'm still very unfamiliar with Windows API.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-12 11:18:50.268931",
+            "update_date": "2023-07-11 06:00:50.268931",
+            "image_url": "https://picsum.photos/seed/8f6e5b06-e500-428d-8d09-e8af3e76ed27/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "9d2efb25-ae81-43f4-9534-54a289d597c2",
+        "fields": {
+            "user_id": "1733666f-0534-4891-979b-f2ae43fb8a7b",
+            "title": "How to Join tables flat with fixed params with Spark SQL",
+            "content": "I have datesets in spark with certain columns. I want to join those dataset flat by keeping some columns as reference(id, date, name).\nDATASET 1: (d1)\nDATASET 1: (d2)\nOutput\nI will make the id, data, name columns fixed, If all three are same then I will do flat join, else create new row with the values being 0 incase of null\nPlease help me with appropriate sql or dataset logic in spark to get the desired output.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 17:43:50.318825",
+            "update_date": "2023-07-09 01:45:50.318825",
+            "image_url": "https://picsum.photos/seed/9d2efb25-ae81-43f4-9534-54a289d597c2/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "924a49ef-5d93-47e7-ab12-c623447b4018",
+        "fields": {
+            "user_id": "16ecf65f-59e3-4c36-8ce3-5626c4a6bd22",
+            "title": "Error AttributeError: 'DataFrame' object has no attribute 'raw_ratings'",
+            "content": "I am making a recommendation system with the surprise class, to know which type of parameter best suits my algorithm I am using the GridSearchCV class, so as not to pass the same parameters again, I have taken another csv file that is very similar to the training_set that I have used , but I get this:\nI'm working with Jupiter Nootebook\n----> 2 gs.fit(data)\nFile ~\\anaconda3\\envs\\machine_learning_udemy\\Lib\\site-packages\\surprise\\model_selection    \\search.py:100, in BaseSearchCV.fit(self, data)\n85     raise ValueError(\n86         \"refit cannot be used when data has been \"\n87         \"loaded with load_from_folds().\"\n88     )\n90 cv = get_cv(self.cv)\n92 delayed_list = (\n93     delayed(fit_and_score)(\n94         self.algo_class(**params),\n95         trainset,\n96         testset,\n97         self.measures,\n98         self.return_train_measures,\n99     )\n--> 100     for params, (trainset, testset) in product(\n101         self.param_combinations, cv.split(data)\n102     )\n103 )\n104 out = Parallel(\n105     n_jobs=self.n_jobs,\n106     pre_dispatch=self.pre_dispatch,\n107     verbose=self.joblib_verbose,\n108 )(delayed_list)\n110 (test_measures_dicts, train_measures_dicts, fit_times, test_times) = zip(*out)\nFile ~\\anaconda3\\envs\\machine_learning_udemy\\Lib\\site-packages\\surprise\\model_selection\\split.py:92, in KFold.split(self, data)\n81 def split(self, data):\n82     \"\"\"Generator function to iterate over trainsets and testsets.\n83\n84     Args:\n(...)\n89         tuple of (trainset, testset)\n90     \"\"\"\n---> 92     if self.n_splits > len(data.raw_ratings) or self.n_splits < 2:\n93         raise ValueError(\n94             \"Incorrect value for n_splits={}. \"\n95             \"Must be >=2 and less than the number \"\n96             \"of ratings\".format(len(data.raw_ratings))\n97         )\n99     # We use indices to avoid shuffling the original data.raw_ratings list.\nI can't find where the error can come from, since it's the same file, but the file I used for the training_set is shortened by size, so there are many fewer examples.\nI need help as i am a bit stuck and i want to check this code as the rmse and mae give me very high values \u200b\u200band i need to adjust the algorithm",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 14:38:50.372672",
+            "update_date": "2023-07-10 16:04:50.372672",
+            "image_url": "https://picsum.photos/seed/924a49ef-5d93-47e7-ab12-c623447b4018/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a31e027b-f916-4eba-83f2-cdffd78308ee",
+        "fields": {
+            "user_id": "9fc6773c-2df8-49fc-b93c-92b5acdf16ce",
+            "title": "Kubernetes rolling update delete old pod before starting a new one",
+            "content": "I've a deployment whose app makes a lock on a file, and crash if there's any existing lock. How can I ask Kubernetes to remove the old pod before spinning up the new one ?\nI know you usually want the opposite, spinning up the new, and only when it's ready remove the old, to avoid downtime. For this case I don't care, it's typesense in a developments environments, we're using the SaaS for staging & production.\nThanks for any help !",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-13 02:07:50.440690",
+            "update_date": "2023-07-08 05:11:50.440690",
+            "image_url": "https://picsum.photos/seed/a31e027b-f916-4eba-83f2-cdffd78308ee/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "0245bd36-b40b-4af6-a06e-91a77ebcb9f9",
+        "fields": {
+            "user_id": "ddbcb561-8870-4f3f-8461-0be8d59f0d76",
+            "title": "I have a problem when I try to find out the version of my typescript after I have downloaded it [closed]",
+            "content": "Want to improve this question? Add details and clarify the problem by editing this post.\nClosed 36 mins ago.\nI downloaded typescript on my device and I did not encounter any problems, and when I try to find out the version on the device, an error message appears.\nI downloaded the typescript by \"npm i -g typescript\" and then tried to find out the version by \"tsc -v\" then the error message appeared",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 07:02:50.593770",
+            "update_date": "2023-07-10 14:05:50.593770",
+            "image_url": "https://picsum.photos/seed/0245bd36-b40b-4af6-a06e-91a77ebcb9f9/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "fc7b4bee-49dd-4679-bc4a-d42aed258644",
+        "fields": {
+            "user_id": "1733666f-0534-4891-979b-f2ae43fb8a7b",
+            "title": "I am working on specific website not able to find locator using selenium automation",
+            "content": "I am working on selenium with c# here i am not able to find locator in automation on latest chrome(112+ chrome version) browser using automation, and below 112 chrome version its working fine.\nI tried with different waits, different locator but not able to resolve this issue could you please help me out for this issue...",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-10 22:16:50.644768",
+            "update_date": "2023-07-13 14:21:50.644768",
+            "image_url": "https://picsum.photos/seed/fc7b4bee-49dd-4679-bc4a-d42aed258644/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "067485b8-7f88-40f2-9ce6-da16751c0fa9",
+        "fields": {
+            "user_id": "930ea6ac-6931-496e-bb70-5d3baa435693",
+            "title": "populating a matrix with 1s row-wise",
+            "content": "I know how to randomly populate a matrix with 1s using the 'rbinom' function. However, I need to populate a matrix such that each row has only one 1 and every column has at least one 1 but more than one 1 is ok.\nMy empty matrix looks like this:\nSo I need a total of 600 '1s' in the matrix. Thanks for your help!",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 15:43:50.706765",
+            "update_date": "2023-07-09 11:41:50.706765",
+            "image_url": "https://picsum.photos/seed/067485b8-7f88-40f2-9ce6-da16751c0fa9/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "6c9bfbaa-fe1b-401c-b807-600c20361d21",
+        "fields": {
+            "user_id": "7bd39e7f-86be-4d56-a9cd-073bb99ebda6",
+            "title": "assign all values (with the same value) a std:array: brace vs .fill, what's the differences?",
+            "content": "If I need to assign to an array the same values on all values, what's the differences between brace assign and .fill?\nThey looks the same...",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 18:32:50.932162",
+            "update_date": "2023-07-12 01:06:50.932162",
+            "image_url": "https://picsum.photos/seed/6c9bfbaa-fe1b-401c-b807-600c20361d21/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "a5f077cf-59af-4918-a63b-af5818373627",
+        "fields": {
+            "user_id": "813c0898-09f0-46d5-9ed5-99634229cb2c",
+            "title": "Sort the list in ascending order",
+            "content": "I want to order the list in ascending order, but it is arranged in upper case and then lower case. Is it possible to arrange the list as expected output given below? If yes, could you provide the solution and how it can be achieved?\nActual Output:\nExcepted Output:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 04:54:51.039083",
+            "update_date": "2023-07-13 00:42:51.039083",
+            "image_url": "https://picsum.photos/seed/a5f077cf-59af-4918-a63b-af5818373627/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "151385c6-7385-4314-b559-2712ffe5d6ce",
+        "fields": {
+            "user_id": "22d7cec2-e08d-49eb-94a9-8e957763bd2b",
+            "title": "How do I reset the values of input x and y?",
+            "content": "Take two integers x and y as inputs from the console using input() function. For each assignment operator (=, +=, -=, and *=), print to the console, the result of applying these operators on the two input integers as shown in the example.\nAssumption:\nHint: Before every assignment operation, reset the values of x and y to the initial values.\nThis is my code line:\nHow do I reset the values of x and y to the initial values??\nSample Input and Output:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 05:11:51.203354",
+            "update_date": "2023-07-08 05:06:51.203582",
+            "image_url": "https://picsum.photos/seed/151385c6-7385-4314-b559-2712ffe5d6ce/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "82d6790a-5d4d-4f5f-87c1-aa06e4181065",
+        "fields": {
+            "user_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "title": "Join two tables using like predicate with character '_' in values and it is taking as wildcard character [duplicate]",
+            "content": "I have two table\nTable_A\nTable_B:\nby using this ip_, is_ is matching with ipa and isa as '_' is acting as a wild card\nI am getting error for this as I cannot use escape character in like predicate.\nMy expected output is hip_ should match with  any text preceding and followed ip_ followed by any characters.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 20:59:51.456639",
+            "update_date": "2023-07-11 10:08:51.456639",
+            "image_url": "https://picsum.photos/seed/82d6790a-5d4d-4f5f-87c1-aa06e4181065/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "1ab193cc-405c-4e65-8f77-b28a227cd023",
+        "fields": {
+            "user_id": "4d6123fb-6f8e-4580-9190-9663c91af545",
+            "title": "Summing all numbers from JSON API response in Angular",
+            "content": "I need help summing all the numbers from JSON that I get from an API response and saving them in a variable that I can output in template...\nThis is what my JSON that I get looks like:\nThis is how I'm getting the data from service in my component.ts file:\nI have tried using .map function but I was getting the error Property 'map' does not exist on type 'number'. How would I go about summing all the numbers of \"count\" together?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 12:11:51.507767",
+            "update_date": "2023-07-06 22:31:51.507767",
+            "image_url": "https://picsum.photos/seed/1ab193cc-405c-4e65-8f77-b28a227cd023/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "22b8c6e5-8dc5-423a-bac5-cb6a0ae36609",
+        "fields": {
+            "user_id": "5786da98-5b2f-47c9-a85e-ee2b7a877e88",
+            "title": "JS exclude break timings from working hours",
+            "content": "I'm trying to split the working time into working slots while excluding Break time.\nWe may have multiple working slots and multiple breaks but time could not overlap.\nwhile excluding the break hours and splitting the working time.\nTo exclude the time slots Exclusion: True means exclude that time from the Exclusion: false object.\nexample: This is the array of objects with working hours and exclusion hours.\nAnd The output I want array of objects with updated working hours to display only working time slots.\nThen I am converting the time to display on the table like in the below example. This is for just understanding.\nThese are the working hours.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 14:15:51.666425",
+            "update_date": "2023-07-12 20:45:51.666517",
+            "image_url": "https://picsum.photos/seed/22b8c6e5-8dc5-423a-bac5-cb6a0ae36609/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "b20b31c6-f275-4bb2-843e-3d208363ac80",
+        "fields": {
+            "user_id": "fa1ee3ed-166b-45c0-80ae-ed39499a5ac5",
+            "title": "Are typedef declarations to bare function types (ie: not function pointers) legal in C89/C90?",
+            "content": "Let's consider the following code:\nThis compiles fine without warnings with GCC and compiler flags -std=c90 -pedantic -Wall -Wextra.\nBut K&R (2e) don't show such code in their book; they only ever usetypedefs for function pointers. (Their discussion on p147 is problematic, but that aspect is not the subject of this question.) I don't have access to the C89/C90 standard documents.\nAccording to the C standards documents (C99 TC3 (ISO/IEC 9899:TC3) draft, 6.7.7 \u00b67; C11 draft, 6.7.8 \u00b67; C17 draft, 6.7.8 \u00b67; text identical (modulo formatting) in all three documents):\nAll three of the following declarations of the signal function [from <signal.h>] specify exactly the same type, the first without making use of any typedef names.\nFor what it's worth, Wikipedia claims:\nThe C and C++ syntax [with typedefs for function pointer types] given above is the canonical one used in all the textbooks - but it's difficult to read and explain. Even the above typedef examples use this syntax. However, every C and C++ compiler supports a more clear and concise mechanism to declare function pointers: use typedef, but don't store the pointer as part of the definition. Note that the only way this kind of typedef can actually be used is with a pointer - but that highlights the pointer-ness of it.\n[...]\nThe implication of their phrasing is that allowing typedefs for bare function types is a compiler extension but not sanctioned by the standards. Is that really so? My quote from the C99 TC3, C11, and C17 standards clearly demonstrates that such typedefs are legal at least since C99 TC3. Are typedef declarations to bare function types (ie: not function pointers) legal in C89/C90? Note that the example \"given above\" that Wikipedia refers to (not quoted here) is a C++ example, so it's also possible that it's always been legal in standard C but just not in C++.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-09 20:53:51.795551",
+            "update_date": "2023-07-09 07:00:51.796498",
+            "image_url": "https://picsum.photos/seed/b20b31c6-f275-4bb2-843e-3d208363ac80/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "b72f4c53-35d2-4cf1-9518-019b5e548b9e",
+        "fields": {
+            "user_id": "0a2cd4c2-ff40-4608-8c18-c9433badee5f",
+            "title": "Question about Linux x64 Calling Convention",
+            "content": "I was reading this page Linux x64 Calling Convention, but got confused about passing function parameters by registers and stack. It says:\nArguments 1-6 are accessed via registers RDI, RSI, RDX, RCX, R8, R9 before they are modified or via  offsets from the RBP register like so: rbp - $offset.\nIf the first 6 parameters are passed by registers, how come they can also be read/write from the stack? Is the first 6 parameters stored both in the registers and on the stack?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-11 10:12:52.604951",
+            "update_date": "2023-07-12 02:32:52.604951",
+            "image_url": "https://picsum.photos/seed/b72f4c53-35d2-4cf1-9518-019b5e548b9e/500"
+        }
+    },
+    {
+        "model": "api.Question",
+        "pk": "6b5b074b-f7da-48c8-8db2-dc93a3f58e6b",
+        "fields": {
+            "user_id": "7f2f6c68-eae8-4469-9fd0-ea2b10f2fd9f",
+            "title": "SQL Logic Operator Precedence: And and Or",
+            "content": "Are the two statements below equivalent?\nand\nIs there some sort of truth table I could use to verify this?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "question_status": 1,
+            "create_date": "2023-07-08 14:40:52.655925",
+            "update_date": "2023-07-13 04:38:52.655925",
+            "image_url": "https://picsum.photos/seed/6b5b074b-f7da-48c8-8db2-dc93a3f58e6b/500"
+        }
+    }
+]

@@ -1,0 +1,1074 @@
+[
+    {
+        "model": "api.Answer",
+        "pk": "66b40a5c-e2cc-45bc-aca3-9685ab880e4d",
+        "fields": {
+            "user_id": "fa1ee3ed-166b-45c0-80ae-ed39499a5ac5",
+            "owner_id": "fa1ee3ed-166b-45c0-80ae-ed39499a5ac5",
+            "question_id": "3b14536d-287a-4007-be0d-64f4d648b2d9",
+            "content": "Use a simple loop and a flag to keep track of the last state:\nOutput: [[2, 3], [6, 2]]\nFor fun, a one-liner alternative using itertools.groupby:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/66b40a5c-e2cc-45bc-aca3-9685ab880e4d/500",
+            "create_date": "2023-07-06 20:06:41.700606",
+            "update_date": "2023-07-12 04:50:41.700606"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "1ad9021f-d3a9-48a7-8f8a-25afee41860f",
+        "fields": {
+            "user_id": "71103e9e-d662-42fd-9c17-0d50a24fca07",
+            "owner_id": "71103e9e-d662-42fd-9c17-0d50a24fca07",
+            "question_id": "3b14536d-287a-4007-be0d-64f4d648b2d9",
+            "content": "check this code",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/1ad9021f-d3a9-48a7-8f8a-25afee41860f/500",
+            "create_date": "2023-07-10 11:39:41.784727",
+            "update_date": "2023-07-08 09:02:41.784727"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "a545d2df-fe5f-4347-9025-65d80eddc8d7",
+        "fields": {
+            "user_id": "40ec0ba4-7982-464e-9781-9960e85f3c7c",
+            "owner_id": "40ec0ba4-7982-464e-9781-9960e85f3c7c",
+            "question_id": "b3deba00-ad9a-4d6a-ace9-aadd568a32db",
+            "content": "To dynamically find and parse the object path for all properties in the given object, you can use a recursive function. Here's an example implementation in\nThis code defines the getObjectPath function, which recursively traverses the object and builds the object path for each property. It takes three parameters: the object to traverse (obj), the current prefix (initialized as an empty string), and the result array to store the field objects.\nWithin the function, it iterates over the keys of the object. If the value of a key is another object, it calls getObjectPath recursively with an updated prefix (including the current key). If the value is not an object, it adds a field object to the result array with the fieldId as the concatenation of the prefix and the current key, and the value as the value of the property.\nIn the example usage, we provide the data object and assign the result of getObjectPath(data) to the fields property of the result object.\nThe output will be displayed in the console, containing the expected result with the object path and corresponding values for each property in the data object.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/a545d2df-fe5f-4347-9025-65d80eddc8d7/500",
+            "create_date": "2023-07-13 13:16:41.887012",
+            "update_date": "2023-07-13 09:27:41.887012"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "e1bbc6e3-0b29-48b6-8f99-5070ac1546fc",
+        "fields": {
+            "user_id": "d35ffc94-fae2-4481-b86c-4fdba042df4d",
+            "owner_id": "d35ffc94-fae2-4481-b86c-4fdba042df4d",
+            "question_id": "8d5afb95-c6d6-4792-b205-aa9faf4f77a8",
+            "content": "You have to choose the separator when you read the file.\nin your case you need to define the separator as sep=\"\"",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/e1bbc6e3-0b29-48b6-8f99-5070ac1546fc/500",
+            "create_date": "2023-07-12 01:55:41.989244",
+            "update_date": "2023-07-11 06:13:41.989244"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "c32cf63b-52ce-4612-92cc-618a5ecf1ef1",
+        "fields": {
+            "user_id": "64b23dda-6f2a-434f-82c2-c9639f099c9a",
+            "owner_id": "64b23dda-6f2a-434f-82c2-c9639f099c9a",
+            "question_id": "8d5afb95-c6d6-4792-b205-aa9faf4f77a8",
+            "content": "",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/c32cf63b-52ce-4612-92cc-618a5ecf1ef1/500",
+            "create_date": "2023-07-09 04:03:42.039044",
+            "update_date": "2023-07-10 10:58:42.039044"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "becc4901-1ae4-4e69-9177-0fe672e43d29",
+        "fields": {
+            "user_id": "fa4f033a-eff4-4945-ad84-df7919254d73",
+            "owner_id": "fa4f033a-eff4-4945-ad84-df7919254d73",
+            "question_id": "5042cc83-64d1-41aa-956c-bbfb1acb6131",
+            "content": "The problem in animating to max-width/height: \"big-magic-number\"px/%; lies exactly in the number being magic and big. Takes time to revert to 0 during a defined transition period.\nThe max-width / max-height transitions are flawed and broken by design.\nA better solution would be using CSS grid as explained in this answer, where basically the animation transitions from 0fr to 1fr\n.button {\n  display: inline-flex;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #323232;\n  color: white;\n  border-radius: 10px;\n  cursor: pointer;\n  border: 1px solid #bdc3c7;\n}\n\n.button-slide {\n  display: grid;\n  grid-template-columns: 0fr;\n  transition: grid-template-columns 0.4s ease-in-out;\n}\n\n.button:hover .button-slide {\n  grid-template-columns: 1fr;\n}\n\n.button-slide-inner {\n  overflow: hidden;\n}\n<div class=\"button\">\n  <span class=\"button-icon\">\u2764\ufe0f</span>\n  <div class=\"button-slide\">\n    <div class=\"button-slide-inner\"><span>Heart</span></div>\n  </div>\n</div>\nTo recap, use grid-template-columns to animate \"width\", and grid-template-rows to animate \"height\".",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/becc4901-1ae4-4e69-9177-0fe672e43d29/500",
+            "create_date": "2023-07-09 21:09:42.344471",
+            "update_date": "2023-07-12 20:15:42.344471"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "d94847dd-74fb-41d7-bd68-a0784c8a2a6f",
+        "fields": {
+            "user_id": "b3633029-e828-433c-823f-88d92de52e92",
+            "owner_id": "b3633029-e828-433c-823f-88d92de52e92",
+            "question_id": "5042cc83-64d1-41aa-956c-bbfb1acb6131",
+            "content": "This is a very interesting problem.\nThe problem is with this line:\nBasically, what happens during transitions is based on the set duration (in your case, 1s), the transition property value keeps changing. So in your case, max-width gets changed from 0 to 1275 over 1s period.\nIf the transition ends prematurely, that is, if you move your mouse out before 1s, the reverse transition happens, that is, max-width starts decreasing from whatever value at that point (say, 700) to 0 over the exact same duration that changed it from 0 to 700. It will be less than 1s because you ended it prematurely.\nAnd because in your code, the visual change is only visible for the initial brief duration, you think you experience that the more you have your mouse inside the element, the more \"delay\" you get.\nYou can visualize what's happening to max-width by changing your transition property from max-width to width.\n.button {\n  width: fit-content;\n  height: fit-content;\n  padding: 10px 15px;\n  background-color: #323232;\n  color: white;\n  border-radius: 10px;\n  align-items: center;\n  justify-content: center;\n  display: flex;\n  cursor: pointer;\n  position: relative;\n  border: 1px solid #bdc3c7;\n}\n\n.button-text-container {\n  order: 1;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  white-space: nowrap;\n  overflow: hidden;\n  width: 0;\n  transition-duration: 1s;\n  transition-property: width;\n  transition-timing-function: ease-in-out;\n  font-size: 1.5em;\n  width: fit-content;\n  width: 0;\n}\n\n.button-icon-container {\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 10px;\n  font-size: 1.6em;\n}\n\n.button:hover .button-text-container {\n  width: 1275px;\n}\n\n.button-text-container>span {\n  margin: 10px;\n}\n<div class=\"button\">\n  <div class=\"button-icon-container\">icon</div>\n  <div class=\"button-text-container\"><span>test</span></div>\n</div>\nSo, the solution is to not use max-width (I don't know why you used it) and/or make the value more relevant than a random high value.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/d94847dd-74fb-41d7-bd68-a0784c8a2a6f/500",
+            "create_date": "2023-07-12 12:46:42.395223",
+            "update_date": "2023-07-10 16:25:42.395223"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "1bd0cb9e-97f2-4e49-9c77-a7562a6d7be5",
+        "fields": {
+            "user_id": "0d3c9405-3f8a-45d5-9d10-05478e4059aa",
+            "owner_id": "0d3c9405-3f8a-45d5-9d10-05478e4059aa",
+            "question_id": "eee8f4f6-274f-4fce-9f43-8b2d3403ea20",
+            "content": "With dplyr, you can use slice_max() ordered by the following 2 variables:\nNote that to order by multiple variables, you need to wrap them in a data frame or tibble.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/1bd0cb9e-97f2-4e49-9c77-a7562a6d7be5/500",
+            "create_date": "2023-07-11 04:16:42.497193",
+            "update_date": "2023-07-11 18:23:42.497193"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "650b9af3-1988-428a-aed1-b82110363c25",
+        "fields": {
+            "user_id": "63583082-33a7-41a3-9594-0c36f507b379",
+            "owner_id": "63583082-33a7-41a3-9594-0c36f507b379",
+            "question_id": "eee8f4f6-274f-4fce-9f43-8b2d3403ea20",
+            "content": "Using the library dplyr from tidyverse\nYou can filter multiple conditions in a single filter using commas. It will AND all conditions.\nMore info in the dplyr libray.\nUseful for working with spreadsheets in R / where I learnt this link.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/650b9af3-1988-428a-aed1-b82110363c25/500",
+            "create_date": "2023-07-12 16:18:42.558081",
+            "update_date": "2023-07-12 13:05:42.558081"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "68779d48-7943-46e6-a0a9-28ce2b41e0a4",
+        "fields": {
+            "user_id": "9fc6773c-2df8-49fc-b93c-92b5acdf16ce",
+            "owner_id": "9fc6773c-2df8-49fc-b93c-92b5acdf16ce",
+            "question_id": "709c7cdb-5c56-44b4-a569-aefbfb38a552",
+            "content": "I tested your code in my codesandbox and it works.\nIt shows an error saying as follows:\nBut it fixes when I import Test as default, not naming import like {Test}. So you face this type of error because of using export default in the test.js file and naming import in the other file to import the class.\nSo you should use import Test from \"./test\"; instead of import {Test} from './test';\nAlso, there are no errors using both Test and {Test} when I use export class Test {...} within export default Test; in the test.js file and ts version 4.4.4 in the package.json file as follows:\nThe codesandbox link here\nHope this will help. Thanks!\n",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/68779d48-7943-46e6-a0a9-28ce2b41e0a4/500",
+            "create_date": "2023-07-08 07:31:42.660177",
+            "update_date": "2023-07-13 06:07:42.660177"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "5481aa41-0418-4fd4-b40b-d1207c3e433f",
+        "fields": {
+            "user_id": "0e3cf761-1501-4a80-9027-ad86c561f1f8",
+            "owner_id": "0e3cf761-1501-4a80-9027-ad86c561f1f8",
+            "question_id": "14c1b66b-0f74-406b-a8e5-c98f229f04f3",
+            "content": "child3 and child4 are not mentioned in the parent, so how do you want to point to parent in the output, if we ignore that the function that gives you desired output is this:\nOutput:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/5481aa41-0418-4fd4-b40b-d1207c3e433f/500",
+            "create_date": "2023-07-13 02:18:42.762079",
+            "update_date": "2023-07-12 12:12:42.762079"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "feac389d-8b59-4695-9fb1-4fb01ff322df",
+        "fields": {
+            "user_id": "7a30d3ae-63bf-4d33-897e-a9c672eb5836",
+            "owner_id": "7a30d3ae-63bf-4d33-897e-a9c672eb5836",
+            "question_id": "14c1b66b-0f74-406b-a8e5-c98f229f04f3",
+            "content": "You can use a recursive function to do this.\nOutput:\nAs @EdizG\u00f6rkemAk\u0131nc\u0131 mentions, you need to add child3 and child4 to the parent if you want them to be included in the output.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/feac389d-8b59-4695-9fb1-4fb01ff322df/500",
+            "create_date": "2023-07-11 15:07:42.813292",
+            "update_date": "2023-07-09 21:13:42.813292"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "d020b2b8-02f3-4ee5-ae9a-15b7837926ee",
+        "fields": {
+            "user_id": "b3633029-e828-433c-823f-88d92de52e92",
+            "owner_id": "b3633029-e828-433c-823f-88d92de52e92",
+            "question_id": "c85b2e68-012f-486c-8020-9410e99b1a30",
+            "content": "Not really an answer, but this is too long to be a comment.\nIn your example case, I'm not sure what's the point of repeating the column twice, since the combination of two identical columns is the same as the combination of one of the two (check below).\nUnder the hood, complete uses full_join and expand. expand works with duplicate names:\nBut full_join does not because names have changed:\nIndeed, the default behavior of nesting (and expand) when there are identical names is .name_repair = \"check_unique\":\nIf you specify .name_repair = \"minimal\" on top of overwriting the columns name with identical names, you'll have the same name:\nBut, here full_join is blocking the process again, because names must be unique:\nSo, what can be done?",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/d020b2b8-02f3-4ee5-ae9a-15b7837926ee/500",
+            "create_date": "2023-07-08 22:00:42.914665",
+            "update_date": "2023-07-11 18:25:42.914665"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "f8703774-aad2-4ef0-aca6-518e29b9698a",
+        "fields": {
+            "user_id": "79219278-b04d-4f31-9ac6-6fa1dc20dcbb",
+            "owner_id": "79219278-b04d-4f31-9ac6-6fa1dc20dcbb",
+            "question_id": "ca400b23-d8af-4f20-b346-df94b56ed3ba",
+            "content": "You are declaring fields instead of properties.\nYou should declare your record as follows:\nthis will create  {get; init;} properties.\nOr you can create the properties yourself.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/f8703774-aad2-4ef0-aca6-518e29b9698a/500",
+            "create_date": "2023-07-10 05:21:43.171194",
+            "update_date": "2023-07-08 06:30:43.171194"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "cf279e5b-1533-40df-bb9a-c7f6b2cce4b3",
+        "fields": {
+            "user_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "owner_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "question_id": "2e15c399-bcc0-4242-8787-731a24eef658",
+            "content": "Python doesn't automatically runs main() when started, you need to call it yourself. Therefore, your program is currently only made of functions, and there's nothing to run, it actually runs properly.\nYou may want to add this code for the behaviour you're expecting:\nThis will call the main function when the program is started from the command line.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/cf279e5b-1533-40df-bb9a-c7f6b2cce4b3/500",
+            "create_date": "2023-07-09 06:37:43.436222",
+            "update_date": "2023-07-07 04:39:43.436222"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "366974c1-52d7-4375-bc30-d29113ca3ae5",
+        "fields": {
+            "user_id": "67ee8119-ee09-4fe0-a55c-1a34a605762b",
+            "owner_id": "67ee8119-ee09-4fe0-a55c-1a34a605762b",
+            "question_id": "2e15c399-bcc0-4242-8787-731a24eef658",
+            "content": "You defined the main function, but you never call it.\nadd main() to the end of your code.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/366974c1-52d7-4375-bc30-d29113ca3ae5/500",
+            "create_date": "2023-07-11 21:50:43.487252",
+            "update_date": "2023-07-12 23:46:43.487252"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "c74cedbe-2711-4a91-81e0-a423182fe914",
+        "fields": {
+            "user_id": "c5cb8579-f3b0-4a2c-a8a0-4005206196df",
+            "owner_id": "c5cb8579-f3b0-4a2c-a8a0-4005206196df",
+            "question_id": "b41f5c63-9961-4dbf-8af9-d2074140f4cb",
+            "content": "You could create a temporary table or a real yable with the fields of (NIF, FILE, FILESIZE, PARTITION, SUBPARTITION). You could add an id to it as well, but for the purpose of this answer I will describe only the absolute minimum.\nYou would set PARTITION and SUBPARTITION to be nullable and insert lines via commands like\nand implement a before insert trigger that will find max(PARTITION) to find out what the current partition is as well as the max(SUBPARTITION) of that partition along with the sum(FILESIZE) in that partition. Something like (this is an agnostic query, you will need to save the fields into local variables)\nFrom here on, inside your trigger you can see whether storage_use + the actual FILESIZE of the record you are to insert is greater than 10. If not, then you set PARTITION and SUBPARTITION of your new record to those that you found in the query. If not, then you can increment SUBPARTITION as long as it's lower than or equal with 8. If SUBPARTITION is 8 and storage_use does not allow you to fit the new record into it, then store PARTITION + 1 and SUBPARTITION + 1 as PARTITION and SUBPARTITION, respectively.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/c74cedbe-2711-4a91-81e0-a423182fe914/500",
+            "create_date": "2023-07-10 15:42:43.589255",
+            "update_date": "2023-07-10 16:43:43.589255"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "5956f671-2c36-431d-bbf5-2968aca57b92",
+        "fields": {
+            "user_id": "f0e9834d-f95c-400c-95f1-cdb193aaabde",
+            "owner_id": "f0e9834d-f95c-400c-95f1-cdb193aaabde",
+            "question_id": "ee077f51-1d97-4644-9791-da4febccfb61",
+            "content": "The reason for this error is that the format specifier d is specifically for formatting integers, not floats.You can use the general format specifier f instead.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/5956f671-2c36-431d-bbf5-2968aca57b92/500",
+            "create_date": "2023-07-07 17:52:43.691197",
+            "update_date": "2023-07-10 08:04:43.691197"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "771301ae-de8c-4026-89c4-7870d23af311",
+        "fields": {
+            "user_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "owner_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "question_id": "67a9e77e-233b-4ff2-a900-aecd718ad0e6",
+            "content": "You can do this by looping over both arrays individually. This should work regardless of how many arrays you have in total.\nSince this runs almost instantly, I had to add sleep(1) to show that it works. The second value is the only value that is overwritten and thus shows the updated timestamp.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/771301ae-de8c-4026-89c4-7870d23af311/500",
+            "create_date": "2023-07-08 02:02:43.791782",
+            "update_date": "2023-07-06 21:34:43.791782"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "7986faa8-39cf-42dd-96ab-8752d61c1630",
+        "fields": {
+            "user_id": "0c8db27f-0118-45f3-948b-cfae3a347176",
+            "owner_id": "0c8db27f-0118-45f3-948b-cfae3a347176",
+            "question_id": "2bad2a62-7d8f-46f0-bbf9-fa62ec350454",
+            "content": "You have to resubmit the inputs because the get_inputs function is called multiple times.\nThis should work well for you, although it's not the best solution:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/7986faa8-39cf-42dd-96ab-8752d61c1630/500",
+            "create_date": "2023-07-13 09:09:43.995193",
+            "update_date": "2023-07-08 09:51:43.996203"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "b7f10c4d-dc79-4466-a24f-325b57ac3392",
+        "fields": {
+            "user_id": "1733666f-0534-4891-979b-f2ae43fb8a7b",
+            "owner_id": "1733666f-0534-4891-979b-f2ae43fb8a7b",
+            "question_id": "34f71bce-e957-46cb-9c0a-c7b2faaa2230",
+            "content": "if you need to make the image larger than its size, tou need to set background-size property, because without it the image will be displayed with a maximum dimension equal to size of the image file.\nE.g. <div style=\"background-size: cover;\"></div>",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/b7f10c4d-dc79-4466-a24f-325b57ac3392/500",
+            "create_date": "2023-07-07 14:49:44.878225",
+            "update_date": "2023-07-08 01:26:44.878225"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "0fa5b3c4-9919-4326-a276-6fa609a47654",
+        "fields": {
+            "user_id": "45e90d2a-5d1c-4918-9b6e-e488d230c80f",
+            "owner_id": "45e90d2a-5d1c-4918-9b6e-e488d230c80f",
+            "question_id": "8dcba8f8-5926-4f69-9a30-e4037297b229",
+            "content": "",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/0fa5b3c4-9919-4326-a276-6fa609a47654/500",
+            "create_date": "2023-07-07 23:20:44.980185",
+            "update_date": "2023-07-09 09:14:44.980185"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "8cb68818-77e8-4dd5-9a6b-c473a8c7679f",
+        "fields": {
+            "user_id": "d2f2d764-508d-4892-a244-a16871b8a414",
+            "owner_id": "d2f2d764-508d-4892-a244-a16871b8a414",
+            "question_id": "e7d7754a-49d1-47b1-baec-22fba134793b",
+            "content": "What you want is not fully clear, but to set up a group you could use:\nOutput:\nIntermediate with sorted timestamps and difference in hours to the previous time:\nTo split the DataFrame in sub DataFrames you can then use:\nOutput:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/8cb68818-77e8-4dd5-9a6b-c473a8c7679f/500",
+            "create_date": "2023-07-13 08:06:45.081645",
+            "update_date": "2023-07-11 19:28:45.081645"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "1b3ebcf2-cbc2-4aad-90a2-fd5c5630518b",
+        "fields": {
+            "user_id": "41487767-25c3-493b-8eb5-7abdace71a5d",
+            "owner_id": "41487767-25c3-493b-8eb5-7abdace71a5d",
+            "question_id": "a31a8573-b89d-4697-ab50-911a74e5d787",
+            "content": "Including the webapp directory in your path is not necessary.\nJust set your properties to:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/1b3ebcf2-cbc2-4aad-90a2-fd5c5630518b/500",
+            "create_date": "2023-07-11 19:48:45.183236",
+            "update_date": "2023-07-08 16:44:45.183236"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "c59847fa-90dd-4e25-be93-0301be177298",
+        "fields": {
+            "user_id": "a90f4a98-4e9b-41da-bec1-ee72e2a3a38a",
+            "owner_id": "a90f4a98-4e9b-41da-bec1-ee72e2a3a38a",
+            "question_id": "d769e0b6-6389-4047-9f2d-f06557ce325f",
+            "content": "try this:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/c59847fa-90dd-4e25-be93-0301be177298/500",
+            "create_date": "2023-07-12 00:25:45.285232",
+            "update_date": "2023-07-12 09:54:45.285232"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "844d50eb-f726-4610-9790-931815494f60",
+        "fields": {
+            "user_id": "fa4f033a-eff4-4945-ad84-df7919254d73",
+            "owner_id": "fa4f033a-eff4-4945-ad84-df7919254d73",
+            "question_id": "a2dd1e80-0b7f-47b2-a4c3-cb4b249574a2",
+            "content": "Each iframe has a src attribute that is effectively a hyperlink to Google maps. That attribute contains the longitude and latitude.\nThese can be extracted as follows:\nOutput:\n...and so on",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/844d50eb-f726-4610-9790-931815494f60/500",
+            "create_date": "2023-07-09 23:18:45.397255",
+            "update_date": "2023-07-10 19:58:45.397255"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "1ccc4509-7b48-4a00-908d-a1e237f2a5f8",
+        "fields": {
+            "user_id": "e2f2edfe-6a48-41dc-b9f5-f4e279dc48fb",
+            "owner_id": "e2f2edfe-6a48-41dc-b9f5-f4e279dc48fb",
+            "question_id": "40313c2f-3d57-4d90-b9a7-488ccc8a5b0d",
+            "content": "let add = document.querySelector(\"#add\")\nlet tasksArray = []\n\nlet taskContent = document.querySelector(\"#task-content\")\n\nadd.addEventListener(\"click\", () => {\n  let task = \"\"\n  tasksArray.push(taskContent.value);\n  for (let index = 0; index < tasksArray.length; index++) {\n    task +=\n      `\n        <div class=\"task\">\n            <input type=\"checkbox\">\n            <span id=\"task-name\">${tasksArray[index]}</span>\n            <span class=\"material-symbols-outlined\" id=\"mark-as-important\">grade</span>\n        </div>\n        `\n  }\n  document.querySelector(\".tasks-list\").innerHTML = task;\n\n\n  console.log(tasksArray);\n})\n<div class=\"add-task\">\n  <span id=\"task-title\">Add new task</span>\n  <input type=\"text\" id=\"task-content\">\n  <button type=\"submit\" id=\"add\">Add</button>\n</div>\n\n<div class=\"tasks-list\">\n\n</div>",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/1ccc4509-7b48-4a00-908d-a1e237f2a5f8/500",
+            "create_date": "2023-07-09 14:27:45.611414",
+            "update_date": "2023-07-10 05:09:45.611414"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "f689966a-77f5-491b-b8bf-86aa05b5d956",
+        "fields": {
+            "user_id": "a585156a-5e80-4ebe-b3e1-533b6a7a54af",
+            "owner_id": "a585156a-5e80-4ebe-b3e1-533b6a7a54af",
+            "question_id": "2e8edc05-0bcd-4457-9809-90a4bf10c27d",
+            "content": "You can use bitshift:\nCareful to 2 points:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/f689966a-77f5-491b-b8bf-86aa05b5d956/500",
+            "create_date": "2023-07-13 10:50:45.713414",
+            "update_date": "2023-07-09 05:06:45.713414"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "c47d8da7-0222-4d2a-8aaf-a45b8974caf5",
+        "fields": {
+            "user_id": "1c811246-1f65-4aab-8480-03c22a3b2acc",
+            "owner_id": "1c811246-1f65-4aab-8480-03c22a3b2acc",
+            "question_id": "958170ee-f4ed-4d15-b33a-b508f029946a",
+            "content": "You need to set the key value in proper way\nI can correct it for you plz provide me the code as text",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/c47d8da7-0222-4d2a-8aaf-a45b8974caf5/500",
+            "create_date": "2023-07-11 06:21:45.815502",
+            "update_date": "2023-07-08 01:01:45.815502"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "dae5fde6-0f98-4732-aaa4-62d2b62432c8",
+        "fields": {
+            "user_id": "d6661573-6832-4d34-b713-4b049aaf8c32",
+            "owner_id": "d6661573-6832-4d34-b713-4b049aaf8c32",
+            "question_id": "958170ee-f4ed-4d15-b33a-b508f029946a",
+            "content": "At the first image, it's just warning and this problem can be solved easily by adding key to your contructors\nFor second image, you can pass a Function as value of onPressed",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/dae5fde6-0f98-4732-aaa4-62d2b62432c8/500",
+            "create_date": "2023-07-12 19:41:45.889732",
+            "update_date": "2023-07-09 12:05:45.890494"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "1c9b773a-6fdf-40da-ae35-7e00da4b0489",
+        "fields": {
+            "user_id": "9012ea0d-8045-43e8-9e2d-74ed0056ade4",
+            "owner_id": "9012ea0d-8045-43e8-9e2d-74ed0056ade4",
+            "question_id": "6035927f-1e1d-4f09-9212-0ef7632188ee",
+            "content": "If you want to process such a huge data, I think it\u2019s better to use POST and send the data as a request body. Don\u2019t know about flask limit, but you should check your browser limit too, if you use it in your project.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/1c9b773a-6fdf-40da-ae35-7e00da4b0489/500",
+            "create_date": "2023-07-13 08:38:46.062421",
+            "update_date": "2023-07-11 23:22:46.062421"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "574f97ad-9d9d-43e7-a14e-6f37d40583b2",
+        "fields": {
+            "user_id": "ba005296-6ade-4d7b-a026-56de7b09365b",
+            "owner_id": "ba005296-6ade-4d7b-a026-56de7b09365b",
+            "question_id": "3c978e52-ac53-475d-92f9-2d34838d9e14",
+            "content": "I think you can achieve this using PyPDF2 library in python.\nThe code goes something like this:\nI think this will work.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/574f97ad-9d9d-43e7-a14e-6f37d40583b2/500",
+            "create_date": "2023-07-13 03:52:46.164451",
+            "update_date": "2023-07-06 19:36:46.164451"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "7e9a3db3-3e77-4401-9aba-01ca77f2350b",
+        "fields": {
+            "user_id": "3251c098-b5b2-4cae-8c4b-2b117fb68e6e",
+            "owner_id": "3251c098-b5b2-4cae-8c4b-2b117fb68e6e",
+            "question_id": "8d1930e4-0063-45fc-9e08-bcafed8b9704",
+            "content": "You can do that either by using clip-path directly on that specific element or adding a :before or :after or a child element as a decoration element to deal with the right corner.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/7e9a3db3-3e77-4401-9aba-01ca77f2350b/500",
+            "create_date": "2023-07-07 16:25:46.584799",
+            "update_date": "2023-07-09 00:25:46.584799"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "bac3adbe-999f-4351-8139-b45199c0a725",
+        "fields": {
+            "user_id": "79219278-b04d-4f31-9ac6-6fa1dc20dcbb",
+            "owner_id": "79219278-b04d-4f31-9ac6-6fa1dc20dcbb",
+            "question_id": "eacfb348-c9c4-4e38-ae66-669738be5ad3",
+            "content": "The compound operators are a special case, see the spec.\nAn operation of the form x \u00abop\u00bb= y is processed by applying binary operator overload resolution (\u00a712.4.5) as if the operation was written x \u00abop\u00bb y. Then,\n...\nThe second rule above permits x \u00abop\u00bb= y to be evaluated as x = (T)(x \u00abop\u00bb y) in certain contexts. The rule exists such that the predefined operators can be used as compound operators when the left operand is of type sbyte, byte, short, ushort, or char. Even when both arguments are of one of those types, the predefined operators produce a result of type int, as described in \u00a712.4.7.3. Thus, without a cast it would not be possible to assign the result to the left operand.\nAs you can see, there is an explicit rule which casts the result back to byte / short, precisely so that you can do byteValue += intValue without needing to add a cast yourself.\nSimilarly for the postfix increment/decrement operators:\nThe run-time processing of a postfix increment or decrement operation of the form x++ or x-- consists of the following steps:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/bac3adbe-999f-4351-8139-b45199c0a725/500",
+            "create_date": "2023-07-09 11:54:46.686872",
+            "update_date": "2023-07-13 13:17:46.686872"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "198472bd-d28f-4d9c-acca-cf903f1d13f5",
+        "fields": {
+            "user_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "owner_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "question_id": "eacfb348-c9c4-4e38-ae66-669738be5ad3",
+            "content": "In c#, an operator is just a static method in a class. If you can concatenate a string with a number using the unary \"+\" operator, then it means, that the String class contains a static overloaded method that does all magic. The same is true for bitwise operators.\nFor example, the structure Byte has the following methods:\nand\nand\nSource code is here\nhttps://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/Byte.cs\nThe former allows incrementing a byte value. The latter allows to plus byte values. Therefore, if a class or structure has a static overloaded method for a specific operator, you can use the declared operator in your code.\nSome system types have implicit conversion operators that allow change value types without necessity to specify an explicit type for conversion.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/198472bd-d28f-4d9c-acca-cf903f1d13f5/500",
+            "create_date": "2023-07-11 21:39:46.737814",
+            "update_date": "2023-07-09 21:33:46.738243"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "bce9a076-f360-4e55-9fb5-2d64cd3d1d75",
+        "fields": {
+            "user_id": "45e90d2a-5d1c-4918-9b6e-e488d230c80f",
+            "owner_id": "45e90d2a-5d1c-4918-9b6e-e488d230c80f",
+            "question_id": "b33ec937-925e-44cd-90cb-617eb31806a8",
+            "content": "try to replace by \"en_US\"",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/bce9a076-f360-4e55-9fb5-2d64cd3d1d75/500",
+            "create_date": "2023-07-08 07:14:46.999577",
+            "update_date": "2023-07-11 04:34:46.999577"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "8a4cc4ab-09e3-4807-8c74-79f29e5acd59",
+        "fields": {
+            "user_id": "3251c098-b5b2-4cae-8c4b-2b117fb68e6e",
+            "owner_id": "3251c098-b5b2-4cae-8c4b-2b117fb68e6e",
+            "question_id": "bf2ed4e7-14ab-4f04-87f4-aa81246ba616",
+            "content": "A quick solution using border-image (for the circles) and conic-gradient (for the border)\n.box {\n  --b: 5px; /* border thickness */\n\n  width: 200px;\n  aspect-ratio: 1;\n  margin: 20px;\n  border-image: \n   radial-gradient(#000 50%,#fff 52% 71%,#0000 72%) \n   100%/40px/18px;\n  background: \n   conic-gradient(from 90deg at var(--b) var(--b),#0000 25%,#000 0)\n   0 0/calc(100% - var(--b)) calc(100% - var(--b))\n    \n}\n<div class=\"box\"></div>",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/8a4cc4ab-09e3-4807-8c74-79f29e5acd59/500",
+            "create_date": "2023-07-09 17:40:47.203772",
+            "update_date": "2023-07-07 16:28:47.203772"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "035669d2-3861-4dec-92c5-43dbfddb968e",
+        "fields": {
+            "user_id": "8f1b392b-e1ca-4669-9c08-c2b82fe4431d",
+            "owner_id": "8f1b392b-e1ca-4669-9c08-c2b82fe4431d",
+            "question_id": "0703e482-fc23-491d-ab03-e586e7e83c2c",
+            "content": "To fix this, you need to wrap your reducer function in a function that converts the Promise to an object. You can do this using the following code:\nThis code will create a reducer function that returns an object, which is what the createRootReducer function expects.\nHere is an example of how to use the wrapped reducer:\nThis code will create a Redux store with the wrapped reducer. You can then use the store to dispatch actions and update the state of your application.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/035669d2-3861-4dec-92c5-43dbfddb968e/500",
+            "create_date": "2023-07-12 10:32:47.305207",
+            "update_date": "2023-07-08 23:30:47.305207"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "2e4f0985-7518-4072-a13c-0488078afda2",
+        "fields": {
+            "user_id": "c1644fc5-c476-458d-8011-fc9d50879848",
+            "owner_id": "c1644fc5-c476-458d-8011-fc9d50879848",
+            "question_id": "ad3b6cab-cf34-4658-824a-a6a126ed706e",
+            "content": "Try to find file in your project that import dart:ffi\nand delete that import line, here is the relevant error: Error: Not found: 'dart:ffi' with flutter web",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/2e4f0985-7518-4072-a13c-0488078afda2/500",
+            "create_date": "2023-07-08 10:41:47.423390",
+            "update_date": "2023-07-07 23:07:47.423390"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "e5b50f35-dc7d-4af3-af84-e3d119cdcc85",
+        "fields": {
+            "user_id": "1f7c6d9c-fbaf-49b3-a687-37a4dbdb67d8",
+            "owner_id": "1f7c6d9c-fbaf-49b3-a687-37a4dbdb67d8",
+            "question_id": "b1442e83-338e-4a0f-b7c2-9b3834c7b8cd",
+            "content": "Function run_command takes an ownership of passed String argument. But it cannot do that, since keymap.command is behind a shared reference. Depending on what you are trying to do you should do one of the following:\nIf you want run_command to change passed command, but not reflect that for the caller you should leave run_command as it is now and indeed call clone() on keymap.command. You could pass &String (or &str) to run_command and clone it inside, but it is better to leave that decision to the caller.\nIf you want run_command to change actual keymap.command pass it a &mut String instead. This will also force you to change handle_keymap to take &mut Keymap instead of &Keymap.\nIf you don't want to mutate command inside run_command then don't do it and change it to take string by reference &String (or event better take advantage of deref coercion and pass command as &str).\nIf you want something different, you will have to be more specific in your question for us to help you.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/e5b50f35-dc7d-4af3-af84-e3d119cdcc85/500",
+            "create_date": "2023-07-12 16:59:47.525519",
+            "update_date": "2023-07-07 16:37:47.526380"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "a24389d5-3c57-471f-9bb0-1deea0c11d9a",
+        "fields": {
+            "user_id": "dad55cfc-b627-4822-a43b-d7b872c2e13f",
+            "owner_id": "dad55cfc-b627-4822-a43b-d7b872c2e13f",
+            "question_id": "6fd6f4bc-8310-4f51-abaf-bf02a34b07c1",
+            "content": "ng-event-plugins is a neat library that allows you to do that !\n<div (click.stop)=\"onClick()\">Clicks on this DIV will not bubble up</div>",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/a24389d5-3c57-471f-9bb0-1deea0c11d9a/500",
+            "create_date": "2023-07-12 21:17:47.627488",
+            "update_date": "2023-07-12 10:45:47.627488"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "3b37fb55-38dc-4038-a2db-2cd2ebd9c5c7",
+        "fields": {
+            "user_id": "fee5f9f4-1481-4ab0-84fc-d939e976a887",
+            "owner_id": "fee5f9f4-1481-4ab0-84fc-d939e976a887",
+            "question_id": "a26a510f-0cee-4d13-9b6f-50166de25d33",
+            "content": "You can first filter the columns (here the Country* columns with strings), then extract the first part of the digit, convert to float and round, finally update the DataFrame in place:\nAlternative using a loop:\nUpdated DataFrame:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/3b37fb55-38dc-4038-a2db-2cd2ebd9c5c7/500",
+            "create_date": "2023-07-12 08:11:48.310877",
+            "update_date": "2023-07-10 03:51:48.310877"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "bef45007-8715-4c0f-b55f-599e76bdb2db",
+        "fields": {
+            "user_id": "f0e9834d-f95c-400c-95f1-cdb193aaabde",
+            "owner_id": "f0e9834d-f95c-400c-95f1-cdb193aaabde",
+            "question_id": "a26a510f-0cee-4d13-9b6f-50166de25d33",
+            "content": "You could remove everything after the second period, by replace then convert to float and round.  finally update the dataframe.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/bef45007-8715-4c0f-b55f-599e76bdb2db/500",
+            "create_date": "2023-07-08 17:52:48.362159",
+            "update_date": "2023-07-10 07:37:48.362159"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "092c2975-8d14-4537-99f4-cb4befebb487",
+        "fields": {
+            "user_id": "6f19260f-22d5-4a6b-8613-e18b7e1e9df7",
+            "owner_id": "6f19260f-22d5-4a6b-8613-e18b7e1e9df7",
+            "question_id": "a9b5e897-3aba-4ee6-a868-354d7c46b14e",
+            "content": "I see directly from your error that you are trying to parse some response (Probably a json), which is not a valid json. I guess the server is down, you are not authenticated, etc. and can not get the desired json to parse.\nHow would I proceed:\nFirst consider where the error occurs. Does it happen when starting the app, when calling a page, when pressing a button, etc.?\nOnce you have found the location, simply set a breakpoint and step through until you find the cause of the error.\nTo your question:\nNormally, there should be much more information there. Restart your IDE completely and look in the console, if there is not more there now.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/092c2975-8d14-4537-99f4-cb4befebb487/500",
+            "create_date": "2023-07-13 02:58:48.694426",
+            "update_date": "2023-07-08 14:08:48.694426"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "0f4648cd-0953-4a87-919b-da8db225b262",
+        "fields": {
+            "user_id": "c6fa0c70-416d-4018-a62e-f92d3ba6c6c1",
+            "owner_id": "c6fa0c70-416d-4018-a62e-f92d3ba6c6c1",
+            "question_id": "d779f715-c303-40cd-b93b-5b84fdb276b8",
+            "content": "As you a new to iOS dev please conform to the naming convention that methods and variables start with a lowercase letter. And whitespaces before and after equal signs increase the readability.\nThe method cellForRowAt is always called once for each index path. Get the item in the data source array by that index path. And use always the tableView parameter in the method rather than accessing the IBOutlet directly.\nSide note: Never call reloadData() multiple times inside a loop. Call it once after the loop",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/0f4648cd-0953-4a87-919b-da8db225b262/500",
+            "create_date": "2023-07-07 09:31:49.805153",
+            "update_date": "2023-07-11 19:15:49.805153"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "505a000f-dfd8-4599-b341-a411c14005dc",
+        "fields": {
+            "user_id": "fa4f033a-eff4-4945-ad84-df7919254d73",
+            "owner_id": "fa4f033a-eff4-4945-ad84-df7919254d73",
+            "question_id": "d779f715-c303-40cd-b93b-5b84fdb276b8",
+            "content": "I think you are doing mistake while dequeuing cell. You have used Table where as you need to use tableView. I think there is no need of declaring variable i and similarly no need to increment it. Here is the updated method .\nI removed extra variables. One more point, above method by default gets called on every count. You don't need to use loop for it.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/505a000f-dfd8-4599-b341-a411c14005dc/500",
+            "create_date": "2023-07-08 05:32:49.862332",
+            "update_date": "2023-07-08 20:46:49.862332"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "8188d70d-bd95-45a8-ac4f-f4b7b9ee3412",
+        "fields": {
+            "user_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "owner_id": "cb5ae975-e939-4349-b531-664b2a8f56a7",
+            "question_id": "a6ad4fa7-1f53-416e-a1da-391add410f13",
+            "content": "",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/8188d70d-bd95-45a8-ac4f-f4b7b9ee3412/500",
+            "create_date": "2023-07-12 19:45:50.217779",
+            "update_date": "2023-07-12 09:30:50.217779"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "406d9f33-1542-4ad9-bbc7-a566a0bb0a0f",
+        "fields": {
+            "user_id": "c12bb3c0-bbb1-4abe-92f4-6bececff3e4a",
+            "owner_id": "c12bb3c0-bbb1-4abe-92f4-6bececff3e4a",
+            "question_id": "a31e027b-f916-4eba-83f2-cdffd78308ee",
+            "content": "If you set your replicas to 0 this should generally achieve that:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/406d9f33-1542-4ad9-bbc7-a566a0bb0a0f/500",
+            "create_date": "2023-07-07 20:30:50.491683",
+            "update_date": "2023-07-12 10:02:50.491683"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "9f6f95c2-3ef3-4a2e-9097-eb657e5f611f",
+        "fields": {
+            "user_id": "fa4f033a-eff4-4945-ad84-df7919254d73",
+            "owner_id": "fa4f033a-eff4-4945-ad84-df7919254d73",
+            "question_id": "a31e027b-f916-4eba-83f2-cdffd78308ee",
+            "content": "Easiest way to achieve that is to set the upgrade strategy to Recreate.\nFrom docs:\nAll existing Pods are killed before new ones are created when .spec.strategy.type==Recreate.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/9f6f95c2-3ef3-4a2e-9097-eb657e5f611f/500",
+            "create_date": "2023-07-10 19:01:50.542766",
+            "update_date": "2023-07-08 23:09:50.542766"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "2abdc219-0a4a-4712-8706-b11588b5eec0",
+        "fields": {
+            "user_id": "4a487381-0358-42f9-be73-460a43fd3f3f",
+            "owner_id": "4a487381-0358-42f9-be73-460a43fd3f3f",
+            "question_id": "067485b8-7f88-40f2-9ce6-da16751c0fa9",
+            "content": "There is no need to create the results matrix beforehand, here is a way with sample and replicate.\nFrom the help page of replicate:\nreplicate is a wrapper for the common use of sapply for repeated evaluation of an expression (which will usually involve random number generation).\nSee also Allan Cameron's comment and my answer to it.\nCreated on 2023-07-13 with reprex v2.0.2\nAnswer to Paul's comment. Repeat the code above R times and compute the mean values of the Chicken matrix columns' sums. Add plots, a picture is worth a thousand words.\n\n\nCreated on 2023-07-13 with reprex v2.0.2",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/2abdc219-0a4a-4712-8706-b11588b5eec0/500",
+            "create_date": "2023-07-12 15:27:50.768444",
+            "update_date": "2023-07-12 16:10:50.768444"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "ff1e561c-f112-4b25-b506-fdf70329cb4c",
+        "fields": {
+            "user_id": "e3b04e90-e314-4ed1-9c9c-eb3171d4f5ec",
+            "owner_id": "e3b04e90-e314-4ed1-9c9c-eb3171d4f5ec",
+            "question_id": "067485b8-7f88-40f2-9ce6-da16751c0fa9",
+            "content": "If the number of rows is that much bigger than the number of columns you can use sample to generate randnom numbers between 1 and 20 and use that to fill the matrix with 1s.\nIf the number of rows should only be slightly larger than the number of columns you can still start with sample but you would than need to remove duplicated columns at some point.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/ff1e561c-f112-4b25-b506-fdf70329cb4c/500",
+            "create_date": "2023-07-08 05:31:50.818679",
+            "update_date": "2023-07-11 03:19:50.818679"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "96d823e5-b37a-46df-bc33-aa5e9136a727",
+        "fields": {
+            "user_id": "3c94a9e5-17e9-4020-b4d7-e1effa5953eb",
+            "owner_id": "3c94a9e5-17e9-4020-b4d7-e1effa5953eb",
+            "question_id": "067485b8-7f88-40f2-9ce6-da16751c0fa9",
+            "content": "This is a multinomial distribution with size = 1, 20 groups and 600 observations:\nin R you could do:\nNotice that we t the data since the observations are given as columns.\nAnother way is to simply sample 600 values from 20 values and convert to one hot encoding:\nAnother way to convert to one-hot vector is to use model.matrix",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/96d823e5-b37a-46df-bc33-aa5e9136a727/500",
+            "create_date": "2023-07-11 20:09:50.880986",
+            "update_date": "2023-07-08 09:13:50.880986"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "a32e0e78-cb6e-4821-9484-39ae21a7b4eb",
+        "fields": {
+            "user_id": "be8b502a-107f-4c0c-b14d-bd17520cd192",
+            "owner_id": "be8b502a-107f-4c0c-b14d-bd17520cd192",
+            "question_id": "6c9bfbaa-fe1b-401c-b807-600c20361d21",
+            "content": "For std::array<int, 4> array:\nEDIT: Finally found a proper reference (perhaps I'm blind, but I cannot find it on cppreference.com):\nFrom the C++26 working draft:\n3 When an aggregate is initialized by an initializer list as specified\nin 9.4.5, the elements of the initializer list are taken as\ninitializers for the elements of the aggregate. The explicitly\ninitialized elements of the aggregate are determined as follows:\n\u2014(3.1) If the initializer list is a brace-enclosed\ndesignated-initializer-list, the aggregate shall be of class type, the\nidentifier in each designator shall name a direct non-static data\nmember of the class, and the explicitly initialized elements of the\naggregate are the elements that are, or contain, those members.\n\u2014(3.2) If the initializer list is a brace-enclosed initializer-list,\nthe explicitly initialized elements of the aggregate are the first n\nelements of the aggregate, where n is the number of elements in the\ninitializer list.\n\u2014(3.3) Otherwise, the initializer list must be {}, and there are no\nexplicitly initialized elements.\n5 For a non-union aggregate, each element that is not an explicitly\ninitialized element is initialized as follows:\n\u2014(5.1) If the element has a default member initializer (11.4), the\nelement is initialized from that initializer.\n\u2014(5.2) Otherwise, if the element is not a reference, the element is\ncopy-initialized from an empty initializer list (9.4.5).\n\u2014(5.3) Otherwise, the program is ill-formed.\n[...]\n(3.11) Otherwise, if the initializer list has no elements, the object\nis value-initialized.\nI think that is all the relevant parts for this question (but I am not used to reading the standard directly so corrections are welcome).",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/a32e0e78-cb6e-4821-9484-39ae21a7b4eb/500",
+            "create_date": "2023-07-08 12:06:50.981937",
+            "update_date": "2023-07-09 22:31:50.981937"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "cc48d0b5-ea06-4107-a7d3-e3fd87478892",
+        "fields": {
+            "user_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "owner_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "question_id": "a5f077cf-59af-4918-a63b-af5818373627",
+            "content": "You can do this using the built-in comparator String.CASE_INSENSITIVE_ORDER:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/cc48d0b5-ea06-4107-a7d3-e3fd87478892/500",
+            "create_date": "2023-07-08 11:47:51.090023",
+            "update_date": "2023-07-10 21:25:51.090023"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "de1a8e55-4dfe-4fe2-aaba-dcddf6a218cb",
+        "fields": {
+            "user_id": "c12bb3c0-bbb1-4abe-92f4-6bececff3e4a",
+            "owner_id": "c12bb3c0-bbb1-4abe-92f4-6bececff3e4a",
+            "question_id": "a5f077cf-59af-4918-a63b-af5818373627",
+            "content": "It looks like you want a string comparison that is identical to the standard comparison, but with letters being compared alphabetically, with lowercase variants of the letters appearing first.\nIn this case, you could create a custom Comparator that compares two strings in this manner.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/de1a8e55-4dfe-4fe2-aaba-dcddf6a218cb/500",
+            "create_date": "2023-07-11 03:47:51.140830",
+            "update_date": "2023-07-07 14:37:51.140830"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "d4de4258-4781-4f05-949d-08cfe0bf41b0",
+        "fields": {
+            "user_id": "04a41657-9062-47c3-a146-b607712a224c",
+            "owner_id": "04a41657-9062-47c3-a146-b607712a224c",
+            "question_id": "151385c6-7385-4314-b559-2712ffe5d6ce",
+            "content": "This is because the variable 'x' is constantly changing during the process, you can save the input x to another variable, and then reset to this value continuously",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/d4de4258-4781-4f05-949d-08cfe0bf41b0/500",
+            "create_date": "2023-07-12 07:09:51.252881",
+            "update_date": "2023-07-08 02:50:51.252881"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "d20a9d87-bd7d-4610-8b8c-2acb63d0cfe4",
+        "fields": {
+            "user_id": "9012ea0d-8045-43e8-9e2d-74ed0056ade4",
+            "owner_id": "9012ea0d-8045-43e8-9e2d-74ed0056ade4",
+            "question_id": "151385c6-7385-4314-b559-2712ffe5d6ce",
+            "content": "In this case you are not modyfing y since you are only reassigning x.\nI think the only way to reinitialize x is that every time, before every operation, you assign x=y.\nLearning how to debug can help you understand what's happening during the execution of the code and how the variables are modified",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/d20a9d87-bd7d-4610-8b8c-2acb63d0cfe4/500",
+            "create_date": "2023-07-10 15:35:51.304926",
+            "update_date": "2023-07-07 22:33:51.304926"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "ccb9d3ef-3d6d-40b7-86e3-3d31150d32a8",
+        "fields": {
+            "user_id": "a13e5479-84b5-4dcd-8186-b82e6048c580",
+            "owner_id": "a13e5479-84b5-4dcd-8186-b82e6048c580",
+            "question_id": "151385c6-7385-4314-b559-2712ffe5d6ce",
+            "content": "If I understand you correctly, I assume those initial values are the input values. So it is better to perform these operations (+, -, * and /) with copy of the initial values like the following code:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/ccb9d3ef-3d6d-40b7-86e3-3d31150d32a8/500",
+            "create_date": "2023-07-07 01:18:51.355899",
+            "update_date": "2023-07-07 07:36:51.355899"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "06a964bb-4440-4730-bebc-544757f8ddf4",
+        "fields": {
+            "user_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "owner_id": "d4a5310c-6ba6-4bb8-8e4c-d62061145f41",
+            "question_id": "151385c6-7385-4314-b559-2712ffe5d6ce",
+            "content": "Get intial input, unpack, then assign x and y to initial value before each operation to reset.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/06a964bb-4440-4730-bebc-544757f8ddf4/500",
+            "create_date": "2023-07-12 15:50:51.406796",
+            "update_date": "2023-07-13 13:40:51.406796"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "c3721978-ba83-424d-a83b-590be96a06cf",
+        "fields": {
+            "user_id": "1dc7a4b3-14b7-4053-9fb9-58d39be0c843",
+            "owner_id": "1dc7a4b3-14b7-4053-9fb9-58d39be0c843",
+            "question_id": "1ab193cc-405c-4e65-8f77-b28a227cd023",
+            "content": "In your's component declare a variable which you would like to use in template\npublic countSum:number = 0\nThen in the subscription you do it like that:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/c3721978-ba83-424d-a83b-590be96a06cf/500",
+            "create_date": "2023-07-11 02:09:51.564541",
+            "update_date": "2023-07-09 21:11:51.564541"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "00fbf592-f4b6-4762-952c-dd01d3e5f01e",
+        "fields": {
+            "user_id": "813c0898-09f0-46d5-9ed5-99634229cb2c",
+            "owner_id": "813c0898-09f0-46d5-9ed5-99634229cb2c",
+            "question_id": "1ab193cc-405c-4e65-8f77-b28a227cd023",
+            "content": "You can use reduce array method",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/00fbf592-f4b6-4762-952c-dd01d3e5f01e/500",
+            "create_date": "2023-07-12 07:30:51.615521",
+            "update_date": "2023-07-09 19:10:51.615521"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "5aa5e1a2-a757-4fc7-a0ec-9968cb599d9d",
+        "fields": {
+            "user_id": "63583082-33a7-41a3-9594-0c36f507b379",
+            "owner_id": "63583082-33a7-41a3-9594-0c36f507b379",
+            "question_id": "22b8c6e5-8dc5-423a-bac5-cb6a0ae36609",
+            "content": "Converting strings to Date and vice versa, and comparing dates are all doable with Date objects, so I won't get into that.\nIf we remove that from the problem, it comes down to finding the segments out of this array:\nHonestly I want to see more efforts from you, but I can at least give you directions:",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/5aa5e1a2-a757-4fc7-a0ec-9968cb599d9d/500",
+            "create_date": "2023-07-13 11:39:51.715681",
+            "update_date": "2023-07-07 20:40:51.716516"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "f2306fd8-13fc-436d-ba78-0c5bdd1cef52",
+        "fields": {
+            "user_id": "dad55cfc-b627-4822-a43b-d7b872c2e13f",
+            "owner_id": "dad55cfc-b627-4822-a43b-d7b872c2e13f",
+            "question_id": "6b5b074b-f7da-48c8-8db2-dc93a3f58e6b",
+            "content": "And has precedence over Or, so, even if a <=> a1 Or a2\nis not the same as\nbecause that would be Executed as\nand what you want, to make them the same, is the following (using parentheses to override rules of precedence):\nHere's an example to illustrate:\nFor those who like to consult references (in alphabetic order):",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/f2306fd8-13fc-436d-ba78-0c5bdd1cef52/500",
+            "create_date": "2023-07-09 17:55:52.706924",
+            "update_date": "2023-07-07 09:49:52.706924"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "9269ee40-4072-431f-a1e8-dfea0596fc32",
+        "fields": {
+            "user_id": "c1644fc5-c476-458d-8011-fc9d50879848",
+            "owner_id": "c1644fc5-c476-458d-8011-fc9d50879848",
+            "question_id": "6b5b074b-f7da-48c8-8db2-dc93a3f58e6b",
+            "content": "I'll add 2 points:\nSo, the 2 expressions are simply not equal.\nSo, when you break the IN clause up, you split the serial ORs up, and changed precedence.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/9269ee40-4072-431f-a1e8-dfea0596fc32/500",
+            "create_date": "2023-07-11 08:54:52.757322",
+            "update_date": "2023-07-06 22:34:52.757322"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "59842d57-982b-4ee6-a19d-cc46b0ad9890",
+        "fields": {
+            "user_id": "79219278-b04d-4f31-9ac6-6fa1dc20dcbb",
+            "owner_id": "79219278-b04d-4f31-9ac6-6fa1dc20dcbb",
+            "question_id": "6b5b074b-f7da-48c8-8db2-dc93a3f58e6b",
+            "content": "You can use parentheses to override rules of precedence.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/59842d57-982b-4ee6-a19d-cc46b0ad9890/500",
+            "create_date": "2023-07-11 00:04:52.808329",
+            "update_date": "2023-07-11 23:17:52.808329"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "1ea9d99e-79b9-4224-8da9-347c51348b2e",
+        "fields": {
+            "user_id": "718672ba-d292-4bca-8a16-5d73521477d9",
+            "owner_id": "718672ba-d292-4bca-8a16-5d73521477d9",
+            "question_id": "6b5b074b-f7da-48c8-8db2-dc93a3f58e6b",
+            "content": "Query to show a 3-variable boolean expression truth table :\nResults for (A=1) OR (B=1) AND (C=1) :\nResults for (A=1) OR ( (B=1) AND (C=1) ) are the same.\nResults for ( (A=1) OR (B=1) ) AND (C=1) :",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/1ea9d99e-79b9-4224-8da9-347c51348b2e/500",
+            "create_date": "2023-07-08 14:35:52.859696",
+            "update_date": "2023-07-08 16:55:52.859696"
+        }
+    },
+    {
+        "model": "api.Answer",
+        "pk": "2d44bda5-4e27-4043-8684-5e2eb49befbd",
+        "fields": {
+            "user_id": "1535c832-55d2-40c8-80a2-79b258aec030",
+            "owner_id": "1535c832-55d2-40c8-80a2-79b258aec030",
+            "question_id": "6b5b074b-f7da-48c8-8db2-dc93a3f58e6b",
+            "content": "Here's a variant of the '3-variable truth table' using booleans\nWith these results:\nIf 'parens_made_a_difference' is true, then the parentheses made a difference.",
+            "number_of_like": 0,
+            "number_of_dislike": 0,
+            "answer_status": 1,
+            "image_url": "https://picsum.photos/seed/2d44bda5-4e27-4043-8684-5e2eb49befbd/500",
+            "create_date": "2023-07-11 17:12:52.909410",
+            "update_date": "2023-07-09 22:02:52.909410"
+        }
+    }
+]

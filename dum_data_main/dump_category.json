@@ -1,0 +1,429 @@
+[
+    {
+        "model": "api.Category",
+        "pk": "cdcb991b-1ef9-4571-98a2-4577c5e9375d",
+        "fields": {
+            "name": "Computer systems manager"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "09fa215e-60ea-43b9-8fb2-09d0919d6b94",
+        "fields": {
+            "name": "Network architect"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "d6037f0b-5a3b-48d3-acf8-67472248e0db",
+        "fields": {
+            "name": "Systems analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "80d90805-8cfb-4d3b-a844-5736ddf6f446",
+        "fields": {
+            "name": "IT coordinator"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "c5ad240f-3cb7-4d2f-8c79-c21fafa875b1",
+        "fields": {
+            "name": "Network administrator"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "2cbc5424-44b7-4c74-9043-839a22280277",
+        "fields": {
+            "name": "Network engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "b29162cd-8ee4-4cf4-83f1-7b732a15c2d6",
+        "fields": {
+            "name": "Service desk analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "f014c9b3-e7f2-4f51-ae29-f34c268c6983",
+        "fields": {
+            "name": "System administrator (also known as sysadmin)"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "2e33fc61-551e-4599-9227-246e5573835c",
+        "fields": {
+            "name": "Wireless network engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "fc0b925d-2f28-4114-9e03-3a5d973165cd",
+        "fields": {
+            "name": "Database administrator"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "cd0a6893-8032-4bac-ac14-08797593811c",
+        "fields": {
+            "name": "Database analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "7b99950e-344e-4f7f-bf4f-ed141d0a891e",
+        "fields": {
+            "name": "Data quality manager"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "be92d3c9-0e86-46ba-9b3a-5cda1a1abb58",
+        "fields": {
+            "name": "Database report writer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "a0adf69f-81da-4c67-bfe0-8864af229d84",
+        "fields": {
+            "name": "SQL database administrator"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "cd932ce8-44b2-4b6d-9202-087757659247",
+        "fields": {
+            "name": "Big data engineer/architect"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "53cafec3-6a2e-4a55-85c9-8b584cc4323f",
+        "fields": {
+            "name": "Business intelligence specialist/analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "563a81d4-849a-4206-9645-ac34cade40ca",
+        "fields": {
+            "name": "Business systems analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "922c86d0-d435-4c6e-9ecb-d11eafe53601",
+        "fields": {
+            "name": "Data analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "bdbc0c53-6bab-4152-8e8f-854bf5bb73ec",
+        "fields": {
+            "name": "Data analytics developer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "d972805c-aeb8-4052-b720-31054b3b914d",
+        "fields": {
+            "name": "Data modeling analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "9c43619f-df12-4253-b0fc-1e62d962c493",
+        "fields": {
+            "name": "Data scientist"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "1bc4dc76-2d44-46ca-bfb4-b58e56c37d13",
+        "fields": {
+            "name": "Data warehouse manager"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "af99b23d-dd81-4239-9a88-efa58daa5a23",
+        "fields": {
+            "name": "Data warehouse programming specialist"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "deb4d349-a555-4402-9c68-e689012904a0",
+        "fields": {
+            "name": "Intelligence specialist"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "ef51c2a3-9062-4e90-ab8a-c496e9b7da4c",
+        "fields": {
+            "name": "Back-end developer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "d566a6cd-e18b-4f3c-ac76-421baacabd72",
+        "fields": {
+            "name": "Cloud/software architect"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "fefd7ea6-b1c7-4bdf-a86c-c008a585fdac",
+        "fields": {
+            "name": "Cloud/software developer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "5640061d-e4ad-478c-abfe-3d480d3564fe",
+        "fields": {
+            "name": "Cloud/software applications engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "902294e4-a6e4-4b61-9796-181ad56a0a56",
+        "fields": {
+            "name": "Cloud system administrator"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "12b8cb4b-19b5-4930-8738-aaa2c033c3dd",
+        "fields": {
+            "name": "Cloud system engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "1a9471d1-5d4f-4700-ad73-6e0bf80e3005",
+        "fields": {
+            "name": "DevOps engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "22ed3e30-2eae-4efc-bfe5-24c290fe937d",
+        "fields": {
+            "name": "Front-end developer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "02f6fb4e-1e05-4b5b-b9cd-25c89c5f6840",
+        "fields": {
+            "name": "Full-stack developer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "637588de-3720-45cf-bf3a-768137fc21e9",
+        "fields": {
+            "name": "Java developer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "e5327cd1-c4d7-425c-a02c-e1875c8f3b1e",
+        "fields": {
+            "name": "Platform engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "2bf6d517-a1cb-4f7c-9a79-be013fcbf4c8",
+        "fields": {
+            "name": "Release manager"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "a62a306e-b7fa-4a69-b550-0befa44bcb2a",
+        "fields": {
+            "name": "Reliability engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "994bf2fb-9c01-4922-a658-2971cdafbbe0",
+        "fields": {
+            "name": "Software engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "4af24d6b-3992-44d3-abbe-b12b9b6bc643",
+        "fields": {
+            "name": "Software quality assurance analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "c63362b1-80ab-4635-b798-e512846c6155",
+        "fields": {
+            "name": "UI (user interface) designer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "a09b85a5-0173-43e1-8320-bd9b6a28dfbe",
+        "fields": {
+            "name": "UX (user experience) designer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "ad431145-cd9f-4110-92be-ad61d69fa6fd",
+        "fields": {
+            "name": "Web developer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "662fc2a4-c4df-417d-85fe-87937b44720a",
+        "fields": {
+            "name": "Application security administrator"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "04ee2a34-4a50-4fef-b9ca-c3d311f54b61",
+        "fields": {
+            "name": "Artificial intelligence security specialist"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "86d58b99-5f99-4abb-896c-b6c5926617d3",
+        "fields": {
+            "name": "Cloud security specialist"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "2f0684d9-e987-4ad2-9539-20a0020085ba",
+        "fields": {
+            "name": "Cybersecurity hardware engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "338e5b45-4873-4174-adbf-6dc01abb00a5",
+        "fields": {
+            "name": "Cyberintelligence specialist"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "6d73836c-6dc5-42b1-8e17-700a35b1be79",
+        "fields": {
+            "name": "Cryptographer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "bca0a248-2cb1-45d8-8916-45b6c802341c",
+        "fields": {
+            "name": "Data privacy officer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "96059a8e-bf37-4bda-83b0-efdbd04f0d45",
+        "fields": {
+            "name": "Digital forensics analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "1454e505-3440-443c-a432-ed437623bfad",
+        "fields": {
+            "name": "IT security engineer"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "d7da7a6e-0135-4a29-a557-00bf38005adf",
+        "fields": {
+            "name": "Information assurance analyst"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "f7e653b9-c7a5-4ec5-921a-929702b7160e",
+        "fields": {
+            "name": "Security systems administrator"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "654a173d-6fea-4445-8120-805270f6b32c",
+        "fields": {
+            "name": "Help desk support specialist"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "3ad26b59-e968-4151-9e11-d862839ff796",
+        "fields": {
+            "name": "IT support specialist"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "e18c9f24-edec-47e5-aa61-1b39c01d936e",
+        "fields": {
+            "name": "Customer service representative"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "82849fec-0623-47fb-9085-a33fa23d63e3",
+        "fields": {
+            "name": "Technical product manager"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "86f35781-dfe7-46f8-b807-ac46804f3311",
+        "fields": {
+            "name": "Product manager"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "e7fdbd97-8a49-46f1-9ba2-198a5be07081",
+        "fields": {
+            "name": "Project manager"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "be8c58b3-2e5d-41b6-89f2-5ad38b6a37ef",
+        "fields": {
+            "name": "Program manager"
+        }
+    },
+    {
+        "model": "api.Category",
+        "pk": "1a6c6648-0a02-4d7b-8e87-3f3e1b883a89",
+        "fields": {
+            "name": "Portfolio manager"
+        }
+    }
+]
