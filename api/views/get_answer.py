@@ -26,36 +26,28 @@ def get_answer_of_question_by_id(request):
         )
     
     answer_data = []
-    user_id_list = []
+    
     for ans in answer:
+        authen_url = "http://authenticator-authenticator-1:8000/api/get-user-by-id"
+        response = requests.get(authen_url, params={"user_id": ans.user_id})
+        
+        if response.status_code != 200:
+            return Response(
+                {
+                    "message": "Get user info failed",
+                    "data": answer_data
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
         answer_data.append({
             "id": ans.id,
-            "user_id": ans.user_id,
-            "question_id": ans.question_id,
+            "user_data": response.json(),
             "content": ans.content,
             "number_of_like": ans.number_of_like,
             "number_of_dislike": ans.number_of_dislike,
             "create_date": ans.create_date,
         })
-        user_id_list.append(ans.user_id)
         
-    authen_url = "http://localhost:8000/api/authen/get_user_by_id"
-    
-    response = requests.get(authen_url, params={"user_id": user_id_list})
-    
-    if response.status_code != 200:
-        return Response(
-            {
-                "message": "Get user info failed",
-                "data": answer_data
-            },
-            status=status.HTTP_200_OK
-        )
-    
-    response_data = response.json()
-
-    # TODO HANDLE ADD USER INFO TO ANSWER DATA
-    
     return Response(
         {
             "message": "Get answer successfully",

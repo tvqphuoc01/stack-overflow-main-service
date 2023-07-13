@@ -24,6 +24,7 @@ RUN chmod +x /usr/src/app/entrypoint.sh
 
 #add app
 COPY . .
+EXPOSE 8009
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
