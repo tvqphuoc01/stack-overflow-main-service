@@ -13,7 +13,7 @@ class Tag(models.Model):
 class Question(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_id = models.UUIDField()
-    title = models.CharField(max_length=100, default='')
+    title = models.CharField(max_length=1000, default='')
     content = models.TextField(default='')
     number_of_like = models.IntegerField(default=0)
     number_of_dislike = models.IntegerField(default=0)
