@@ -36,7 +36,6 @@ class QuestionTag(models.Model):
 class Answer(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_id = models.UUIDField()
-    owner_id = models.UUIDField()
     question_id = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
     content = models.TextField(default='')
     number_of_like = models.IntegerField(default=0)
