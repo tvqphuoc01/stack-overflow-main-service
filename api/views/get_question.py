@@ -1,4 +1,4 @@
-from api.models import Question, Answer
+from api.models import Question, Answer, QuestionTag, QuestionCategory
 from django.core.paginator import Paginator
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -164,6 +164,7 @@ def get_top_three_question(request):
                 "number_of_dislike": question.number_of_dislike,
                 "image_url": question.image_url,
                 "create_date": question.create_date,
+                "num_answers": question.num_answers,
             }
         )
     return Response(
@@ -184,18 +185,18 @@ def create_question(request):
     # question data
     title = validated_data.get('title')
     content = validated_data.get('content')
-    tag_id = validated_data.get('tag_id')
-    category_id = validated_data.get('category_id')
+    tag = validated_data.get('tag')
+    category = validated_data.get('category')
     user_id = validated_data.get('user_id')
+    image_url = request.data.get('image_url', '')
 
-    url = "http://stack-overflow-authen-authenticator-1:8006" + "/api/check-user"
+    url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
     params = {'user_id': user_id}
 
     try:
         response = requests.get(url, params=params)
-        # response.raise_for_status()  # Raise an exception for non-2xx status codes
+        response.raise_for_status()  # Raise an exception for non-2xx status codes
         res = response.json()
-        print(res)
     except requests.exceptions.RequestException as e:
         return Response(
             {
@@ -203,26 +204,50 @@ def create_question(request):
             },
             status=status.HTTP_400_BAD_REQUEST
         )
-    
-    try:
-        question, created = Question.objects.get_or_create(title=name, content=content)
-        if created == False:
+    print(res["message"])
+    if (res["message"] == True):
+        try:
+            question, created = Question.objects.get_or_create(title=title, content=content, user_id=user_id, image_url=image_url)
+            if created == False:
+                return Response(
+                    {
+                        'message': 'Create question failed'
+                    },
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            question_tag, question_tag_created = QuestionTag.objects.get_or_create(question_id=question, tag_id=tag)
+            if question_tag_created == False:
+                return Response(
+                    {
+                        'message': 'Create questionTag failed'
+                    },
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            question_category, question_category_created = QuestionCategory.objects.get_or_create(question_id=question, category_id=category)
+            if question_category_created == False:
+                return Response(
+                    {
+                        'message': 'Create questionCategory failed'
+                    },
+                    status=status.HTTP_400_BAD_REQUEST
+                )
             return Response(
                 {
-                    'message': 'Create question failed'
+                    'message': 'Question created'
+                }
+            )
+        except Exception as e:
+            return Response(
+                {
+                    'message': 'Internal server error',
+                    'error': f'{e}'
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+    else: 
+        return Response(
+                {
+                    'message': 'User not found',
                 },
                 status=status.HTTP_400_BAD_REQUEST
             )
-        return Response(
-            {
-                'message': 'Question created'
-            }
-        )
-    except Exception as e:
-        return Response(
-            {
-                'message': 'Internal server error',
-                'error': f'{e}'
-            },
-            status=status.HTTP_500_INTERNAL_SERVER_ERROR
-        )
