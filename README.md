@@ -66,3 +66,13 @@ chmod +x .git/hooks/pre-commit
 - Centralize side effects (update, create model, etc) in view
 - Use debug toolbar to profile API performace (could change to use other tools)
 - User data has to go through serializer
+
+## How to create network for docker and connect 2 services
+- Create network with name `stackoverflow` if not exist
+- Run docker network create [OPTIONS] NETWORK-NAME if you haven't created the network
+- Run docker network ls to check if network is created
+- Run docker ls -a and get the id of the docker container you want to add to the network
+- Run docker network connect NETWORK-NAME CONTAINER-ID
+- Run docker network inspect NETWORK-NAME to check if the container is added to the network
+- install apt-get update && apt-get install ping to check if the container can ping to other container in the network
+- Change request url to http://your-container-name:8000 to request data from this repo
