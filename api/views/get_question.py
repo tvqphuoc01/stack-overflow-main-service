@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from api.serializers.question_serializers import QuestionSerializer
-from django.db.models import Count
+from django.db.models import Count, Q
 import os
 import requests
 
@@ -49,38 +49,6 @@ def get_question_by_id(request):
                 "image_url": question.image_url,
                 "create_date": question.create_date,
             }
-        },
-        status=status.HTTP_200_OK
-    )
-    
-@api_view(['GET'])
-def get_first_ten_question(request):
-    number_of_page = request.GET.get('page' , 1)
-    
-    question = Question.objects.filter(question_status=True).order_by('-create_date').all()
-    question_list = Paginator(question, 10)
-    question_objs = question_list.page(number_of_page)
-    
-    question_list_data = []
-    
-    for question in question_objs:
-        question_list_data.append(
-            {
-                "id": question.id,
-                "user_id": question.user_id,
-                "title": question.title,
-                "content": question.content,
-                "number_of_like": question.number_of_like,
-                "number_of_dislike": question.number_of_dislike,
-                "image_url": question.image_url,
-                "create_date": question.create_date,
-            }
-        )
-    
-    return Response(
-        {
-            "message": "Get question successfully",
-            "data": question_list_data
         },
         status=status.HTTP_200_OK
     )
@@ -251,3 +219,47 @@ def create_question(request):
                 },
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+@api_view(['GET'])
+def get_list_question(request):
+    number_of_page = request.GET.get('page' , 1)
+    page_size = request.GET.get('page_size', 10)
+    search = request.GET.get('search', None)
+    category = request.GET.get('category_id', None)
+    tag = request.GET.get('tag_id', None)
+
+    question = Question.objects.filter(question_status=True).order_by('-create_date').all()
+    if search:
+        question = question.filter(Q(title__icontains=search) | Q(content__icontains=search))
+    if tag:
+        result = QuestionTag.objects.values('question_id').filter(tag_id=tag)
+        question = question.filter(id__in = result)
+    if category:
+        result = QuestionCategory.objects.values('question_id').filter(category_id=category)
+        question = question.filter(id__in = result)
+    question_list = Paginator(question, page_size)
+    question_objs = question_list.page(number_of_page)
+    
+    question_list_data = []
+    
+    for question in question_objs:
+        question_list_data.append(
+            {
+                "id": question.id,
+                "user_id": question.user_id,
+                "title": question.title,
+                "content": question.content,
+                "number_of_like": question.number_of_like,
+                "number_of_dislike": question.number_of_dislike,
+                "image_url": question.image_url,
+                "create_date": question.create_date,
+            }
+        )
+    
+    return Response(
+        {
+            "message": "Get question successfully",
+            "data": question_list_data
+        },
+        status=status.HTTP_200_OK
+    )
