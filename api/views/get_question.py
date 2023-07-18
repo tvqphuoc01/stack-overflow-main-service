@@ -1,9 +1,9 @@
-from api.models import Question, Answer, QuestionTag, QuestionCategory
+from api.models import Question, Answer, QuestionTag, QuestionCategory, QuestionUser
 from django.core.paginator import Paginator
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.serializers.question_serializers import QuestionSerializer
+from api.serializers.question_serializers import QuestionSerializer, QuestionLikeSerializer
 from django.db.models import Count, Q
 import os
 import requests
@@ -145,7 +145,7 @@ def get_top_three_question(request):
 
 @api_view(["POST"])
 def create_question(request):
-     # check request data is valid
+    # check request data is valid
     serializer = QuestionSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     validated_data = serializer.validated_data
@@ -161,64 +161,54 @@ def create_question(request):
     url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
     params = {'user_id': user_id}
 
-    try:
-        response = requests.get(url, params=params)
-        response.raise_for_status()  # Raise an exception for non-2xx status codes
-        res = response.json()
-    except requests.exceptions.RequestException as e:
-        return Response(
+    response = requests.get(url, params=params)
+    res = response.json()
+    if (response.status_code == 200):
+        if (res["message"] == True):
+            try:
+                question, created = Question.objects.get_or_create(title=title, content=content, user_id=user_id, image_url=image_url)
+                if created == False:
+                    return Response(
+                        {
+                            'message': 'Create question failed'
+                        },
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+                question_tag, question_tag_created = QuestionTag.objects.get_or_create(question_id=question, tag_id=tag)
+                if question_tag_created == False:
+                    return Response(
+                        {
+                            'message': 'Create questionTag failed'
+                        },
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+                question_category, question_category_created = QuestionCategory.objects.get_or_create(question_id=question, category_id=category)
+                if question_category_created == False:
+                    return Response(
+                        {
+                            'message': 'Create questionCategory failed'
+                        },
+                        status=status.HTTP_400_BAD_REQUEST
+                    )
+                return Response(
+                    {
+                        'message': 'Question created'
+                    }
+                )
+            except Exception as e:
+                return Response(
+                    {
+                        'message': 'Internal server error',
+                        'error': f'{e}'
+                    },
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                )
+    return Response(
             {
-                'message': f'Error: {e}'
+                'message': 'User not found',
             },
             status=status.HTTP_400_BAD_REQUEST
         )
-    print(res["message"])
-    if (res["message"] == True):
-        try:
-            question, created = Question.objects.get_or_create(title=title, content=content, user_id=user_id, image_url=image_url)
-            if created == False:
-                return Response(
-                    {
-                        'message': 'Create question failed'
-                    },
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-            question_tag, question_tag_created = QuestionTag.objects.get_or_create(question_id=question, tag_id=tag)
-            if question_tag_created == False:
-                return Response(
-                    {
-                        'message': 'Create questionTag failed'
-                    },
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-            question_category, question_category_created = QuestionCategory.objects.get_or_create(question_id=question, category_id=category)
-            if question_category_created == False:
-                return Response(
-                    {
-                        'message': 'Create questionCategory failed'
-                    },
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-            return Response(
-                {
-                    'message': 'Question created'
-                }
-            )
-        except Exception as e:
-            return Response(
-                {
-                    'message': 'Internal server error',
-                    'error': f'{e}'
-                },
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
-    else: 
-        return Response(
-                {
-                    'message': 'User not found',
-                },
-                status=status.HTTP_400_BAD_REQUEST
-            )
 
 @api_view(['GET'])
 def get_list_question(request):
@@ -263,3 +253,66 @@ def get_list_question(request):
         },
         status=status.HTTP_200_OK
     )
+
+@api_view(["POST"])
+def create_question_like(request):
+    # check request data is valid
+    serializer = QuestionLikeSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    validated_data = serializer.validated_data
+
+    # question like data
+    question = validated_data.get('question')
+    user_id = validated_data.get('user_id')
+    is_like = validated_data.get('is_like')
+
+    url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
+    params = {'user_id': user_id}
+
+    response = requests.get(url, params=params)
+    res = response.json()
+    if (response.status_code == 200):
+        if (res["message"] == True):
+            try:
+                if (is_like == True):
+                    question_like, created = QuestionUser.objects.get_or_create(question_id=question, user_id=user_id, is_like=is_like)
+                    if created == False:
+                        return Response(
+                            {
+                                'message': 'Like question failed'
+                            },
+                            status=status.HTTP_400_BAD_REQUEST
+                        )
+                    return Response(
+                        {
+                            'message': 'Like question success'
+                        }
+                    )
+                elif (is_like == False):
+                    question_like, created = QuestionUser.objects.get_or_create(question_id=question, user_id=user_id, is_dislike=is_like)
+                    if created == False:
+                        return Response(
+                            {
+                                'message': 'Dislike question failed'
+                            },
+                            status=status.HTTP_400_BAD_REQUEST
+                        )
+                    return Response(
+                        {
+                            'message': 'Dislike question success'
+                        }
+                    )
+            except Exception as e:
+                return Response(
+                    {
+                        'message': 'Internal server error',
+                        'error': f'{e}'
+                    },
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                )
+    return Response(
+            {
+                'message': 'User not found',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )

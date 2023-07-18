@@ -1,10 +1,12 @@
 from django.urls import path
-from api.views.get_question import get_question_by_id, get_list_question, update_question_status, delete_question, get_top_three_question, create_question
+from api.views.get_question import get_question_by_id, get_list_question, update_question_status, delete_question, get_top_three_question, create_question, create_question_like
 from api.views.get_category import get_list_category, create_category
 from api.views.get_tag import get_list_tag, create_tag, delete_tag, get_top_five_tag
 from api.views.notification import send_notification, get_user_notification
-from api.views.get_answer import get_answer_of_question_by_id
+from api.views.get_answer import get_answer_of_question_by_id, create_answer
 from api.views.get_user import get_top_user
+from api.views.reply import create_reply
+
 urlpatterns = [
     path('update-question-status', update_question_status, name='update_question_status'),
     path('delete-question', delete_question, name='delete_question'),
@@ -22,5 +24,8 @@ urlpatterns = [
     path('get-top-five-tag', get_top_five_tag, name='get_top_five_tag'),
     path('create-question', create_question, name='create_question'),
     path('get-answer-of-question-by-id', get_answer_of_question_by_id, name='get_answer_of_question_by_id'),
-    path('get-top-user', get_top_user, name="get_top_user")
+    path('get-top-user', get_top_user, name="get_top_user"),
+    path('create-answer', create_answer, name='create_answer'),
+    path('create-reply', create_reply, name='create_reply'),
+    path('create_question_like', create_question_like, name='create_question_like')
 ]
