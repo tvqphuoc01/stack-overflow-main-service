@@ -17,11 +17,10 @@ class QuestionSerializer(serializers.Serializer):
     user_id = serializers.CharField(required=True)
 
 class QuestionLikeSerializer(serializers.Serializer):
-    question_id=serializers.PrimaryKeyRelatedField(
+    user_id = serializers.CharField(required=True)
+    question_id = serializers.PrimaryKeyRelatedField(
         queryset=Question.objects.all(),
-        source="question",
+        source='question',
         write_only=True
-    ),
-    user_id = serializers.CharField(required=True),
-    is_like = serializers.BooleanField(),
+    )
 

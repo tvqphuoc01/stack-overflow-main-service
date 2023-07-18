@@ -264,7 +264,7 @@ def create_question_like(request):
     # question like data
     question = validated_data.get('question')
     user_id = validated_data.get('user_id')
-    is_like = validated_data.get('is_like')
+    is_like = request.data.get('is_like')
 
     url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
     params = {'user_id': user_id}
