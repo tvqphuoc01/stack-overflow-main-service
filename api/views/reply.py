@@ -54,6 +54,109 @@ def create_reply(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
+@api_view(["GET"])
+def get_reply_by_answer_id(request):
+    answer_id = request.GET.get('answer_id')
+    if not answer_id:
+        return Response(
+            {
+                "message": "Answer id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+        
+    reply = Reply.objects.filter(answer_id=answer_id, answer_status=True).all()
+    if not reply:
+        return Response(
+            {
+                "message": "Reply is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    reply_data = []
+    
+    for rep in reply:
+        authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+        response = requests.get(authen_url, params={"user_id": rep.owner_id})
+        
+        if response.status_code != 200:
+            return Response(
+                {
+                    "message": "Get user info failed",
+                    "data": reply_data
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+        reply_data.append({
+            "id": rep.reply_id,
+            "user_data": response.json(),
+            "content": rep.content,
+            "number_of_like": rep.number_of_like,
+            "number_of_dislike": rep.number_of_dislike,
+            "create_date": rep.create_date,
+        })
+        
+    return Response(
+        {
+            "message": "Get reply successfully",
+            "data": reply_data
+        },
+        status=status.HTTP_200_OK
+    )
+
+@api_view(["GET"])
+def get_reply_by_question_id(request):
+    question_id = request.GET.get('question_id')
+    if not question_id:
+        return Response(
+            {
+                "message": "Question id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+        
+    reply = Reply.objects.filter(question_id=question_id, answer_status=True).all()
+    if not reply:
+        return Response(
+            {
+                "message": "Reply is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    reply_data = []
+    
+    for rep in reply:
+        authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+        response = requests.get(authen_url, params={"user_id": rep.owner_id})
+        
+        if response.status_code != 200:
+            return Response(
+                {
+                    "message": "Get user info failed",
+                    "data": reply_data
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+        reply_data.append({
+            "id": rep.reply_id,
+            "user_data": response.json(),
+            "content": rep.content,
+            "number_of_like": rep.number_of_like,
+            "number_of_dislike": rep.number_of_dislike,
+            "create_date": rep.create_date,
+            "answer_id": rep.answer_id.id
+        })
+        
+    return Response(
+        {
+            "message": "Get reply successfully",
+            "data": reply_data
+        },
+        status=status.HTTP_200_OK
+    )
+
 @api_view(["POST"])
 def create_reply_like(request):
      # check request data is valid

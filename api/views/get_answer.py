@@ -29,7 +29,7 @@ def get_answer_of_question_by_id(request):
     answer_data = []
     
     for ans in answer:
-        authen_url = "http://authenticator-authenticator-1:8000/api/get-user-by-id"
+        authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
         response = requests.get(authen_url, params={"user_id": ans.user_id})
         
         if response.status_code != 200:

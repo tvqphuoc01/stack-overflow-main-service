@@ -5,7 +5,7 @@ from api.views.get_tag import get_list_tag, create_tag, delete_tag, get_top_five
 from api.views.notification import send_notification, get_user_notification
 from api.views.get_answer import get_answer_of_question_by_id, create_answer
 from api.views.get_user import get_top_user
-from api.views.reply import create_reply, create_reply_like
+from api.views.reply import create_reply, create_reply_like, get_reply_by_answer_id, get_reply_by_question_id
 
 urlpatterns = [
     path('update-question-status', update_question_status, name='update_question_status'),
@@ -28,5 +28,7 @@ urlpatterns = [
     path('create-answer', create_answer, name='create_answer'),
     path('create-reply', create_reply, name='create_reply'),
     path('create-question-like', create_question_like, name='create_question_like'),
-    path('create-reply-like', create_reply_like, name='create_reply_like')
+    path('create-reply-like', create_reply_like, name='create_reply_like'),
+    path('get-reply-by-answer-id', get_reply_by_answer_id, name='get_reply_by_answer_id'),
+    path('get-reply-by-question-id', get_reply_by_question_id, name='get_reply_by_question_id')
 ]
