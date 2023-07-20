@@ -64,6 +64,37 @@ def update_tag(request):
 @api_view(['DELETE'])
 def delete_tag(request):
     tag_id = request.data.get("tag_id")
+    requester_id = request.data.get('requester_id')
+
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+
     if not tag_id:
         return Response(
             {

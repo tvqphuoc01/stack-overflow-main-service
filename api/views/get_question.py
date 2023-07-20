@@ -12,6 +12,7 @@ import requests
 @api_view(['GET'])
 def get_question_by_id(request):
     question_id = request.GET.get('question_id')
+    requester_id = request.GET.get('requester_id')
     if not question_id:
         return Response(
             {
@@ -21,6 +22,8 @@ def get_question_by_id(request):
         )
         
     question = Question.objects.filter(id=question_id).first()
+    print(question.question_status)
+
     if not question:
         return Response(
             {
@@ -29,37 +32,97 @@ def get_question_by_id(request):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    if question.question_status != True:
+    if not requester_id and question.question_status != 1:
         return Response(
             {
                 "message": "Question is not available"
             },
             status=status.HTTP_400_BAD_REQUEST
         )
-    return Response(
-        {
-            "message": "Get question successfully",
-            "data": {
-                "id": question.id,
-                "user_id": question.user_id,
-                "title": question.title,
-                "content": question.content,
-                "number_of_like": question.number_of_like,
-                "number_of_dislike": question.number_of_dislike,
-                "image_url": question.image_url,
-                "create_date": question.create_date,
-            }
-        },
-        status=status.HTTP_200_OK
-    )
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
     
+    if response.status_code == 200:
+        result_body = response.json()
+        user = result_body["data"]
+        if (user["role"] == "ADMIN"):
+            return Response(
+                {
+                    "message": "Get question successfully",
+                    "data": {
+                        "id": question.id,
+                        "user_id": question.user_id,
+                        "title": question.title,
+                        "content": question.content,
+                        "number_of_like": question.number_of_like,
+                        "number_of_dislike": question.number_of_dislike,
+                        "image_url": question.image_url,
+                        "create_date": question.create_date,
+                    }
+                },
+                status=status.HTTP_200_OK
+            )
+        elif question.question_status == 1:
+            return Response(
+                {
+                    "message": "Get question successfully",
+                    "data": {
+                        "id": question.id,
+                        "user_id": question.user_id,
+                        "title": question.title,
+                        "content": question.content,
+                        "number_of_like": question.number_of_like,
+                        "number_of_dislike": question.number_of_dislike,
+                        "image_url": question.image_url,
+                        "create_date": question.create_date,
+                    }
+                },
+                status=status.HTTP_200_OK
+            )
+    else:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
 @api_view(['PUT'])
 def update_question_status(request):
     question_id = request.data.get('question_id')
     question_status = request.data.get('question_status')
+    requester_id = request.data.get('requester_id')
+
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
     
-    # TODO ADD PERMISSION CHECK
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
     
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
     if not question_id:
         return Response(
             {
@@ -76,9 +139,9 @@ def update_question_status(request):
             },
             status=status.HTTP_400_BAD_REQUEST
         )
-    
-    question.question_status = question_status
-    question.save()
+    if question_status:
+        question.question_status = question_status
+        question.save()
     return Response(
         {
             "message": "Update question successfully",
@@ -89,8 +152,36 @@ def update_question_status(request):
 @api_view(['DELETE'])
 def delete_question(request):
     question_id = request.data.get('question_id')
+    requester_id = request.data.get('requester_id')
+
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
     
-    # TODO ADD PERMISSION CHECK
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
     
     if not question_id:
         return Response(
@@ -217,8 +308,22 @@ def get_list_question(request):
     search = request.GET.get('search', None)
     category = request.GET.get('category_id', None)
     tag = request.GET.get('tag_id', None)
+    requester_id = request.GET.get('requester_id', None)
+    question = None
 
-    question = Question.objects.filter(question_status=True).order_by('-create_date').all()
+
+    if not requester_id:
+        question = Question.objects.filter(question_status=1).order_by('-create_date').all()
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code == 200:
+        result_body = response.json()
+        user = result_body["data"]
+        if (user["role"] == "ADMIN"):
+            question = Question.objects.order_by('-create_date').all()
+    
     if search:
         question = question.filter(Q(title__icontains=search) | Q(content__icontains=search))
     if tag:

@@ -40,3 +40,62 @@ def create_category(request):
             },
             status=status.HTTP_201_CREATED
         )
+
+@api_view(['DELETE'])
+def delete_category(request):
+    category_id = request.data.get('category_id')
+    requester_id = request.data.get('requester_id')
+
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+    
+    if not category_id:
+        return Response(
+            {
+                "message": "Category id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    category = Category.objects.filter(id=category_id).first()
+    if not category:
+        return Response(
+            {
+                "message": "Category is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    category.delete()
+    return Response(
+        {
+            "message": "Delete category successfully",
+        },
+        status=status.HTTP_200_OK
+    )

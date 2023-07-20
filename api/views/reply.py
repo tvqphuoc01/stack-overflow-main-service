@@ -159,7 +159,7 @@ def get_reply_by_question_id(request):
 
 @api_view(["POST"])
 def create_reply_like(request):
-     # check request data is valid
+    # check request data is valid
     serializer = ReplyLikeSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     validated_data = serializer.validated_data
@@ -219,3 +219,122 @@ def create_reply_like(request):
             },
             status=status.HTTP_400_BAD_REQUEST
         )
+
+@api_view(['PUT'])
+def update_reply_status(request):
+    reply_id = request.data.get('reply_id')
+    answer_status = request.data.get('answer_status')
+    requester_id = request.data.get('requester_id')
+
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+    if not reply_id:
+        return Response(
+            {
+                "message": "Reply id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+        
+    reply = Reply.objects.filter(reply_id=reply_id).first()
+    if not reply:
+        return Response(
+            {
+                "message": "Reply is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    if answer_status:
+        reply.answer_status = answer_status
+        reply.save()
+    return Response(
+        {
+            "message": "Update answer successfully",
+        },
+        status=status.HTTP_200_OK
+    )
+
+@api_view(['DELETE'])
+def delete_reply(request):
+    reply_id = request.data.get('reply_id')
+    requester_id = request.data.get('requester_id')
+
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+    
+    if not reply_id:
+        return Response(
+            {
+                "message": "Reply id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+        
+    reply = Reply.objects.filter(reply_id=reply_id).first()
+    if not reply:
+        return Response(
+            {
+                "message": "Reply is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    reply.delete()
+    return Response(
+        {
+            "message": "Delete reply successfully",
+        },
+        status=status.HTTP_200_OK
+    )

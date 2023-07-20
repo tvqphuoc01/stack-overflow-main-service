@@ -3,9 +3,9 @@ from api.views.get_question import get_question_by_id, get_list_question, update
 from api.views.get_category import get_list_category, create_category
 from api.views.get_tag import get_list_tag, create_tag, delete_tag, get_top_five_tag
 from api.views.notification import send_notification, get_user_notification
-from api.views.get_answer import get_answer_of_question_by_id, create_answer
+from api.views.get_answer import get_answer_of_question_by_id, create_answer, delete_answer
 from api.views.get_user import get_top_user
-from api.views.reply import create_reply, create_reply_like, get_reply_by_answer_id, get_reply_by_question_id
+from api.views.reply import create_reply, create_reply_like, get_reply_by_answer_id, get_reply_by_question_id, delete_reply
 
 urlpatterns = [
     path('update-question-status', update_question_status, name='update_question_status'),
@@ -30,5 +30,8 @@ urlpatterns = [
     path('create-question-like', create_question_like, name='create_question_like'),
     path('create-reply-like', create_reply_like, name='create_reply_like'),
     path('get-reply-by-answer-id', get_reply_by_answer_id, name='get_reply_by_answer_id'),
-    path('get-reply-by-question-id', get_reply_by_question_id, name='get_reply_by_question_id')
+    path('get-reply-by-question-id', get_reply_by_question_id, name='get_reply_by_question_id'),
+    # path('get-answer-by-id', get_answer_by_id, name='get_answer_by_id')
+    path('delete-answer', delete_answer, name='delete_answer'),
+    path('delete-reply', delete_reply, name='delete_reply')
 ]

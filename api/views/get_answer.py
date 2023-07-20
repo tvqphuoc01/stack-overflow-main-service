@@ -9,6 +9,8 @@ from api.serializers.answer_serializers import AnswerSerializer
 @api_view(['GET'])
 def get_answer_of_question_by_id(request):
     question_id = request.GET.get('question_id')
+    requester_id = request.GET.get('requester_id')
+
     if not question_id:
         return Response(
             {
@@ -16,8 +18,21 @@ def get_answer_of_question_by_id(request):
             },
             status=status.HTTP_400_BAD_REQUEST
         )
-        
-    answer = Answer.objects.filter(question_id=question_id, answer_status=True).all()
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    answer = None
+    if response.status_code == 200:
+        result_body = response.json()
+        user = result_body["data"]
+        if (user["role"] == "ADMIN"):
+            answer = Answer.objects.filter(question_id=question_id).all()
+        else:
+            answer = Answer.objects.filter(question_id=question_id, answer_status=1).all()
+    else:
+        answer = Answer.objects.filter(question_id=question_id, answer_status=1).all()
+
     if not answer:
         return Response(
             {
@@ -25,11 +40,10 @@ def get_answer_of_question_by_id(request):
             },
             status=status.HTTP_400_BAD_REQUEST
         )
-    
+
     answer_data = []
-    
+
     for ans in answer:
-        authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
         response = requests.get(authen_url, params={"user_id": ans.user_id})
         
         if response.status_code != 200:
@@ -48,7 +62,6 @@ def get_answer_of_question_by_id(request):
             "number_of_dislike": ans.number_of_dislike,
             "create_date": ans.create_date,
         })
-        
     return Response(
         {
             "message": "Get answer successfully",
@@ -167,3 +180,201 @@ def create_answer_like(request):
             },
             status=status.HTTP_400_BAD_REQUEST
         )
+
+@api_view(['PUT'])
+def update_answer_status(request):
+    answer_id = request.data.get('answer_id')
+    answer_status = request.data.get('answer_status')
+    requester_id = request.data.get('requester_id')
+
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+    if not answer_id:
+        return Response(
+            {
+                "message": "Answer id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+        
+    answer = Answer.objects.filter(id=answer_id).first()
+    if not answer:
+        return Response(
+            {
+                "message": "Answer is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    if answer_status:
+        answer.answer_status = answer_status
+        answer.save()
+    return Response(
+        {
+            "message": "Update answer successfully",
+        },
+        status=status.HTTP_200_OK
+    )
+
+# @api_view(['GET'])
+# def get_answer_by_id(request):
+#     answer_id = request.GET.get('answer_id')
+#     requester_id = request.GET.get('requester_id')
+#     if not answer_id:
+#         return Response(
+#             {
+#                 "message": "Answer id is required"
+#             },
+#             status=status.HTTP_400_BAD_REQUEST
+#         )
+        
+#     answer = Answer.objects.filter(id=answer_id).first()
+
+#     if not answer:
+#         return Response(
+#             {
+#                 "message": "Answer is not available"
+#             },
+#             status=status.HTTP_400_BAD_REQUEST
+#         )
+    
+#     if not requester_id and answer.answer_status != 1:
+#         return Response(
+#             {
+#                 "message": "Answer is not available"
+#             },
+#             status=status.HTTP_400_BAD_REQUEST
+#         )
+
+#     authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+#     response = requests.get(authen_url, params={"user_id": requester_id})
+    
+#     if response.status_code == 200:
+#         result_body = response.json()
+#         user = result_body["data"]
+#         if (user["role"] == "ADMIN"):
+#             return Response(
+#                 {
+#                     "message": "Get answer successfully",
+#                     "data": {
+#                         "id": answer.id,
+#                         "user_id": answer.user_id,
+#                         "title": answer.title,
+#                         "content": answer.content,
+#                         "number_of_like": answer.number_of_like,
+#                         "number_of_dislike": answer.number_of_dislike,
+#                         "image_url": answer.image_url,
+#                         "create_date": answer.create_date,
+#                     }
+#                 },
+#                 status=status.HTTP_200_OK
+#             )
+#         elif answer.answer_status == 1:
+#             return Response(
+#                 {
+#                     "message": "Get answer successfully",
+#                     "data": {
+#                         "id": answer.id,
+#                         "user_id": answer.user_id,
+#                         "title": answer.title,
+#                         "content": answer.content,
+#                         "number_of_like": answer.number_of_like,
+#                         "number_of_dislike": answer.number_of_dislike,
+#                         "image_url": answer.image_url,
+#                         "create_date": answer.create_date,
+#                     }
+#                 },
+#                 status=status.HTTP_200_OK
+#             )
+#     else:
+#         return Response(
+#             {
+#                 "message": "Get user info failed",
+#                 "data": {}
+#             },
+#             status=status.HTTP_500_INTERNAL_SERVER_ERROR
+#         )
+
+@api_view(['DELETE'])
+def delete_answer(request):
+    answer_id = request.data.get('answer_id')
+    requester_id = request.data.get('requester_id')
+
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+    
+    if not answer_id:
+        return Response(
+            {
+                "message": "Answer id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+        
+    answer = Answer.objects.filter(id=answer_id).first()
+    if not answer:
+        return Response(
+            {
+                "message": "Answer is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    answer.delete()
+    return Response(
+        {
+            "message": "Delete answer successfully",
+        },
+        status=status.HTTP_200_OK
+    )
