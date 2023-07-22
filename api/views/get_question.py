@@ -421,3 +421,49 @@ def create_question_like(request):
             },
             status=status.HTTP_400_BAD_REQUEST
         )
+
+@api_view(['GET'])
+def get_question_by_user_id(request):
+    user_id = request.GET.get("user_id")
+
+    if not user_id:
+        return Response(
+            {
+                'message': 'User id is required',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    response = requests.get(authen_url, params={"user_id": user_id})
+    
+    if (response.status_code == 200):
+        res = response.json()
+        if (res["message"] == True):
+            question_objs = Question.objects.filter(user_id=user_id, question_status=1).all()
+            question_list_data = []
+            for question in question_objs:
+                question_list_data.append(
+                    {
+                        "id": question.id,
+                        "title": question.title,
+                        "content": question.content,
+                        "number_of_like": question.number_of_like,
+                        "number_of_dislike": question.number_of_dislike,
+                        "image_url": question.image_url,
+                        "create_date": question.create_date,
+                    }
+                )
+            return Response(
+                {
+                    "message": "Get question successfully",
+                    "data": question_list_data
+                },
+                status=status.HTTP_200_OK
+            )
+    return Response(
+            {
+                'message': 'User not found',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )

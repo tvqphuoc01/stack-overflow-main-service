@@ -1,5 +1,5 @@
 import requests
-from api.models import Answer, AnswerUser
+from api.models import Answer, AnswerUser, Reply
 
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -378,3 +378,62 @@ def delete_answer(request):
         },
         status=status.HTTP_200_OK
     )
+
+@api_view(['GET'])
+def get_answer_by_user_id(request):
+    user_id = request.GET.get("user_id")
+
+    if not user_id:
+        return Response(
+            {
+                'message': 'User id is required',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    response = requests.get(authen_url, params={"user_id": user_id})
+    
+    if (response.status_code == 200):
+        res = response.json()
+        if (res["message"] == True):
+            reply_objs = Reply.objects.filter(owner_id=user_id, answer_status=1).all()
+            answer_objs = Answer.objects.filter(user_id=user_id, answer_status=1).all()
+            answer_list_data = []
+            for answer in answer_objs:
+                answer_list_data.append(
+                    {
+                        "id": answer.id,
+                        "content": answer.content,
+                        "number_of_like": answer.number_of_like,
+                        "number_of_dislike": answer.number_of_dislike,
+                        "image_url": answer.image_url,
+                        "create_date": answer.create_date,
+                    }
+                )
+
+            for reply in reply_objs:
+                answer_list_data.append(
+                    {
+                        "id": reply.id,
+                        "content": reply.content,
+                        "number_of_like": reply.number_of_like,
+                        "number_of_dislike": reply.number_of_dislike,
+                        "image_url": reply.image_url,
+                        "create_date": reply.create_date,
+                    }
+                )
+
+            return Response(
+                {
+                    "message": "Get answer successfully",
+                    "data": answer_list_data
+                },
+                status=status.HTTP_200_OK
+            )
+    return Response(
+            {
+                'message': 'User not found',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
