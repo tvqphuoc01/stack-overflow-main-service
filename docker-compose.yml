@@ -3,7 +3,7 @@ version: '3.9'
 services:
   main_service:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000 --noreload
     volumes:
       - .:/usr/src/app/
     ports:
@@ -31,6 +31,7 @@ services:
 
 volumes:
   postgres_data:
+
 
 networks:
   stackoverflow:
