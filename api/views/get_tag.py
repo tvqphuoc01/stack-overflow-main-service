@@ -8,10 +8,18 @@ from django.db.models import Count
 @api_view(['GET'])
 def get_list_tag(request):
     list_tag = Tag.objects.all()
+    
+    return_data = []
+    for tag in list_tag:
+        return_data.append({
+            "tag_id": tag.tag_id,
+            "tag_name": tag.name
+        })
+    
     return Response(
         {
             "message": "Get list tag successfully",
-            "data": list_tag
+            "data": return_data
         },
         status=status.HTTP_200_OK
     )
@@ -171,7 +179,3 @@ def get_top_five_tag(request):
         },
         status=status.HTTP_200_OK
     )
-
-
-    
-    

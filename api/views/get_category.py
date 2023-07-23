@@ -7,10 +7,16 @@ from rest_framework.response import Response
 @api_view(['GET'])
 def get_list_category(request):
     list_category = Category.objects.all()
+    return_data = []
+    for category in list_category:
+        return_data.append({
+            "id": category.id,
+            "name": category.name
+        })
     return Response(
         {
             "message": "Get list category successfully",
-            "data": list_category
+            "data": return_data
         },
         status=status.HTTP_200_OK
     )
