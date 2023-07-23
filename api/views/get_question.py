@@ -1,4 +1,4 @@
-from api.models import Question, Answer, QuestionTag, QuestionCategory, QuestionUser
+from api.models import Question, Answer, QuestionTag, QuestionCategory, QuestionUser, Tag, Category
 from django.core.paginator import Paginator
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -203,10 +203,48 @@ def create_question(request):
     # question data
     title = validated_data.get('title')
     content = validated_data.get('content')
-    tag = validated_data.get('tag')
-    category = validated_data.get('category')
     user_id = validated_data.get('user_id')
     image_url = request.data.get('image_url', '')
+    tag_ids = request.data.get('tag_ids', [])
+    category_ids = request.data.get('category_ids', [])
+    
+    if (len(tag_ids) == 0):
+        return Response(
+            {
+                'message': 'Tag id is required'
+            }
+        )
+
+    if (len(category_ids) == 0):
+        return Response(
+            {
+                'message': 'Category id is required'
+            }
+        )
+
+    tag_objs = []
+    category_objs = []
+
+    for id in tag_ids:
+        tag = Tag.objects.filter(tag_id=id).first()
+        if not tag: 
+            return Response(
+                {
+                    'message': '"'+ id +'" is not a valid UUID' 
+                }
+            )
+        tag_objs.append(tag)
+
+    for id in category_ids:
+        category = Category.objects.filter(category_id=id).first()
+        if not category: 
+            return Response(
+                {
+                    'message': '"'+ id +'" is not a valid UUID' 
+                }
+            )
+        category_objs.append(category)
+
 
     url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
     params = {'user_id': user_id}
@@ -224,22 +262,24 @@ def create_question(request):
                         },
                         status=status.HTTP_400_BAD_REQUEST
                     )
-                question_tag, question_tag_created = QuestionTag.objects.get_or_create(question_id=question, tag_id=tag)
-                if question_tag_created == False:
-                    return Response(
-                        {
-                            'message': 'Create questionTag failed'
-                        },
-                        status=status.HTTP_400_BAD_REQUEST
-                    )
-                question_category, question_category_created = QuestionCategory.objects.get_or_create(question_id=question, category_id=category)
-                if question_category_created == False:
-                    return Response(
-                        {
-                            'message': 'Create questionCategory failed'
-                        },
-                        status=status.HTTP_400_BAD_REQUEST
-                    )
+                for tag in tag_objs:
+                    question_tag, question_tag_created = QuestionTag.objects.get_or_create(question_id=question, tag_id=tag)
+                    if question_tag_created == False:
+                        return Response(
+                            {
+                                'message': 'Create questionTag failed'
+                            },
+                            status=status.HTTP_400_BAD_REQUEST
+                        )
+                for category in category_objs:
+                    question_category, question_category_created = QuestionCategory.objects.get_or_create(question_id=question, category_id=category)
+                    if question_category_created == False:
+                        return Response(
+                            {
+                                'message': 'Create questionCategory failed'
+                            },
+                            status=status.HTTP_400_BAD_REQUEST
+                        )
                 return Response(
                     {
                         'message': 'Question created'
