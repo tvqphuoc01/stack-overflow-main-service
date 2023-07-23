@@ -10,7 +10,7 @@ def get_list_category(request):
     return_data = []
     for category in list_category:
         return_data.append({
-            "id": category.id,
+            "id": category.category_id,
             "name": category.name
         })
     return Response(
