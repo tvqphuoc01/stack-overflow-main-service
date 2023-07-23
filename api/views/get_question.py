@@ -12,7 +12,6 @@ import requests
 @api_view(['GET'])
 def get_question_by_id(request):
     question_id = request.GET.get('question_id')
-    requester_id = request.GET.get('requester_id')
     if not question_id:
         return Response(
             {
@@ -22,72 +21,32 @@ def get_question_by_id(request):
         )
         
     question = Question.objects.filter(id=question_id).first()
-    print(question.question_status)
+    # print(question.question_status)
 
     if not question:
         return Response(
             {
                 "message": "Question is not available"
             },
-            status=status.HTTP_400_BAD_REQUEST
-        )
-    
-    if not requester_id and question.question_status != 1:
-        return Response(
-            {
-                "message": "Question is not available"
-            },
-            status=status.HTTP_400_BAD_REQUEST
+            status=status.HTTP_404_NOT_FOUND
         )
 
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
-    response = requests.get(authen_url, params={"user_id": requester_id})
-    
-    if response.status_code == 200:
-        result_body = response.json()
-        user = result_body["data"]
-        if (user["role"] == "ADMIN"):
-            return Response(
-                {
-                    "message": "Get question successfully",
-                    "data": {
-                        "id": question.id,
-                        "user_id": question.user_id,
-                        "title": question.title,
-                        "content": question.content,
-                        "number_of_like": question.number_of_like,
-                        "number_of_dislike": question.number_of_dislike,
-                        "image_url": question.image_url,
-                        "create_date": question.create_date,
-                    }
-                },
-                status=status.HTTP_200_OK
-            )
-        elif question.question_status == 1:
-            return Response(
-                {
-                    "message": "Get question successfully",
-                    "data": {
-                        "id": question.id,
-                        "user_id": question.user_id,
-                        "title": question.title,
-                        "content": question.content,
-                        "number_of_like": question.number_of_like,
-                        "number_of_dislike": question.number_of_dislike,
-                        "image_url": question.image_url,
-                        "create_date": question.create_date,
-                    }
-                },
-                status=status.HTTP_200_OK
-            )
-    else:
-        return Response(
-            {
-                "message": "Get user info failed",
-                "data": {}
-            },
-            status=status.HTTP_500_INTERNAL_SERVER_ERROR
-        )
+    return Response(
+        {
+            "message": "Get question successfully",
+            "data": {
+                "id": question.id,
+                "user_id": question.user_id,
+                "title": question.title,
+                "content": question.content,
+                "number_of_like": question.number_of_like,
+                "number_of_dislike": question.number_of_dislike,
+                "image_url": question.image_url,
+                "create_date": question.create_date,
+            }
+        },
+        status=status.HTTP_200_OK
+    )
 
 @api_view(['PUT'])
 def update_question_status(request):
