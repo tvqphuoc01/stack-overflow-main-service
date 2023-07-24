@@ -3,9 +3,9 @@ from api.views.get_question import get_question_by_id, get_list_question, update
 from api.views.get_category import get_list_category, create_category
 from api.views.get_tag import get_list_tag, create_tag, delete_tag, get_top_five_tag
 from api.views.notification import send_notification, get_user_notification
-from api.views.get_answer import get_answer_of_question_by_id, create_answer, delete_answer, get_answer_by_user_id
+from api.views.get_answer import get_answer_of_question_by_id, create_answer, delete_answer, get_answer_by_user_id, get_all_answer_for_admin
 from api.views.get_user import get_top_user
-from api.views.reply import create_reply, create_reply_like, get_reply_by_answer_id, get_reply_by_question_id, delete_reply
+from api.views.reply import create_reply, create_reply_like, get_reply_by_answer_id, get_reply_by_question_id, delete_reply, get_all_replies_for_admin
 
 urlpatterns = [
     path('update-question-status', update_question_status, name='update_question_status'),
@@ -35,5 +35,7 @@ urlpatterns = [
     path('delete-answer', delete_answer, name='delete_answer'),
     path('delete-reply', delete_reply, name='delete_reply'),
     path('get-question-by-user-id', get_question_by_user_id, name='get_question_by_user_id'),
-    path('get-answer-by-user-id', get_answer_by_user_id, name='get_answer_by_user_id')
+    path('get-answer-by-user-id', get_answer_by_user_id, name='get_answer_by_user_id'),
+    path('get-all-reply-admin', get_all_replies_for_admin, name='get_all_replies_for_admin'),
+    path('get-all-answer-admin', get_all_answer_for_admin, name='get_all_answer_for_admin')
 ]

@@ -17,3 +17,9 @@ class AnswerLikeSerializer(serializers.Serializer):
         source='answer',
         write_only=True
     )
+
+class AnswerResponseDataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Answer
+        fields = ('id', 'user_id', 'question_id', 'content', 'number_of_like', 'number_of_dislike', 'answer_status', 'image_url', 'create_date', 'update_date')
+        read_only_fields = ('id', 'number_of_like', 'number_of_dislike', 'answer_status', 'create_date', 'update_date')

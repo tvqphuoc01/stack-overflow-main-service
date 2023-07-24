@@ -4,7 +4,8 @@ from api.models import Answer, AnswerUser, Reply
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.serializers.answer_serializers import AnswerSerializer
+from api.serializers.answer_serializers import AnswerSerializer, AnswerResponseDataSerializer
+from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 
 @api_view(['GET'])
 def get_answer_of_question_by_id(request):
@@ -437,3 +438,84 @@ def get_answer_by_user_id(request):
             },
             status=status.HTTP_400_BAD_REQUEST
         )
+    
+@api_view(['GET'])
+def get_all_answer_for_admin(request):
+    requester_id = request.GET.get("requestor_id")
+    
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    # check if requestor is admin
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+    
+    
+    # Pagination
+    page_number = request.GET.get('page', 1)
+    page_size = request.GET.get('page_size', 10)
+
+    answer_objs = Answer.objects.all()
+    paginator = Paginator(answer_objs, page_size)
+    
+    try:
+        answers = paginator.page(page_number)
+        serialized_answers = AnswerResponseDataSerializer(
+            answers.object_list.values(), many=True)
+        return Response(
+            {
+                "message": "Get answers successfully",
+                "data": {
+                    "total_pages": paginator.num_pages,
+                    "answers": serialized_answers,
+                    "current_page": answers.number,
+                }
+            },
+            status=status.HTTP_200_OK
+        )
+    except PageNotAnInteger:
+        return Response(
+            {
+                "message": "Invalid page number",
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except EmptyPage:
+        return Response(
+            {
+                "message": "Page out of range",
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except Exception as e:
+        return Response(
+            {
+                "message": "Get answers failed",
+                "error": f"{e}"
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    

@@ -1,11 +1,11 @@
 import requests
-from api.models import Reply, Answer, ReplyUser
+from api.models import Reply, ReplyUser
 
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.serializers.reply_serializers import ReplySerializer
-
+from api.serializers.reply_serializers import ReplySerializer, ReplyResponseDataSerializer
+from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 @api_view(["POST"])
 def create_reply(request):
     serializer = ReplySerializer(data=request.data)
@@ -338,3 +338,81 @@ def delete_reply(request):
         },
         status=status.HTTP_200_OK
     )
+
+@api_view(['GET'])
+def get_all_replies_for_admin(request):
+    requester_id = request.GET.get('requester_id')
+    
+    if not requester_id:
+        return Response(
+            {
+                "message": 'Requester id is required'
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    # check requester role
+     # check if requestor is admin
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+        
+    page = request.GET.get('page', 1)
+    limit = request.GET.get('limit', 10)
+    reply = Reply.objects.all()
+    paginator = Paginator(reply, limit)
+    
+    try:
+        reply = paginator.page(page)
+        serialized_reply = ReplyResponseDataSerializer(reply.object_list.values(), many=True)
+        
+        return Response(
+            {
+                "message": "Get all replies successfully",
+                "data": {
+                    "total_pages": paginator.num_pages,
+                    "total_records": paginator.count,
+                    "data": serialized_reply.data
+                }
+            },
+            status=status.HTTP_200_OK
+        )
+    except PageNotAnInteger:
+        return Response(
+            {
+                "message": "Page not an integer"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except EmptyPage:
+        return Response(
+            {
+                "message": "Empty page"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except Exception as e:
+        return Response(
+            {
+                "message": "Internal server error",
+                "error": f"{e}"
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )

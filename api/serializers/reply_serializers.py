@@ -18,3 +18,9 @@ class ReplyLikeSerializer(serializers.Serializer):
         write_only=True
     ),
     user_id = serializers.CharField(required=True),
+
+class ReplyResponseDataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reply
+        fields = ('reply_id', 'owner_id', 'answer_id', 'content', 'number_of_like', 'number_of_dislike', 'answer_status', 'image_url', 'create_date', 'update_date')
+        read_only_fields = ('reply_id', 'number_of_like', 'number_of_dislike', 'answer_status', 'create_date', 'update_date')
