@@ -337,18 +337,28 @@ def get_list_question(request):
     question_list_data = []
     
     for question in question_objs:
-        question_list_data.append(
-            {
-                "id": question.id,
-                "user_id": question.user_id,
-                "title": question.title,
-                "content": question.content,
-                "number_of_like": question.number_of_like,
-                "number_of_dislike": question.number_of_dislike,
-                "image_url": question.image_url,
-                "create_date": question.create_date,
-            }
-        )
+        response = requests.get(authen_url, params={"user_id": question.user_id})
+        if response.status_code != 200:
+            return Response(
+                {
+                    "message": "Get user info failed",
+                    "data": question_list_data
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+        if response.status_code == 200:
+            question_list_data.append(
+                {
+                    "id": question.id,
+                    "user_data": response.json(),
+                    "title": question.title,
+                    "content": question.content,
+                    "number_of_like": question.number_of_like,
+                    "number_of_dislike": question.number_of_dislike,
+                    "image_url": question.image_url,
+                    "create_date": question.create_date,
+                }
+            )
     
     return Response(
         {
