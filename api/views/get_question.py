@@ -22,7 +22,9 @@ def get_question_by_id(request):
         
     question = Question.objects.filter(id=question_id).first()
     # print(question.question_status)
-
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    response = requests.get(authen_url, params={"user_id": question.user_id})
+    user_data = response.json()
     if not question:
         return Response(
             {
@@ -36,7 +38,7 @@ def get_question_by_id(request):
             "message": "Get question successfully",
             "data": {
                 "id": question.id,
-                "user_id": question.user_id,
+                "user_data": user_data,
                 "title": question.title,
                 "content": question.content,
                 "number_of_like": question.number_of_like,
