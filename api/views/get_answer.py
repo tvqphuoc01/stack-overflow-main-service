@@ -4,7 +4,7 @@ from api.models import Answer, AnswerUser, Reply
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.serializers.answer_serializers import AnswerSerializer, AnswerResponseDataSerializer
+from api.serializers.answer_serializers import AnswerSerializer, AnswerResponseDataSerializer, AnswerLikeSerializer
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 
 @api_view(['GET'])
