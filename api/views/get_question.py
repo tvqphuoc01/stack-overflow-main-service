@@ -22,7 +22,7 @@ def get_question_by_id(request):
         
     question = Question.objects.filter(id=question_id).first()
     # print(question.question_status)
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": question.user_id})
     user_data = response.json()
     if not question:
