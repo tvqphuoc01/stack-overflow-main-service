@@ -451,7 +451,7 @@ def get_question_by_user_id(request):
     if (response.status_code == 200):
         res = response.json()
         if (res["message"] == True):
-            question_objs = Question.objects.filter(user_id=user_id, question_status=1).all()
+            question_objs = Question.objects.filter(user_id=user_id).all()
             question_list_data = []
             for question in question_objs:
                 question_list_data.append(
