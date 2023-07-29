@@ -3,23 +3,58 @@ from api.models import Category
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 
 @api_view(['GET'])
 def get_list_category(request):
     list_category = Category.objects.all()
-    return_data = []
-    for category in list_category:
-        return_data.append({
-            "id": category.category_id,
-            "name": category.name
-        })
-    return Response(
-        {
-            "message": "Get list category successfully",
-            "data": return_data
-        },
-        status=status.HTTP_200_OK
-    )
+    page_number = request.GET.get('page', 1)
+    page_size = request.GET.get('page_size', 10)
+    paginator = Paginator(list_category, page_size)
+    categories = paginator.page(page_number)
+
+    try:
+        
+        return_data = []
+        for category in categories:
+            return_data.append({
+                "id": category.category_id,
+                "name": category.name
+            })
+        return Response(
+            {
+                "message": "Get categories successfully",
+                "data": {
+                    "total_pages": paginator.num_pages,
+                    "categories": return_data,
+                    "current_page": categories.number,
+                }
+            },
+            status=status.HTTP_200_OK
+        )
+    except PageNotAnInteger:
+        return Response(
+            {
+                "message": "Invalid page number",
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except EmptyPage:
+        return Response(
+            {
+                "message": "Page out of range",
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except Exception as e:
+        return Response(
+            {
+                "message": "Get categories failed",
+                "error": f"{e}"
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
 
 @api_view(['POST'])
 def create_category(request):

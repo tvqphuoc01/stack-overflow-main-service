@@ -335,6 +335,7 @@ def get_list_question(request):
         question = question.filter(id__in = result)
     question_list = Paginator(question, page_size)
     question_objs = question_list.page(number_of_page)
+    total = question_list.count
     
     question_list_data = []
     
@@ -365,7 +366,8 @@ def get_list_question(request):
     return Response(
         {
             "message": "Get question successfully",
-            "data": question_list_data
+            "data": question_list_data,
+            "total": total
         },
         status=status.HTTP_200_OK
     )
