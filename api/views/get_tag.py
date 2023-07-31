@@ -4,25 +4,57 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.db.models import Count
+from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 
 @api_view(['GET'])
 def get_list_tag(request):
     list_tag = Tag.objects.all()
+    page_number = request.GET.get('page', 1)
+    page_size = request.GET.get('page_size', 10)
+    paginator = Paginator(list_tag, page_size)
+    tags = paginator.page(page_number)
+    total = paginator.count
     
-    return_data = []
-    for tag in list_tag:
-        return_data.append({
-            "tag_id": tag.tag_id,
-            "tag_name": tag.name
-        })
-    
-    return Response(
-        {
-            "message": "Get list tag successfully",
-            "data": return_data
-        },
-        status=status.HTTP_200_OK
-    )
+    try:
+        return_data = []
+        for tag in tags:
+            return_data.append({
+                "id": tag.tag_id,
+                "name": tag.name
+            })
+        return Response(
+            {
+                "message": "Get tags successfully",
+                "data": {
+                    "tags": return_data,
+                    "current_page": tags.number,
+                    "total": total
+                }
+            },
+            status=status.HTTP_200_OK
+        )
+    except PageNotAnInteger:
+        return Response(
+            {
+                "message": "Invalid page number",
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except EmptyPage:
+        return Response(
+            {
+                "message": "Page out of range",
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except Exception as e:
+        return Response(
+            {
+                "message": "Get categories failed",
+                "error": f"{e}"
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 @api_view(['PUT'])
 def update_tag(request):
@@ -83,7 +115,7 @@ def delete_tag(request):
         )
     
     authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
-    response = requests.get(authen_url, params={"user_id": requester_id})
+    response = request.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
         return Response(

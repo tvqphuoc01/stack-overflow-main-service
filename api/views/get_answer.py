@@ -20,7 +20,7 @@ def get_answer_of_question_by_id(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    authen_url = "http://localhost:8006/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
     answer = None
@@ -83,7 +83,7 @@ def create_answer(request):
     content = validated_data.get('content')
     question_id = validated_data.get('question_id')
 
-    url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
+    url = "http://localhost:8006" + "/api/check-user"
     params = {'user_id': user_id}
 
     response = requests.get(url, params=params)
@@ -131,7 +131,7 @@ def create_answer_like(request):
     user_id = validated_data.get('user_id')
     is_like = request.data.get('is_like')
 
-    url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
+    url = "http://localhost:8006" + "/api/check-user"
     params = {'user_id': user_id}
 
     response = requests.get(url, params=params)
@@ -196,7 +196,7 @@ def update_answer_status(request):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    authen_url = "http://localhost:8006/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
@@ -272,7 +272,7 @@ def update_answer_status(request):
 #             status=status.HTTP_400_BAD_REQUEST
 #         )
 
-#     authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+#     authen_url = "http://localhost:8006/api/get-user-by-id"
 #     response = requests.get(authen_url, params={"user_id": requester_id})
     
 #     if response.status_code == 200:
@@ -334,7 +334,7 @@ def delete_answer(request):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    authen_url = "http://localhost:8006/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
@@ -392,7 +392,7 @@ def get_answer_by_user_id(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    authen_url = "http://localhost:8006/api/check-user"
     response = requests.get(authen_url, params={"user_id": user_id})
     
     if (response.status_code == 200):
@@ -452,7 +452,7 @@ def get_all_answer_for_admin(request):
         )
     
     # check if requestor is admin
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    authen_url = "http://localhost:8006/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
@@ -473,25 +473,27 @@ def get_all_answer_for_admin(request):
             status=status.HTTP_403_FORBIDDEN
         )
     
-    
     # Pagination
     page_number = request.GET.get('page', 1)
     page_size = request.GET.get('page_size', 10)
 
     answer_objs = Answer.objects.all()
     paginator = Paginator(answer_objs, page_size)
+    total = paginator.count
     
     try:
         answers = paginator.page(page_number)
+
         serialized_answers = AnswerResponseDataSerializer(
-            answers.object_list.values(), many=True)
+            answers, many=True)
         return Response(
             {
                 "message": "Get answers successfully",
                 "data": {
                     "total_pages": paginator.num_pages,
-                    "answers": serialized_answers,
+                    "answers": serialized_answers.data,
                     "current_page": answers.number,
+                    "total": total
                 }
             },
             status=status.HTTP_200_OK

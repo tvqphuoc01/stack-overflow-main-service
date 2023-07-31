@@ -352,8 +352,8 @@ def get_all_replies_for_admin(request):
         )
     
     # check requester role
-     # check if requestor is admin
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    #  check if requestor is admin
+    authen_url = "http://locahost:8006/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
@@ -381,7 +381,7 @@ def get_all_replies_for_admin(request):
     
     try:
         reply = paginator.page(page)
-        serialized_reply = ReplyResponseDataSerializer(reply.object_list.values(), many=True)
+        serialized_reply = ReplyResponseDataSerializer(reply, many=True)
         
         return Response(
             {
@@ -389,7 +389,7 @@ def get_all_replies_for_admin(request):
                 "data": {
                     "total_pages": paginator.num_pages,
                     "total_records": paginator.count,
-                    "data": serialized_reply.data
+                    "data": serialized_reply.data,
                 }
             },
             status=status.HTTP_200_OK

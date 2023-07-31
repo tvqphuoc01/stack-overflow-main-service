@@ -1,9 +1,9 @@
 from django.urls import path
 from api.views.get_question import get_question_by_id, get_list_question, update_question_status, delete_question, get_top_three_question, create_question, create_question_like, get_question_by_user_id
-from api.views.get_category import get_list_category, create_category
-from api.views.get_tag import get_list_tag, create_tag, delete_tag, get_top_five_tag
+from api.views.get_category import get_list_category, create_category, delete_category
+from api.views.get_tag import get_list_tag, update_tag, create_tag, delete_tag, get_top_five_tag
 from api.views.notification import send_notification, get_user_notification
-from api.views.get_answer import get_answer_of_question_by_id, create_answer, delete_answer, get_answer_by_user_id, get_all_answer_for_admin
+from api.views.get_answer import update_answer_status, get_answer_of_question_by_id, create_answer, delete_answer, get_answer_by_user_id, get_all_answer_for_admin
 from api.views.get_user import get_top_user
 from api.views.reply import create_reply, create_reply_like, get_reply_by_answer_id, get_reply_by_question_id, delete_reply, get_all_replies_for_admin
 
@@ -17,6 +17,7 @@ urlpatterns = [
     path('send-notification', send_notification, name='send_notification'),
     path('get-user-notification', get_user_notification, name='get_user_notification'),
     path('create-tag', create_tag, name='create_tag'),
+    path('update-tag', update_tag, name='update_tag'),
     # path('add-tag', add_tag, name='add_tag'),
     path('delete-tag', delete_tag, name='delete_tag'),
     path('create-category', create_category, name='create_category'),
@@ -37,5 +38,7 @@ urlpatterns = [
     path('get-question-by-user-id', get_question_by_user_id, name='get_question_by_user_id'),
     path('get-answer-by-user-id', get_answer_by_user_id, name='get_answer_by_user_id'),
     path('get-all-reply-admin', get_all_replies_for_admin, name='get_all_replies_for_admin'),
-    path('get-all-answer-admin', get_all_answer_for_admin, name='get_all_answer_for_admin')
+    path('get-all-answer-admin', get_all_answer_for_admin, name='get_all_answer_for_admin'),
+    path('update-answer-status', update_answer_status, name="update_answer_status"),
+    path('delete-category', delete_category, name="delete_category")
 ]

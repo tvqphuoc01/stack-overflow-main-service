@@ -12,6 +12,7 @@ def get_list_category(request):
     page_size = request.GET.get('page_size', 10)
     paginator = Paginator(list_category, page_size)
     categories = paginator.page(page_number)
+    total = paginator.count
 
     try:
         
@@ -28,6 +29,7 @@ def get_list_category(request):
                     "total_pages": paginator.num_pages,
                     "categories": return_data,
                     "current_page": categories.number,
+                    "total": total
                 }
             },
             status=status.HTTP_200_OK
@@ -96,7 +98,7 @@ def delete_category(request):
         )
     
     authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
-    response = requests.get(authen_url, params={"user_id": requester_id})
+    response = request.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
         return Response(
