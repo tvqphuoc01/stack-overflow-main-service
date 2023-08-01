@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
+import requests
 
 @api_view(['GET'])
 def get_list_category(request):
@@ -98,7 +99,7 @@ def delete_category(request):
         )
     
     authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
-    response = request.get(authen_url, params={"user_id": requester_id})
+    response = requests.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
         return Response(
