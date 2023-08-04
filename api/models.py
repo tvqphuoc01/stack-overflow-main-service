@@ -76,6 +76,7 @@ class Notification(models.Model):
     owner_id = models.UUIDField()
     create_date = models.DateTimeField(auto_now_add=True)
     is_checked = models.BooleanField(default=False)
+    content = models.TextField(default='')
     
     def __str__(self):
         return "Noti: " + str(self.noti_id) + " - Question: " + str(self.question_id) + " - Owner: " + str(self.owner_id) + " - Checked: " + str(self.is_checked)

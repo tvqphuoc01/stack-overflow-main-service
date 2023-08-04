@@ -8,6 +8,7 @@ from rest_framework.response import Response
 def send_notification(request):
     user_id = request.GET.get('user_id')
     content = request.GET.get('content')
+    question_id = request.GET.get('question_id')
     if not user_id:
         return Response(
             {
@@ -24,15 +25,16 @@ def send_notification(request):
         )
     
     notification = Notification.objects.create(
-        user_id=user_id,
+        owner_id=user_id,
+        question_id=question_id,
         content=content
     )
     return Response(
         {
             "message": "Send notification successfully",
             "data": {
-                "id": notification.id,
-                "user_id": notification.user_id,
+                "id": notification.noti_id,
+                "user_id": notification.owner_id,
                 "content": notification.content,
                 "create_date": notification.create_date,
             }
@@ -57,8 +59,8 @@ def get_user_notification(request):
     for notification in notification_list:
         notification_list_data.append(
             {
-                "id": notification.id,
-                "user_id": notification.user_id,
+                "id": notification.noti_id,
+                "user_id": notification.owner_id,
                 "content": notification.content,
                 "create_date": notification.create_date,
                 "is_checked": notification.is_checked
@@ -67,7 +69,8 @@ def get_user_notification(request):
     return Response(
         {
             "message": "Get user notification successfully",
-            "data": notification_list_data
+            "data": notification_list_data,
+            "number_of_noti": len(notification_list_data)
         },
         status=status.HTTP_200_OK
     )
