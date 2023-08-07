@@ -1,6 +1,6 @@
 from django.urls import path
 from api.views.get_question import get_question_by_id, get_list_question, update_question_status, delete_question, get_top_three_question, create_question, create_question_like, get_question_by_user_id
-from api.views.get_category import get_list_category, create_category, delete_category
+from api.views.get_category import get_list_category, create_category, delete_category, edit_category
 from api.views.get_tag import get_list_tag, update_tag, create_tag, delete_tag, get_top_five_tag
 from api.views.notification import send_notification, get_user_notification
 from api.views.get_answer import update_answer_status, get_answer_of_question_by_id, create_answer, delete_answer, get_answer_by_user_id, get_all_answer_for_admin
@@ -40,5 +40,6 @@ urlpatterns = [
     path('get-all-reply-admin', get_all_replies_for_admin, name='get_all_replies_for_admin'),
     path('get-all-answer-admin', get_all_answer_for_admin, name='get_all_answer_for_admin'),
     path('update-answer-status', update_answer_status, name="update_answer_status"),
-    path('delete-category', delete_category, name="delete_category")
+    path('delete-category', delete_category, name="delete_category"),
+    path('edit-category', edit_category, name="edit_category")
 ]

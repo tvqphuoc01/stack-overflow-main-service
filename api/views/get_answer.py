@@ -452,7 +452,7 @@ def get_all_answer_for_admin(request):
         )
     
     # check if requestor is admin
-    authen_url = "http://localhost:8006/api/get-user-by-id"
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
