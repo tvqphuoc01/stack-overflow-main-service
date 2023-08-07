@@ -471,6 +471,7 @@ def get_question_by_user_id(request):
                         "number_of_dislike": question.number_of_dislike,
                         "image_url": question.image_url,
                         "create_date": question.create_date,
+                        "status": question.question_status
                     }
                 )
             return Response(
