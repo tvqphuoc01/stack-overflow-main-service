@@ -143,3 +143,50 @@ def delete_category(request):
         },
         status=status.HTTP_200_OK
     )
+    
+@api_view(['PATCH'])
+def edit_category(request):
+    category_id = request.data.get('category_id')
+    requester_id = request.data.get('requester_id')
+    new_name = request.data.get('name')
+    
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": requester_id})
+    
+    if response.status_code != 200:
+        return Response(
+            {
+                "message": "Get user info failed",
+                "data": {}
+            },
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    result_body = response.json()
+    user = result_body["data"]
+    if (user["role"] != "ADMIN"):
+        return Response(
+            {
+                "message": "Permission denied"
+            },
+            status=status.HTTP_403_FORBIDDEN
+        )
+    
+    category = Category.objects.filter(category_id=category_id).first()
+    
+    if not category:
+        return Response(
+            {
+                "message": "Category is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    category.name = new_name
+    category.save()
+    
+    return Response(
+        {
+            "message": "Edit category successfully",
+        },
+        status=status.HTTP_200_OK
+    )
