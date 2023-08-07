@@ -127,7 +127,7 @@ def delete_category(request):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    category = Category.objects.filter(id=category_id).first()
+    category = Category.objects.filter(category_id=category_id).first()
     if not category:
         return Response(
             {
