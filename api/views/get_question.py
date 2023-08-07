@@ -1,4 +1,4 @@
-from api.models import Question, Answer, QuestionTag, QuestionCategory, QuestionUser, Tag, Category
+from api.models import Question, Answer, QuestionTag, QuestionCategory, QuestionUser, Tag, Category, Reply
 from django.core.paginator import Paginator
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -32,7 +32,8 @@ def get_question_by_id(request):
             },
             status=status.HTTP_404_NOT_FOUND
         )
-
+    answer = Answer.objects.filter(question_id=question.id, answer_status=1)
+    reply = Reply.objects.filter(question_id=question.id, answer_status=1)
     return Response(
         {
             "message": "Get question successfully",
@@ -45,6 +46,7 @@ def get_question_by_id(request):
                 "number_of_dislike": question.number_of_dislike,
                 "image_url": question.image_url,
                 "create_date": question.create_date,
+                "total_answer": len(answer) + len(reply)
             }
         },
         status=status.HTTP_200_OK
@@ -340,6 +342,8 @@ def get_list_question(request):
     question_list_data = []
     
     for question in question_objs:
+        answer = Answer.objects.filter(question_id=question.id, answer_status = 1)
+        reply = Reply.objects.filter(question_id=question.id, answer_status = 1)
         response = requests.get(authen_url, params={"user_id": question.user_id})
         if response.status_code != 200:
             return Response(
@@ -360,6 +364,8 @@ def get_list_question(request):
                     "number_of_dislike": question.number_of_dislike,
                     "image_url": question.image_url,
                     "create_date": question.create_date,
+                    "status": question.question_status,
+                    "total_answer": len(answer) + len(reply)
                 }
             )
     

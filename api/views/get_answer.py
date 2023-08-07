@@ -20,10 +20,10 @@ def get_answer_of_question_by_id(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
-    authen_url = "http://localhost:8006/api/get-user-by-id"
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
-    answer = None
+    answer = []
     if response.status_code == 200:
         result_body = response.json()
         user = result_body["data"]
@@ -33,14 +33,6 @@ def get_answer_of_question_by_id(request):
             answer = Answer.objects.filter(question_id=question_id, answer_status=1).all()
     else:
         answer = Answer.objects.filter(question_id=question_id, answer_status=1).all()
-
-    if not answer:
-        return Response(
-            {
-                "message": "Answer is not available"
-            },
-            status=status.HTTP_400_BAD_REQUEST
-        )
 
     answer_data = []
 
@@ -62,6 +54,7 @@ def get_answer_of_question_by_id(request):
             "number_of_like": ans.number_of_like,
             "number_of_dislike": ans.number_of_dislike,
             "create_date": ans.create_date,
+            "image_url": ans.image_url
         })
     return Response(
         {
