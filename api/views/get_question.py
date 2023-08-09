@@ -7,6 +7,7 @@ from api.serializers.question_serializers import QuestionSerializer, QuestionLik
 from django.db.models import Count, Q
 import os
 import requests
+from django.contrib.postgres.search import SearchVector
 
 
 @api_view(['GET'])
@@ -173,9 +174,11 @@ def delete_question(request):
 
 @api_view(["GET"])
 def get_top_three_question(request):
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
     queryset = Question.objects.annotate(num_answers=Count('answers')).order_by('-num_answers','-create_date','number_of_like').all()[:3]
     question_list_data = []
     for question in queryset:
+        response = requests.get(authen_url, params={"user_id": question.user_id})
         question_list_data.append(
             {
                 "id": question.id,
@@ -187,6 +190,7 @@ def get_top_three_question(request):
                 "image_url": question.image_url,
                 "create_date": question.create_date,
                 "num_answers": question.num_answers,
+                "user_data": response.json()
             }
         )
     return Response(
@@ -328,7 +332,7 @@ def get_list_question(request):
             question = Question.objects.order_by('-create_date').all()
     
     if search:
-        question = question.filter(Q(title__icontains=search) | Q(content__icontains=search))
+        question = question.annotate(search=SearchVector('title', 'content')).filter(Q(search=search))
     if tag:
         result = QuestionTag.objects.values('question_id').filter(tag_id=tag)
         question = question.filter(id__in = result)

@@ -188,14 +188,16 @@ def create_tag(request):
 
 @api_view(["GET"])
 def get_top_five_tag(request):
-    question_tags = QuestionTag.objects.select_related('tag_id').values('tag_id').annotate(tag_count=Count('tag_id')).order_by("tag_count").all()
+    question_tags = QuestionTag.objects.select_related('tag_id').values('tag_id').annotate(tag_count=Count('tag_id')).order_by("tag_count")[:5]
+    print(question_tags)
     list_tag = []
     list_tag_name = []
     for question_tag in question_tags:
         tag = Tag.objects.get(tag_id=question_tag["tag_id"])
         list_tag.append({
             "tag_id": tag.tag_id,
-            "tag_name": tag.name
+            "tag_name": tag.name,
+            "number_of_questions": question_tag["tag_count"]
         })
         list_tag_name.append(tag.name)
     total = 5 - len(question_tags)
@@ -203,7 +205,8 @@ def get_top_five_tag(request):
     for tag in tags:
         list_tag.append({
             "tag_id": tag.tag_id,
-            "tag_name": tag.name
+            "tag_name": tag.name,
+            "number_of_questions": 0
         })
     return Response(
         {

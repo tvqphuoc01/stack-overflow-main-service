@@ -26,11 +26,11 @@ class Question(models.Model):
         return self.title
     
 class QuestionCategory(models.Model):
-    question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question_id = models.ForeignKey(Question, on_delete=models.DO_NOTHING)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     
 class QuestionTag(models.Model):
-    question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question_id = models.ForeignKey(Question, on_delete=models.DO_NOTHING)
     tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE)
     
 class Answer(models.Model):
