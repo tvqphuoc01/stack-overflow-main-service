@@ -8,7 +8,7 @@ from django.db.models import Count, Q
 import os
 import requests
 from django.contrib.postgres.search import SearchVector
-
+from firebase_admin import messaging
 
 @api_view(['GET'])
 def get_question_by_id(request):
@@ -35,6 +35,7 @@ def get_question_by_id(request):
         )
     answer = Answer.objects.filter(question_id=question.id, answer_status=1)
     reply = Reply.objects.filter(question_id=question.id, answer_status=1)
+
     return Response(
         {
             "message": "Get question successfully",
@@ -457,7 +458,7 @@ def get_question_by_user_id(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": user_id})
     
     if (response.status_code == 200):

@@ -6,6 +6,7 @@ from api.views.notification import send_notification, get_user_notification
 from api.views.get_answer import update_answer_status, get_answer_of_question_by_id, create_answer, delete_answer, get_answer_by_user_id, get_all_answer_for_admin
 from api.views.get_user import get_top_user
 from api.views.reply import create_reply, create_reply_like, get_reply_by_answer_id, get_reply_by_question_id, delete_reply, get_all_replies_for_admin
+from api.views.device_token import create_device_token
 
 urlpatterns = [
     path('update-question-status', update_question_status, name='update_question_status'),
@@ -41,5 +42,6 @@ urlpatterns = [
     path('get-all-answer-admin', get_all_answer_for_admin, name='get_all_answer_for_admin'),
     path('update-answer-status', update_answer_status, name="update_answer_status"),
     path('delete-category', delete_category, name="delete_category"),
-    path('edit-category', edit_category, name="edit_category")
+    path('edit-category', edit_category, name="edit_category"),
+    path('create-device-token', create_device_token, name="create_device_token")
 ]

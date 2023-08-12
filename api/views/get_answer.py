@@ -76,7 +76,7 @@ def create_answer(request):
     content = validated_data.get('content')
     question_id = validated_data.get('question_id')
 
-    url = "http://localhost:8006" + "/api/check-user"
+    url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
     params = {'user_id': user_id}
 
     response = requests.get(url, params=params)
@@ -124,7 +124,7 @@ def create_answer_like(request):
     user_id = validated_data.get('user_id')
     is_like = request.data.get('is_like')
 
-    url = "http://localhost:8006" + "/api/check-user"
+    url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
     params = {'user_id': user_id}
 
     response = requests.get(url, params=params)
@@ -189,7 +189,7 @@ def update_answer_status(request):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    authen_url = "http://localhost:8006/api/get-user-by-id"
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
@@ -327,7 +327,7 @@ def delete_answer(request):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    authen_url = "http://localhost:8006/api/get-user-by-id"
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
     response = requests.get(authen_url, params={"user_id": requester_id})
     
     if response.status_code != 200:
@@ -385,7 +385,7 @@ def get_answer_by_user_id(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
-    authen_url = "http://localhost:8006/api/check-user"
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
     response = requests.get(authen_url, params={"user_id": user_id})
     
     if (response.status_code == 200):

@@ -11,3 +11,4 @@ requests==2.26.0
 python-json-logger==2.0.2
 tblib==1.7.0
 APScheduler==3.10.1
+firebase-admin==6.2.0

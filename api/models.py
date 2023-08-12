@@ -107,3 +107,7 @@ class ReplyUser(models.Model):
     
     def __str__(self):
         return "User: " + str(self.user_id) + " - Question: " + str(self.question_id) + " - Like: " + str(self.is_like) + " - Dislike: " + str(self.is_dislike)
+
+class DeviceToken(models.Model):
+    user_id = models.UUIDField()
+    token = models.CharField(max_length=1000, default='')
