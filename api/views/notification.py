@@ -89,7 +89,7 @@ def get_user_notification(request):
             status=status.HTTP_400_BAD_REQUEST
         )
         
-    notification_list = Notification.objects.filter(user_id=user_id).order_by('-create_date')
+    notification_list = Notification.objects.filter(owner_id=user_id).order_by('-create_date')
     notification_list_data = []
     
     for notification in notification_list:
