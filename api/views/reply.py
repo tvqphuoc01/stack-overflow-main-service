@@ -66,13 +66,6 @@ def get_reply_by_answer_id(request):
         )
         
     reply = Reply.objects.filter(answer_id=answer_id, answer_status=True).all()
-    if not reply:
-        return Response(
-            {
-                "message": "Reply is not available"
-            },
-            status=status.HTTP_400_BAD_REQUEST
-        )
     
     reply_data = []
     
@@ -117,13 +110,6 @@ def get_reply_by_question_id(request):
         )
         
     reply = Reply.objects.filter(question_id=question_id, answer_status=True).all()
-    if not reply:
-        return Response(
-            {
-                "message": "Reply is not available"
-            },
-            status=status.HTTP_400_BAD_REQUEST
-        )
     
     reply_data = []
     
