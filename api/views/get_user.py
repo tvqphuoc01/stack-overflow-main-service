@@ -1,4 +1,4 @@
-from api.models import Question, Answer
+from api.models import Question, Answer, Reply
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -11,10 +11,11 @@ def get_top_user(request):
     filter_data = request.GET.get("filter", "question")
 
     queryset = []
+    querysetReply = []
     if (filter_data == "question"):
-        queryset = Question.objects.values("user_id").annotate(question_count=Count('user_id')).order_by('-question_count').all()[:amount]
+        queryset = Question.objects.filter(question_status=1).values("user_id").annotate(question_count=Count('user_id')).order_by('-question_count').all()[:amount]
     else:
-        queryset = Answer.objects.values("user_id").annotate(answer_count=Count('user_id')).order_by('-answer_count').all()[:amount]
+        queryset = Answer.objects.filter(answer_status=1).values("user_id").annotate(answer_count=Count('user_id')).order_by('-answer_count').all()[:amount]
 
     url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/get-user-by-id-for-ranking-table"
     
@@ -27,7 +28,7 @@ def get_top_user(request):
         
         if (response.ok):
             if (filter_data == "question"):
-                answer_count = Answer.objects.filter(user_id=item["user_id"]).count()       
+                answer_count = Answer.objects.filter(user_id=item["user_id"], answer_status=1).count()       
                 list_data.append(
                     {
                         "user":{
@@ -40,7 +41,7 @@ def get_top_user(request):
                     }
                 )
             else:
-                question_count = Question.objects.filter(user_id=item["user_id"]).count()
+                question_count = Question.objects.filter(user_id=item["user_id"], question_status=1).count()
                 list_data.append(
                     {
                         "user":{
