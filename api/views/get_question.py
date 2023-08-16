@@ -459,7 +459,7 @@ def get_question_by_user_id(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
-    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
     response = requests.get(authen_url, params={"user_id": user_id})
     
     if (response.status_code == 200):
