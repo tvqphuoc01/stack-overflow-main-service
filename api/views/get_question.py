@@ -48,7 +48,8 @@ def get_question_by_id(request):
                 "number_of_dislike": question.number_of_dislike,
                 "image_url": question.image_url,
                 "create_date": question.create_date,
-                "total_answer": len(answer) + len(reply)
+                "total_answer": len(answer) + len(reply),
+                "status": question.question_status
             }
         },
         status=status.HTTP_200_OK
