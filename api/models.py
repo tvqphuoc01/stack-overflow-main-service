@@ -111,3 +111,6 @@ class ReplyUser(models.Model):
 class DeviceToken(models.Model):
     user_id = models.UUIDField()
     token = models.CharField(max_length=1000, default='')
+
+class ForbiddenWord(models.Model):
+    word = models.CharField(max_length=100, unique=True)

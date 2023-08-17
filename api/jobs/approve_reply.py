@@ -5,7 +5,7 @@ def approve_reply():
     replies = Reply.objects.filter(answer_status=0).all()
     authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
     for reply in replies:
-        response = requests.get(authen_url, params={"user_id": reply.user_id})
+        response = requests.get(authen_url, params={"user_id": reply.owner_id})
         if response.status_code != 200:
             reply.answer_status = 2
         else:

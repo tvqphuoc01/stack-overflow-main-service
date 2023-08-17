@@ -28,11 +28,11 @@ def get_answer_of_question_by_id(request):
         result_body = response.json()
         user = result_body["data"]
         if (user["role"] == "ADMIN"):
-            answer = Answer.objects.filter(question_id=question_id).all()
+            answer = Answer.objects.filter(question_id=question_id).order_by("-create_date").all()
         else:
-            answer = Answer.objects.filter(question_id=question_id, answer_status=1).all()
+            answer = Answer.objects.filter(question_id=question_id, answer_status=1).order_by("-create_date").all()
     else:
-        answer = Answer.objects.filter(question_id=question_id, answer_status=1).all()
+        answer = Answer.objects.filter(question_id=question_id, answer_status=1).order_by("-create_date").all()
 
     answer_data = []
 
