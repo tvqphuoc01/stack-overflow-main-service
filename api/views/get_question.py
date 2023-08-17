@@ -518,13 +518,21 @@ def get_question_like_by_user_id(request):
         res = response.json()
         if (res["message"] == True):
             questionUser = QuestionUser.objects.filter(question_id=question_id, user_id=user_id).first()
+            if (questionUser):
+                return Response(
+                    {
+                        'message': 'Get question like success',
+                        'data': questionUser.is_like
+                    },
+                    status=status.HTTP_200_OK
+                )
             return Response(
-                {
-                    'message': 'Get question like success',
-                    'data': questionUser.is_like
-                },
-                status=status.HTTP_200_OK
-            )
+                    {
+                        'message': 'Get question like success',
+                        'data': None
+                    },
+                    status=status.HTTP_200_OK
+                )
     return Response(
             {
                 'message': 'User not found',
