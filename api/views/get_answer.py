@@ -47,12 +47,15 @@ def get_answer_of_question_by_id(request):
                 },
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+
+        answer_like = AnswerUser.objects.filter(answer_id=ans.id, is_like=True)
+        answer_dislike = AnswerUser.objects.filter(answer_id=ans.id, is_like=False)
         answer_data.append({
             "id": ans.id,
             "user_data": response.json(),
             "content": ans.content,
-            "number_of_like": ans.number_of_like,
-            "number_of_dislike": ans.number_of_dislike,
+            "number_of_like": len(answer_like),
+            "number_of_dislike": len(answer_dislike),
             "create_date": ans.create_date,
             "image_url": ans.image_url
         })
@@ -132,34 +135,23 @@ def create_answer_like(request):
     if (response.status_code == 200):
         if (res["message"] == True):
             try:
-                if (is_like == True):
-                    answer_like, created = AnswerUser.objects.get_or_create(answer_id=answer, user_id=user_id, is_like=is_like)
-                    if created == False:
-                        return Response(
-                            {
-                                'message': 'Like answer failed'
-                            },
-                            status=status.HTTP_400_BAD_REQUEST
-                        )
+                answer_like = AnswerUser.objects.filter(answer_id=answer , user_id=user_id).first()
+                if answer_like:
+                    answer_like.is_like = is_like
+                    answer_like.save()
+                else:
+                    answer_like = AnswerUser.objects.create(answer_id=answer, user_id=user_id, is_like=is_like)
+                if is_like:
                     return Response(
                         {
                             'message': 'Like answer success'
                         }
                     )
-                elif (is_like == False):
-                    answer_like, created = AnswerUser.objects.get_or_create(answer_id=answer, user_id=user_id, is_dislike=is_like)
-                    if created == False:
-                        return Response(
-                            {
-                                'message': 'Dislike answer failed'
-                            },
-                            status=status.HTTP_400_BAD_REQUEST
-                        )
-                    return Response(
-                        {
-                            'message': 'Dislike answer success'
-                        }
-                    )
+                return Response(
+                    {
+                        'message': 'Dislike answer success'
+                    }
+                )
             except Exception as e:
                 return Response(
                     {
@@ -172,8 +164,7 @@ def create_answer_like(request):
             {
                 'message': 'User not found',
             },
-            status=status.HTTP_400_BAD_REQUEST
-        )
+    )
 
 @api_view(['PUT'])
 def update_answer_status(request):
@@ -235,84 +226,49 @@ def update_answer_status(request):
         status=status.HTTP_200_OK
     )
 
-# @api_view(['GET'])
-# def get_answer_by_id(request):
-#     answer_id = request.GET.get('answer_id')
-#     requester_id = request.GET.get('requester_id')
-#     if not answer_id:
-#         return Response(
-#             {
-#                 "message": "Answer id is required"
-#             },
-#             status=status.HTTP_400_BAD_REQUEST
-#         )
+@api_view(['GET'])
+def get_answer_by_id(request):
+    answer_id = request.GET.get('answer_id')
+
+    if not answer_id:
+        return Response(
+            {
+                "message": "Answer id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
         
-#     answer = Answer.objects.filter(id=answer_id).first()
+    answer = Answer.objects.filter(id=answer_id).first()
+    answer_like = AnswerUser.objects.filter(answer_id=answer_id, is_like=True)
+    answer_dislike = AnswerUser.objects.filter(answer_id=answer_id, is_like=False)
 
-#     if not answer:
-#         return Response(
-#             {
-#                 "message": "Answer is not available"
-#             },
-#             status=status.HTTP_400_BAD_REQUEST
-#         )
-    
-#     if not requester_id and answer.answer_status != 1:
-#         return Response(
-#             {
-#                 "message": "Answer is not available"
-#             },
-#             status=status.HTTP_400_BAD_REQUEST
-#         )
+    if not answer:
+        return Response(
+            {
+                "message": "Answer is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-#     authen_url = "http://localhost:8006/api/get-user-by-id"
-#     response = requests.get(authen_url, params={"user_id": requester_id})
-    
-#     if response.status_code == 200:
-#         result_body = response.json()
-#         user = result_body["data"]
-#         if (user["role"] == "ADMIN"):
-#             return Response(
-#                 {
-#                     "message": "Get answer successfully",
-#                     "data": {
-#                         "id": answer.id,
-#                         "user_id": answer.user_id,
-#                         "title": answer.title,
-#                         "content": answer.content,
-#                         "number_of_like": answer.number_of_like,
-#                         "number_of_dislike": answer.number_of_dislike,
-#                         "image_url": answer.image_url,
-#                         "create_date": answer.create_date,
-#                     }
-#                 },
-#                 status=status.HTTP_200_OK
-#             )
-#         elif answer.answer_status == 1:
-#             return Response(
-#                 {
-#                     "message": "Get answer successfully",
-#                     "data": {
-#                         "id": answer.id,
-#                         "user_id": answer.user_id,
-#                         "title": answer.title,
-#                         "content": answer.content,
-#                         "number_of_like": answer.number_of_like,
-#                         "number_of_dislike": answer.number_of_dislike,
-#                         "image_url": answer.image_url,
-#                         "create_date": answer.create_date,
-#                     }
-#                 },
-#                 status=status.HTTP_200_OK
-#             )
-#     else:
-#         return Response(
-#             {
-#                 "message": "Get user info failed",
-#                 "data": {}
-#             },
-#             status=status.HTTP_500_INTERNAL_SERVER_ERROR
-#         )
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": answer.user_id})
+    user_data = response.json()
+    return Response(
+        {
+            "message": "Get answer successfully",
+            "data": {
+                "id": answer.id,
+                "user_id": answer.user_id,
+                "content": answer.content,
+                "number_of_like": len(answer_like),
+                "number_of_dislike": len(answer_dislike),
+                "image_url": answer.image_url,
+                "create_date": answer.create_date,
+                "user_data": user_data
+            }
+        },
+        status=status.HTTP_200_OK
+    )
 
 @api_view(['DELETE'])
 def delete_answer(request):
@@ -512,5 +468,55 @@ def get_all_answer_for_admin(request):
                 "error": f"{e}"
             },
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+@api_view(['GET'])
+def get_answer_like_by_user_id(request):
+    user_id = request.GET.get("user_id")
+    answer_id= request.GET.get("answer_id")
+
+    if not user_id:
+        return Response(
+            {
+                'message': 'User id is required',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    if not answer_id:
+        return Response(
+            {
+                'message': 'Answer id is required',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    response = requests.get(authen_url, params={"user_id": user_id})
+
+    if (response.status_code == 200):
+        res = response.json()
+        if (res["message"] == True):
+            answerUser = AnswerUser.objects.filter(answer_id=answer_id, user_id=user_id).first()
+            if answerUser:
+                return Response(
+                    {
+                        'message': 'Get answer like success',
+                        'data': answerUser.is_like
+                    },
+                    status=status.HTTP_200_OK
+                )
+            return Response(
+                    {
+                        'message': 'Get answer like success',
+                        'data': None
+                    },
+                    status=status.HTTP_200_OK
+                )
+    return Response(
+            {
+                'message': 'User not found',
+            },
+            status=status.HTTP_400_BAD_REQUEST
         )
     

@@ -4,8 +4,9 @@ from api.models import Reply, ReplyUser
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from api.serializers.reply_serializers import ReplySerializer, ReplyResponseDataSerializer
+from api.serializers.reply_serializers import ReplySerializer, ReplyResponseDataSerializer, ReplyLikeSerializer
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
+
 @api_view(["POST"])
 def create_reply(request):
     serializer = ReplySerializer(data=request.data)
@@ -81,12 +82,15 @@ def get_reply_by_answer_id(request):
                 },
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+        
+        reply_like = ReplyUser.objects.filter(reply_id=rep.reply_id, is_like=True)
+        reply_dislike = ReplyUser.objects.filter(reply_id=rep.reply_id, is_like=False)
         reply_data.append({
             "id": rep.reply_id,
             "user_data": response.json(),
             "content": rep.content,
-            "number_of_like": rep.number_of_like,
-            "number_of_dislike": rep.number_of_dislike,
+            "number_of_like": len(reply_like),
+            "number_of_dislike": len(reply_dislike),
             "create_date": rep.create_date,
         })
         
@@ -154,43 +158,34 @@ def create_reply_like(request):
     reply = validated_data.get('reply')
     user_id = validated_data.get('user_id')
     is_like = request.data.get('is_like')
+    print(user_id)
 
     url = "http://stack-overflow-authen-authenticator-1:8000" + "/api/check-user"
     params = {'user_id': user_id}
 
     response = requests.get(url, params=params)
     res = response.json()
+    print(res)
     if (response.status_code == 200):
         if (res["message"] == True):
             try:
-                if (is_like == True):
-                    reply_like, created = ReplyUser.objects.get_or_create(reply_id=reply, user_id=user_id, is_like=is_like)
-                    if created == False:
-                        return Response(
-                            {
-                                'message': 'Like reply failed'
-                            },
-                            status=status.HTTP_400_BAD_REQUEST
-                        )
+                reply_like = ReplyUser.objects.filter(reply_id=reply , user_id=user_id).first()
+                if reply_like:
+                    reply_like.is_like = is_like
+                    reply_like.save()
+                else:
+                    reply_like = ReplyUser.objects.create(reply_id=reply, user_id=user_id, is_like=is_like)
+                if is_like:
                     return Response(
                         {
                             'message': 'Like reply success'
                         }
                     )
-                elif (is_like == False):
-                    reply_like, created = ReplyUser.objects.get_or_create(reply_id=reply, user_id=user_id, is_dislike=is_like)
-                    if created == False:
-                        return Response(
-                            {
-                                'message': 'Dislike reply failed'
-                            },
-                            status=status.HTTP_400_BAD_REQUEST
-                        )
-                    return Response(
-                        {
-                            'message': 'Dislike reply success'
-                        }
-                    )
+                return Response(
+                    {
+                        'message': 'Dislike reply success'
+                    }
+                )
             except Exception as e:
                 return Response(
                     {
@@ -203,8 +198,7 @@ def create_reply_like(request):
             {
                 'message': 'User not found',
             },
-            status=status.HTTP_400_BAD_REQUEST
-        )
+    )
 
 @api_view(['PUT'])
 def update_reply_status(request):
@@ -402,3 +396,97 @@ def get_all_replies_for_admin(request):
             },
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+@api_view(['GET'])
+def get_reply_like_by_user_id(request):
+    user_id = request.GET.get("user_id")
+    reply_id= request.GET.get("reply_id")
+
+    if not user_id:
+        return Response(
+            {
+                'message': 'User id is required',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    if not reply_id:
+        return Response(
+            {
+                'message': 'Reply id is required',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    response = requests.get(authen_url, params={"user_id": user_id})
+
+    if (response.status_code == 200):
+        res = response.json()
+        if (res["message"] == True):
+            replyUser = ReplyUser.objects.filter(reply_id=reply_id, user_id=user_id).first()
+            if replyUser:
+                return Response(
+                    {
+                        'message': 'Get reply like success',
+                        'data': replyUser.is_like
+                    },
+                    status=status.HTTP_200_OK
+                )
+            return Response(
+                    {
+                        'message': 'Get reply like success',
+                        'data': None
+                    },
+                    status=status.HTTP_200_OK
+                )
+    return Response(
+            {
+                'message': 'User not found',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+@api_view(['GET'])
+def get_reply_by_id(request):
+    reply_id = request.GET.get('reply_id')
+
+    if not reply_id:
+        return Response(
+            {
+                "message": "Reply id is required"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+        
+    reply = Reply.objects.filter(reply_id=reply_id).first()
+    reply_like = ReplyUser.objects.filter(reply_id=reply_id, is_like=True)
+    reply_dislike = ReplyUser.objects.filter(reply_id=reply_id, is_like=False)
+
+    if not reply:
+        return Response(
+            {
+                "message": "Reply is not available"
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
+    response = requests.get(authen_url, params={"user_id": reply.owner_id})
+    user_data = response.json()
+    return Response(
+        {
+            "message": "Get reply successfully",
+            "data": {
+                "id": reply.reply_id,
+                "user_id": reply.owner_id,
+                "content": reply.content,
+                "number_of_like": len(reply_like),
+                "number_of_dislike": len(reply_dislike),
+                "image_url": reply.image_url,
+                "create_date": reply.create_date,
+                "user_data": user_data
+            }
+        },
+        status=status.HTTP_200_OK
+    )

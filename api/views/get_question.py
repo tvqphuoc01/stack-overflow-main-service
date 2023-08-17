@@ -35,6 +35,8 @@ def get_question_by_id(request):
         )
     answer = Answer.objects.filter(question_id=question.id, answer_status=1)
     reply = Reply.objects.filter(question_id=question.id, answer_status=1)
+    like_question = QuestionUser.objects.filter(question_id=question_id, is_like=True).all()
+    dislike_question = QuestionUser.objects.filter(question_id=question_id, is_like=False).all()
 
     return Response(
         {
@@ -44,8 +46,8 @@ def get_question_by_id(request):
                 "user_data": user_data,
                 "title": question.title,
                 "content": question.content,
-                "number_of_like": question.number_of_like,
-                "number_of_dislike": question.number_of_dislike,
+                "number_of_like": len(like_question),
+                "number_of_dislike": len(dislike_question),
                 "image_url": question.image_url,
                 "create_date": question.create_date,
                 "total_answer": len(answer) + len(reply),
@@ -348,8 +350,6 @@ def get_list_question(request):
     question_list_data = []
     
     for question in question_objs:
-        answer = Answer.objects.filter(question_id=question.id, answer_status = 1)
-        reply = Reply.objects.filter(question_id=question.id, answer_status = 1)
         response = requests.get(authen_url, params={"user_id": question.user_id})
         if response.status_code != 200:
             return Response(
@@ -360,14 +360,19 @@ def get_list_question(request):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
         if response.status_code == 200:
+            answer = Answer.objects.filter(question_id=question.id, answer_status = 1)
+            reply = Reply.objects.filter(question_id=question.id, answer_status = 1)
+            like_question = QuestionUser.objects.filter(question_id=question.id, is_like=True).all()
+            dislike_question = QuestionUser.objects.filter(question_id=question.id, is_like=False).all()
+            
             question_list_data.append(
                 {
                     "id": question.id,
                     "user_data": response.json(),
                     "title": question.title,
                     "content": question.content,
-                    "number_of_like": question.number_of_like,
-                    "number_of_dislike": question.number_of_dislike,
+                    "number_of_like": len(like_question),
+                    "number_of_dislike": len(dislike_question),
                     "image_url": question.image_url,
                     "create_date": question.create_date,
                     "status": question.question_status,
@@ -404,34 +409,23 @@ def create_question_like(request):
     if (response.status_code == 200):
         if (res["message"] == True):
             try:
-                if (is_like == True):
-                    question_like, created = QuestionUser.objects.get_or_create(question_id=question, user_id=user_id, is_like=is_like)
-                    if created == False:
-                        return Response(
-                            {
-                                'message': 'Like question failed'
-                            },
-                            status=status.HTTP_400_BAD_REQUEST
-                        )
+                question_like = QuestionUser.objects.filter(question_id=question, user_id=user_id).first()
+                if question_like:
+                    question_like.is_like = is_like
+                    question_like.save()
+                else:
+                    question_like = QuestionUser.objects.create(question_id=question, user_id=user_id, is_like=is_like)
+                if is_like:
                     return Response(
                         {
                             'message': 'Like question success'
                         }
                     )
-                elif (is_like == False):
-                    question_like, created = QuestionUser.objects.get_or_create(question_id=question, user_id=user_id, is_dislike=is_like)
-                    if created == False:
-                        return Response(
-                            {
-                                'message': 'Dislike question failed'
-                            },
-                            status=status.HTTP_400_BAD_REQUEST
-                        )
-                    return Response(
-                        {
-                            'message': 'Dislike question success'
-                        }
-                    )
+                return Response(
+                    {
+                        'message': 'Dislike question success'
+                    }
+                )
             except Exception as e:
                 return Response(
                     {
@@ -484,6 +478,50 @@ def get_question_by_user_id(request):
                 {
                     "message": "Get question successfully",
                     "data": question_list_data
+                },
+                status=status.HTTP_200_OK
+            )
+    return Response(
+            {
+                'message': 'User not found',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+@api_view(['GET'])
+def get_question_like_by_user_id(request):
+    user_id = request.GET.get("user_id")
+    question_id= request.GET.get("question_id")
+
+    if not user_id:
+        return Response(
+            {
+                'message': 'User id is required',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    if not question_id:
+        return Response(
+            {
+                'message': 'Question id is required',
+            },
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/check-user"
+    response = requests.get(authen_url, params={"user_id": user_id})
+
+    print(response)
+    
+    if (response.status_code == 200):
+        res = response.json()
+        if (res["message"] == True):
+            questionUser = QuestionUser.objects.filter(question_id=question_id, user_id=user_id).first()
+            return Response(
+                {
+                    'message': 'Get question like success',
+                    'data': questionUser.is_like
                 },
                 status=status.HTTP_200_OK
             )

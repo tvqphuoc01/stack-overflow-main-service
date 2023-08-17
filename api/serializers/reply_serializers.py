@@ -12,12 +12,12 @@ class ReplySerializer(serializers.Serializer):
     image_url = serializers.CharField(required=False)
 
 class ReplyLikeSerializer(serializers.Serializer):
+    user_id = serializers.CharField(required=True)
     reply_id=serializers.PrimaryKeyRelatedField(
         queryset=Reply.objects.all(),
         source="reply",
         write_only=True
-    ),
-    user_id = serializers.CharField(required=True),
+    )
 
 class ReplyResponseDataSerializer(serializers.ModelSerializer):
     class Meta:

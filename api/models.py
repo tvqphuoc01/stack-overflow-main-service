@@ -54,21 +54,19 @@ class QuestionUser(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     is_like = models.BooleanField(default=False)
-    is_dislike = models.BooleanField(default=False)
     
     def __str__(self):
-        return "User: " + str(self.user_id) + " - Question: " + str(self.question_id) + " - Like: " + str(self.is_like) + " - Dislike: " + str(self.is_dislike)
+        return "User: " + str(self.user_id) + " - Question: " + str(self.question_id) + " - Like: " + str(self.is_like)
     
 class AnswerUser(models.Model):
-    question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
+    answer_id = models.ForeignKey(Answer, on_delete=models.CASCADE, null=True)
     user_id = models.UUIDField()
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     is_like = models.BooleanField(default=False)
-    is_dislike = models.BooleanField(default=False)
     
     def __str__(self):
-        return "User: " + str(self.user_id) + " - Question: " + str(self.question_id) + " - Like: " + str(self.is_like) + " - Dislike: " + str(self.is_dislike)
+        return "User: " + str(self.user_id) + " - Answer: " + str(self.answer_id) + " - Like: " + str(self.is_like)
     
 class Notification(models.Model):
     noti_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -103,10 +101,9 @@ class ReplyUser(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     is_like = models.BooleanField(default=False)
-    is_dislike = models.BooleanField(default=False)
     
     def __str__(self):
-        return "User: " + str(self.user_id) + " - Question: " + str(self.question_id) + " - Like: " + str(self.is_like) + " - Dislike: " + str(self.is_dislike)
+        return "User: " + str(self.user_id) + " - Question: " + str(self.question_id) + " - Like: " + str(self.is_like)
 
 class DeviceToken(models.Model):
     user_id = models.UUIDField()
