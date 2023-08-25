@@ -356,7 +356,7 @@ def get_all_replies_for_admin(request):
         
     page = request.GET.get('page', 1)
     limit = request.GET.get('limit', 10)
-    reply = Reply.objects.all()
+    reply = Reply.objects.order_by("-create_date").all()
     paginator = Paginator(reply, limit)
     
     try:

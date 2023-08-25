@@ -347,8 +347,8 @@ def get_answer_by_user_id(request):
     if (response.status_code == 200):
         res = response.json()
         if (res["message"] == True):
-            reply_objs = Reply.objects.filter(owner_id=user_id, answer_status=1).all()
-            answer_objs = Answer.objects.filter(user_id=user_id, answer_status=1).all()
+            reply_objs = Reply.objects.filter(owner_id=user_id).all()
+            answer_objs = Answer.objects.filter(user_id=user_id).all()
             answer_list_data = []
             for answer in answer_objs:
                 answer_list_data.append(
@@ -359,18 +359,20 @@ def get_answer_by_user_id(request):
                         "number_of_dislike": answer.number_of_dislike,
                         "image_url": answer.image_url,
                         "create_date": answer.create_date,
+                        "status": answer.answer_status
                     }
                 )
 
             for reply in reply_objs:
                 answer_list_data.append(
                     {
-                        "id": reply.id,
+                        "id": reply.reply_id,
                         "content": reply.content,
                         "number_of_like": reply.number_of_like,
                         "number_of_dislike": reply.number_of_dislike,
                         "image_url": reply.image_url,
                         "create_date": reply.create_date,
+                        "status": reply.answer_status
                     }
                 )
 
@@ -426,7 +428,7 @@ def get_all_answer_for_admin(request):
     page_number = request.GET.get('page', 1)
     page_size = request.GET.get('page_size', 10)
 
-    answer_objs = Answer.objects.all()
+    answer_objs = Answer.objects.order_by("-create_date").all()
     paginator = Paginator(answer_objs, page_size)
     total = paginator.count
     

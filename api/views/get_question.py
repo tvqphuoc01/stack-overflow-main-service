@@ -179,7 +179,7 @@ def delete_question(request):
 @api_view(["GET"])
 def get_top_three_question(request):
     authen_url = "http://stack-overflow-authen-authenticator-1:8000/api/get-user-by-id"
-    queryset = Question.objects.annotate(num_answers=Count('answers')).order_by('-num_answers','-create_date','number_of_like').all()[:3]
+    queryset = Question.objects.filter(question_status=1).annotate(num_answers=Count('answers')).order_by('-num_answers','-create_date','number_of_like').all()[:3]
     question_list_data = []
     for question in queryset:
         response = requests.get(authen_url, params={"user_id": question.user_id})
@@ -194,7 +194,8 @@ def get_top_three_question(request):
                 "image_url": question.image_url,
                 "create_date": question.create_date,
                 "num_answers": question.num_answers,
-                "user_data": response.json()
+                "user_data": response.json(),
+                "status": question.question_status
             }
         )
     return Response(
@@ -364,7 +365,14 @@ def get_list_question(request):
             reply = Reply.objects.filter(question_id=question.id, answer_status = 1)
             like_question = QuestionUser.objects.filter(question_id=question.id, is_like=True).all()
             dislike_question = QuestionUser.objects.filter(question_id=question.id, is_like=False).all()
-            
+            question_tags = QuestionTag.objects.filter(question_id=question.id).all()
+            question_categories = QuestionCategory.objects.filter(question_id=question.id).all()
+            tag_list = []
+            tag_category = []
+            for question_tag in question_tags:
+                tag_list.append(question_tag.tag_id.name)
+            for question_category in question_categories:
+                tag_category.append(question_category.category_id.name)
             question_list_data.append(
                 {
                     "id": question.id,
@@ -376,7 +384,9 @@ def get_list_question(request):
                     "image_url": question.image_url,
                     "create_date": question.create_date,
                     "status": question.question_status,
-                    "total_answer": len(answer) + len(reply)
+                    "total_answer": len(answer) + len(reply),
+                    "tag_list": tag_list,
+                    "tag_category": tag_category
                 }
             )
     
